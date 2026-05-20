@@ -1,0 +1,2330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bright Mind Mental Health — Anna Rondon, MS, LMHC, NCC</title>
+<meta name="description" content="Compassionate, evidence-based therapy for adolescents, children, and adults. With Anna Rondon — Licensed Mental Health Counselor in the Miami area, with telehealth across Florida. Take life in baby steps." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,200;1,9..144,300;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   BRIGHT MIND MENTAL HEALTH — v2
+   Editorial-luxury · Slate-teal + antique gold · Motion-rich
+========================================================= */
+:root {
+  --ink: #0a1422;
+  --slate-abyss: #0d1a2b;
+  --slate-deep: #11203a;
+  --slate: #1a2f4d;
+  --slate-mid: #243f63;
+  --slate-soft: #2f4e76;
+  --gold: #c9a961;
+  --gold-bright: #e0c688;
+  --gold-deep: #9a7f3f;
+  --gold-glow: rgba(201, 169, 97, 0.5);
+  --cream: #f4ede0;
+  --cream-warm: #ebe2cd;
+  --paper: #e8dfc8;
+  --whisper: rgba(244, 237, 224, 0.62);
+  --whisper-dim: rgba(244, 237, 224, 0.32);
+  --hairline: rgba(201, 169, 97, 0.18);
+  --hairline-soft: rgba(244, 237, 224, 0.08);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-cubic: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Manrope', system-ui, sans-serif;
+  background: var(--slate-abyss);
+  color: var(--cream);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  cursor: none;
+}
+@media (hover: none) { body { cursor: auto; } }
+
+/* — Atmospheric grain — */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.97 0 0 0 0 0.93 0 0 0 0 0.78 0 0 0 0.6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.045;
+  z-index: 999;
+  mix-blend-mode: overlay;
+}
+
+/* — Aurora glow behind hero — */
+.aurora {
+  position: fixed;
+  inset: -20% -10% auto auto;
+  width: 80vw;
+  height: 80vh;
+  background:
+    radial-gradient(circle at 70% 30%, rgba(201,169,97,0.18) 0%, transparent 45%),
+    radial-gradient(circle at 30% 60%, rgba(47,78,118,0.5) 0%, transparent 50%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+  animation: aurora 18s ease-in-out infinite alternate;
+}
+@keyframes aurora {
+  0% { transform: translate(0,0) scale(1); }
+  100% { transform: translate(-5%, 5%) scale(1.1); }
+}
+
+/* — Custom cursor — */
+.cursor {
+  position: fixed;
+  top: 0; left: 0;
+  width: 10px; height: 10px;
+  background: var(--gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s var(--ease-out-expo), height 0.3s var(--ease-out-expo), background 0.3s ease;
+  mix-blend-mode: difference;
+}
+.cursor-ring {
+  position: fixed;
+  top: 0; left: 0;
+  width: 36px; height: 36px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.25s var(--ease-out-expo), width 0.3s var(--ease-out-expo), height 0.3s var(--ease-out-expo), border-color 0.3s ease, opacity 0.3s ease;
+  opacity: 0.7;
+}
+.cursor.is-hover { width: 30px; height: 30px; opacity: 0; }
+.cursor-ring.is-hover { width: 64px; height: 64px; border-color: var(--gold-bright); background: rgba(201,169,97,0.08); }
+
+@media (hover: none) {
+  .cursor, .cursor-ring { display: none; }
+}
+
+/* — Loader (page reveal) — */
+.loader {
+  position: fixed; inset: 0;
+  background: var(--slate-abyss);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  animation: loaderOut 1.6s 1.2s var(--ease-in-out-cubic) forwards;
+}
+.loader-mark {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: var(--gold);
+  opacity: 0;
+  animation: loaderFade 1.2s ease forwards, loaderFadeOut 0.5s 1s ease forwards;
+}
+.loader::before, .loader::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  height: 50vh;
+  background: var(--slate-abyss);
+  z-index: -1;
+}
+.loader::before { top: 0; animation: panelUp 1.2s 1.4s var(--ease-in-out-cubic) forwards; }
+.loader::after { bottom: 0; animation: panelDown 1.2s 1.4s var(--ease-in-out-cubic) forwards; }
+@keyframes loaderFade { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: none; } }
+@keyframes loaderFadeOut { to { opacity: 0; } }
+@keyframes loaderOut { 99% { pointer-events: none; } 100% { pointer-events: none; visibility: hidden; } }
+@keyframes panelUp { to { transform: translateY(-100%); } }
+@keyframes panelDown { to { transform: translateY(100%); } }
+
+/* ========== NAV ========== */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  padding: 1.75rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  transition: padding 0.5s var(--ease-out-expo), background 0.5s ease, backdrop-filter 0.5s ease, border-color 0.5s ease;
+  border-bottom: 1px solid transparent;
+}
+nav.scrolled {
+  padding: 1rem 3rem;
+  background: rgba(13, 26, 43, 0.75);
+  backdrop-filter: blur(20px) saturate(160%);
+  border-bottom-color: var(--hairline);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  text-decoration: none;
+  color: var(--cream);
+}
+.nav-logo .badge {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--cream);
+  padding: 3px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  transition: transform 0.6s var(--ease-out-expo);
+}
+.nav-logo .badge img { width: 100%; height: 100%; object-fit: contain; }
+.nav-logo:hover .badge { transform: rotate(-12deg) scale(1.05); }
+
+.nav-logo .wordmark {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+}
+.nav-logo .wordmark em {
+  display: block;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 0.78rem;
+  color: var(--gold);
+  letter-spacing: 0.04em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  align-items: center;
+}
+.nav-links a {
+  color: var(--whisper);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  position: relative;
+  transition: color 0.3s ease;
+}
+.nav-links a:not(.nav-cta)::after {
+  content: '';
+  position: absolute;
+  bottom: -6px; left: 0;
+  width: 0; height: 1px;
+  background: var(--gold);
+  transition: width 0.5s var(--ease-out-expo);
+}
+.nav-links a:hover { color: var(--cream); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-cta {
+  background: var(--gold);
+  color: var(--slate-deep) !important;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  letter-spacing: 0.12em !important;
+  font-weight: 500;
+  transition: background 0.35s ease, border-color 0.35s ease, transform 0.4s var(--ease-out-expo), box-shadow 0.5s ease;
+}
+.nav-cta:hover {
+  background: var(--gold-bright);
+  border-color: var(--gold-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -6px var(--gold-glow), 0 0 0 4px rgba(201, 169, 97, 0.12);
+}
+
+.nav-mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--cream);
+  cursor: none;
+  width: 32px; height: 32px;
+}
+
+/* ========== HERO ========== */
+.hero {
+  position: relative;
+  min-height: 70vh;
+  padding: 7rem 0 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 1;
+}
+.hero-text {
+  width: 100%;
+}
+.hero-eyebrow,
+.hero-sub,
+.hero-actions {
+  padding-left: 3rem;
+  padding-right: 3rem;
+  justify-content: center;
+}
+.hero-eyebrow,
+.hero-sub {
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-sub {
+  text-align: center;
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--gold);
+  font-size: 0.78rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 40px; height: 1px;
+  background: var(--gold);
+}
+.hero-eyebrow .pulse {
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  margin-right: 0.5rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 var(--gold-glow); }
+  50% { box-shadow: 0 0 0 8px transparent; }
+}
+
+.hero-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2rem, 6.5vw, 6.5rem);
+  line-height: 1;
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  color: var(--cream);
+  margin-bottom: 2rem;
+  padding: 0 2rem;
+  white-space: nowrap;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--gold);
+  font-weight: 400;
+}
+
+/* Mask-reveal lines (motion.dev style) */
+.line-mask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.1em;
+}
+.line-mask > span {
+  display: inline-block;
+  transform: translateY(110%);
+  opacity: 0;
+}
+.loaded .line-mask > span {
+  animation: lineReveal 1.1s var(--ease-out-expo) forwards;
+}
+.loaded .line-mask:nth-of-type(1) > span { animation-delay: 1.7s; }
+.loaded .line-mask:nth-of-type(2) > span { animation-delay: 1.85s; }
+.loaded .line-mask:nth-of-type(3) > span { animation-delay: 2.0s; }
+@keyframes lineReveal {
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.hero-sub {
+  font-size: 1.1rem;
+  line-height: 1.85;
+  color: var(--whisper);
+  max-width: 720px;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: simpleFade 1s 2.3s var(--ease-out-expo) forwards;
+}
+@keyframes simpleFade { to { opacity: 1; transform: none; } }
+
+.hero-actions {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  opacity: 0;
+  animation: simpleFade 1s 2.5s var(--ease-out-expo) forwards;
+}
+
+/* Magnetic button */
+.btn-magnetic {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: var(--gold);
+  color: var(--slate-deep);
+  padding: 1.05rem 2.2rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s ease;
+}
+.btn-magnetic::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--cream);
+  transform: translateY(101%);
+  transition: transform 0.6s var(--ease-out-expo);
+}
+.btn-magnetic span, .btn-magnetic svg {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.4s var(--ease-out-expo);
+}
+.btn-magnetic:hover::before { transform: translateY(0); }
+.btn-magnetic:hover { box-shadow: 0 20px 50px -15px var(--gold-glow); }
+.btn-magnetic:hover svg { transform: translateX(6px); }
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 6px;
+}
+.btn-ghost::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%; height: 1px;
+  background: var(--gold);
+  transform-origin: right;
+  transform: scaleX(1);
+  transition: transform 0.5s var(--ease-out-expo);
+}
+.btn-ghost:hover::after { transform-origin: left; transform: scaleX(0); animation: ghostLine 0.8s 0.3s var(--ease-out-expo) forwards; }
+@keyframes ghostLine {
+  0% { transform-origin: left; transform: scaleX(0); }
+  100% { transform-origin: left; transform: scaleX(1); }
+}
+
+/* — Hero Portrait — */
+.hero-portrait {
+  position: relative;
+  opacity: 0;
+  animation: simpleFade 1.4s 1.9s var(--ease-out-expo) forwards;
+}
+
+.portrait-frame {
+  position: relative;
+  aspect-ratio: 4/5;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow:
+    0 50px 100px -20px rgba(0,0,0,0.6),
+    0 30px 60px -30px rgba(0,0,0,0.5);
+}
+.portrait-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(170deg, transparent 55%, rgba(13,26,43,0.55) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+.portrait-frame img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 1.5s var(--ease-out-expo);
+  will-change: transform;
+}
+.portrait-frame:hover img { transform: scale(1.05); }
+
+/* Mask-reveal overlay on load */
+.portrait-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--slate-abyss);
+  z-index: 2;
+  animation: maskSlide 1.6s 2.1s var(--ease-in-out-cubic) forwards;
+}
+@keyframes maskSlide { to { transform: translateY(-101%); } }
+
+.portrait-tag {
+  position: absolute;
+  bottom: -2rem;
+  left: -2.5rem;
+  background: var(--cream);
+  color: var(--slate-deep);
+  padding: 1.1rem 1.6rem;
+  font-family: 'Fraunces', serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  border-left: 2px solid var(--gold);
+  box-shadow: 0 30px 60px -15px rgba(0,0,0,0.5);
+  z-index: 3;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: simpleFade 0.8s 3.5s var(--ease-out-expo) forwards;
+}
+.portrait-tag strong {
+  display: block;
+  font-style: normal;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+}
+
+.portrait-orbit {
+  position: absolute;
+  top: -2.5rem; right: -2.5rem;
+  width: 110px; height: 110px;
+  z-index: 3;
+  animation: orbit 28s linear infinite;
+}
+.portrait-orbit svg { width: 100%; height: 100%; }
+.portrait-orbit text {
+  fill: var(--gold);
+  font-family: 'Fraunces', serif;
+  font-size: 9px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+}
+@keyframes orbit { to { transform: rotate(360deg); } }
+
+.portrait-orbit-center {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--gold);
+  font-size: 1.2rem;
+}
+
+/* Scroll cue */
+.scroll-cue {
+  position: absolute;
+  bottom: 2rem; left: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--whisper-dim);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: simpleFade 1s 3s var(--ease-out-expo) forwards;
+}
+.scroll-cue::after {
+  content: '';
+  width: 60px; height: 1px;
+  background: linear-gradient(to right, var(--gold), transparent);
+  animation: scrollLine 2.2s ease-in-out infinite;
+}
+@keyframes scrollLine {
+  0%, 100% { transform: scaleX(1); transform-origin: left; opacity: 1; }
+  50% { transform: scaleX(0.3); transform-origin: left; opacity: 0.3; }
+}
+
+/* ========== COUNSELOR PICKER ========== */
+.counselors {
+  padding: 9rem 3rem 7rem;
+  position: relative;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, var(--slate-abyss) 0%, var(--slate-deep) 100%);
+  border-top: 1px solid var(--hairline);
+  overflow: hidden;
+}
+.counselors::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(201,169,97,0.06) 0%, transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(47,78,118,0.4) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.counselors-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: end;
+  margin-bottom: 5rem;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+.counselors-header p {
+  color: var(--whisper);
+  font-size: 1.02rem;
+  line-height: 1.85;
+  max-width: 460px;
+}
+
+.counselor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.counselor-card {
+  position: relative;
+  background: var(--slate);
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: none;
+  transition: transform 0.6s var(--ease-out-expo), border-color 0.5s ease, box-shadow 0.5s ease;
+}
+.counselor-card[data-state="available"]:hover {
+  transform: translateY(-8px);
+  border-color: var(--gold);
+  box-shadow: 0 30px 60px -20px rgba(0,0,0,0.5);
+}
+.counselor-card[data-state="available"].is-active {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px var(--gold), 0 30px 60px -20px rgba(0,0,0,0.5);
+}
+
+.counselor-card[data-state="coming-soon"] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.counselor-card[data-state="coming-soon"] .counselor-photo {
+  background: linear-gradient(135deg, var(--slate-mid), var(--slate-soft));
+  display: grid;
+  place-items: center;
+  color: var(--whisper-dim);
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+.counselor-photo {
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  position: relative;
+  background: var(--slate-mid);
+}
+.counselor-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s var(--ease-out-expo);
+  filter: contrast(1.02) saturate(0.95);
+}
+.counselor-card:hover .counselor-photo img { transform: scale(1.06); }
+
+.counselor-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(13,26,43,0.75) 100%);
+  pointer-events: none;
+}
+
+.counselor-badge {
+  position: absolute;
+  top: 1rem; left: 1rem;
+  z-index: 2;
+  background: var(--gold);
+  color: var(--slate-deep);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+}
+.counselor-badge.muted {
+  background: transparent;
+  color: var(--whisper);
+  border: 1px solid var(--hairline);
+}
+
+.counselor-info {
+  padding: 1.75rem;
+  position: relative;
+  z-index: 1;
+}
+.counselor-info h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.55rem;
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.01em;
+}
+.counselor-info h3 em { font-style: italic; color: var(--gold); }
+.counselor-info .credentials-line {
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+.counselor-info .role {
+  font-size: 0.92rem;
+  color: var(--whisper);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+.counselor-select {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--gold);
+  transition: gap 0.4s var(--ease-out-expo);
+}
+.counselor-card[data-state="available"]:hover .counselor-select { gap: 1rem; }
+
+/* — Selected profile panel — */
+.counselor-profile {
+  margin-top: 4rem;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  background: linear-gradient(135deg, var(--slate-deep), var(--slate));
+  border: 1px solid var(--gold);
+  border-radius: 6px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 0;
+  position: relative;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    max-height 0.9s var(--ease-out-expo),
+    opacity 0.7s var(--ease-out-expo),
+    transform 0.9s var(--ease-out-expo),
+    margin-top 0.5s var(--ease-out-expo);
+  pointer-events: none;
+}
+.counselor-profile.is-open {
+  max-height: 1400px;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.profile-close {
+  position: absolute;
+  top: 1.25rem; right: 1.25rem;
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--hairline);
+  background: rgba(13,26,43,0.6);
+  color: var(--cream);
+  display: grid;
+  place-items: center;
+  cursor: none;
+  z-index: 3;
+  transition: all 0.4s var(--ease-out-expo);
+  backdrop-filter: blur(8px);
+}
+.profile-close:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: rotate(90deg);
+}
+
+.profile-visual {
+  position: relative;
+  overflow: hidden;
+  min-height: 480px;
+}
+.profile-visual img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: contrast(1.02) saturate(0.95);
+}
+.profile-visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 40%, rgba(13,26,43,0.6) 100%);
+}
+
+.profile-visual-tag {
+  position: absolute;
+  bottom: 1.5rem; left: 1.5rem;
+  z-index: 2;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  color: var(--cream);
+  font-size: 1.05rem;
+}
+.profile-visual-tag strong {
+  display: block;
+  font-style: normal;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.35rem;
+  font-weight: 500;
+}
+
+.profile-body {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.profile-eyebrow {
+  font-size: 0.74rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+.profile-eyebrow::before {
+  content: '';
+  width: 26px; height: 1px;
+  background: var(--gold);
+}
+
+.profile-body h3 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--cream);
+}
+.profile-body h3 em { font-style: italic; color: var(--gold); font-weight: 400; }
+
+.profile-creds {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--gold);
+}
+
+.profile-bio {
+  color: var(--whisper);
+  font-size: 0.97rem;
+  line-height: 1.8;
+}
+
+.profile-spec-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--whisper-dim);
+  margin-top: 0.5rem;
+}
+.profile-spec-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+.profile-spec-chip {
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  color: var(--whisper);
+  letter-spacing: 0.03em;
+  transition: all 0.3s ease;
+}
+.profile-spec-chip:hover {
+  border-color: var(--gold);
+  color: var(--cream);
+}
+
+.profile-actions {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ========== MARQUEE ========== */
+.marquee {
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  overflow: hidden;
+  padding: 1.75rem 0;
+  background: var(--slate-deep);
+  position: relative;
+  z-index: 2;
+}
+.marquee::before, .marquee::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+.marquee::before { left: 0; background: linear-gradient(to right, var(--slate-deep), transparent); }
+.marquee::after { right: 0; background: linear-gradient(to left, var(--slate-deep), transparent); }
+
+.marquee-track {
+  display: flex;
+  gap: 4rem;
+  animation: marquee 42s linear infinite;
+  white-space: nowrap;
+  width: max-content;
+}
+.marquee-track span {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.7rem;
+  color: var(--whisper);
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  transition: color 0.4s ease;
+}
+.marquee-track span:hover { color: var(--gold); }
+.marquee-track span::after {
+  content: '✦';
+  color: var(--gold);
+  font-style: normal;
+  font-size: 0.85rem;
+}
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* ========== SECTIONS ========== */
+section { padding: 9rem 3rem; position: relative; z-index: 1; }
+
+.section-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--gold);
+  font-size: 0.78rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+.section-eyebrow::before {
+  content: '';
+  width: 32px; height: 1px;
+  background: var(--gold);
+}
+
+.section-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.4rem, 5.5vw, 4.5rem);
+  line-height: 1.02;
+  font-weight: 300;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.5rem;
+}
+.section-title em {
+  font-style: italic;
+  color: var(--gold);
+  font-weight: 400;
+}
+
+/* ========== ABOUT ========== */
+.about {
+  display: grid;
+  grid-template-columns: 0.9fr 1.3fr;
+  gap: 6rem;
+  align-items: center;
+}
+.about-visual { position: relative; }
+
+.about-logo-wrap {
+  background: var(--cream);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow:
+    0 40px 80px -20px rgba(0,0,0,0.5),
+    inset 0 0 60px rgba(154, 127, 63, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+.about-logo-wrap img {
+  width: 92%; height: 92%;
+  object-fit: contain;
+  transition: transform 0.8s var(--ease-out-expo);
+}
+.about-logo-wrap:hover img { transform: scale(1.04); }
+
+.about-orbit {
+  position: absolute;
+  inset: -28px;
+  animation: orbit 50s linear infinite;
+}
+.about-orbit svg { width: 100%; height: 100%; }
+.about-orbit text {
+  fill: var(--gold);
+  font-family: 'Fraunces', serif;
+  font-size: 11px;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+}
+
+.about-dot {
+  position: absolute;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+.about-dot.tl { top: 0; left: 0; }
+.about-dot.br { bottom: 0; right: 0; }
+
+.about-content p {
+  font-size: 1.05rem;
+  color: var(--whisper);
+  line-height: 1.85;
+  margin-bottom: 1.5rem;
+}
+.about-content p:first-of-type::first-letter {
+  font-family: 'Fraunces', serif;
+  font-size: 4.5rem;
+  float: left;
+  line-height: 0.85;
+  margin: 0.4rem 0.6rem 0 0;
+  color: var(--gold);
+  font-style: italic;
+  font-weight: 300;
+}
+
+.credentials {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--hairline);
+}
+@media (max-width: 1200px) {
+  .credentials { grid-template-columns: repeat(3, 1fr); row-gap: 2rem; }
+  .credential:nth-child(4), .credential:nth-child(5) { padding-top: 1.5rem; border-top: 1px solid var(--hairline); }
+}
+.credential {
+  position: relative;
+  padding-left: 1rem;
+  border-left: 1px solid var(--hairline);
+}
+.credential:first-child { padding-left: 0; border-left: none; }
+.credential-num {
+  font-family: 'Fraunces', serif;
+  font-size: 1.65rem;
+  color: var(--gold);
+  font-weight: 300;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+.credential-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--whisper);
+  line-height: 1.5;
+}
+
+/* ========== SPECIALTIES ========== */
+.specialties {
+  background: var(--slate-deep);
+  position: relative;
+}
+.specialties::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--hairline), transparent);
+}
+
+.specialties-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  margin-bottom: 5rem;
+  align-items: end;
+}
+.specialties-header p {
+  color: var(--whisper);
+  font-size: 1.02rem;
+  line-height: 1.85;
+  max-width: 460px;
+}
+
+.specialty-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid var(--hairline);
+  border-left: 1px solid var(--hairline);
+}
+
+.specialty {
+  padding: 3rem;
+  border-right: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.6s var(--ease-out-expo);
+}
+.specialty::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(201,169,97,0.08), transparent 50%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+.specialty:hover::before { opacity: 1; }
+.specialty::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 0; height: 1px;
+  background: var(--gold);
+  transition: width 0.7s var(--ease-out-expo);
+}
+.specialty:hover::after { width: 100%; }
+
+.specialty-num {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  color: var(--gold);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.specialty-icon {
+  width: 52px; height: 52px;
+  margin-bottom: 1.5rem;
+  color: var(--gold);
+  transition: transform 0.6s var(--ease-back);
+}
+.specialty:hover .specialty-icon { transform: scale(1.1) rotate(-6deg); }
+
+.specialty h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.85rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: var(--cream);
+  letter-spacing: -0.01em;
+}
+.specialty h3 em { font-style: italic; color: var(--gold); }
+
+.specialty p {
+  color: var(--whisper);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.specialty-tag {
+  display: inline-block;
+  margin-top: 1.25rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  position: relative;
+  padding-bottom: 3px;
+}
+.specialty-tag::after {
+  content: '→';
+  margin-left: 0.5rem;
+  display: inline-block;
+  transition: transform 0.4s var(--ease-out-expo);
+}
+.specialty:hover .specialty-tag::after { transform: translateX(6px); }
+
+/* ========== CONDITIONS BAR ========== */
+.conditions {
+  padding: 5rem 3rem;
+  background: var(--slate-abyss);
+  position: relative;
+}
+.conditions-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.conditions-label {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--whisper);
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+.conditions-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+.condition-chip {
+  padding: 0.6rem 1.25rem;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: var(--whisper);
+  letter-spacing: 0.04em;
+  transition: all 0.4s var(--ease-out-expo);
+  cursor: none;
+}
+.condition-chip:hover {
+  border-color: var(--gold);
+  color: var(--cream);
+  background: rgba(201,169,97,0.05);
+  transform: translateY(-2px);
+}
+
+/* ========== APPROACH ========== */
+.approach {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.approach-list { list-style: none; counter-reset: step; }
+
+.approach-step {
+  counter-increment: step;
+  padding: 2.25rem 0;
+  border-bottom: 1px solid var(--hairline);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  align-items: start;
+  transition: padding-left 0.5s var(--ease-out-expo);
+  position: relative;
+}
+.approach-step::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -1px;
+  width: 0; height: 1px;
+  background: var(--gold);
+  transition: width 0.6s var(--ease-out-expo);
+}
+.approach-step:hover { padding-left: 1.25rem; }
+.approach-step:hover::after { width: 100%; }
+.approach-step::before {
+  content: counter(step, decimal-leading-zero);
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--gold);
+  font-weight: 300;
+}
+.approach-step h4 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.45rem;
+  font-weight: 400;
+  margin-bottom: 0.6rem;
+  color: var(--cream);
+  letter-spacing: -0.01em;
+}
+.approach-step p {
+  color: var(--whisper);
+  font-size: 0.97rem;
+  line-height: 1.75;
+}
+
+.approach-quote {
+  position: sticky;
+  top: 9rem;
+  padding: 3.25rem;
+  background:
+    linear-gradient(135deg, var(--slate-mid), var(--slate));
+  border-left: 2px solid var(--gold);
+  position: relative;
+  overflow: hidden;
+}
+.approach-quote::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(201,169,97,0.1), transparent 50%);
+  pointer-events: none;
+}
+.approach-quote-mark {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 6rem;
+  color: var(--gold);
+  line-height: 0.5;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+.approach-quote p {
+  font-family: 'Fraunces', serif;
+  font-size: 1.55rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--cream);
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+  position: relative;
+}
+.approach-quote cite {
+  display: block;
+  font-style: normal;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  position: relative;
+}
+
+/* ========== VOICES ========== */
+.testimonials {
+  background: var(--slate-deep);
+  padding: 9rem 0;
+  overflow: hidden;
+}
+.testimonials-inner { padding: 0 3rem; max-width: 1400px; margin: 0 auto; }
+
+.testimonials-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: end;
+  margin-bottom: 5rem;
+}
+.testimonials-header p {
+  color: var(--whisper);
+  max-width: 420px;
+  line-height: 1.8;
+}
+
+.testimonial-track-wrap {
+  position: relative;
+  margin: 0 -3rem;
+  overflow: hidden;
+  padding: 2rem 0;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+.testimonial-track {
+  display: flex;
+  gap: 1.75rem;
+  padding: 0 3rem;
+  animation: slideTestimonials 50s linear infinite;
+  width: max-content;
+}
+.testimonial-track:hover { animation-play-state: paused; }
+@keyframes slideTestimonials { to { transform: translateX(-50%); } }
+
+.testimonial-card {
+  flex: 0 0 440px;
+  padding: 2.5rem;
+  background: var(--slate-mid);
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  position: relative;
+  transition: transform 0.5s var(--ease-out-expo), border-color 0.5s ease, background 0.5s ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold);
+  background: var(--slate-soft);
+}
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: 0.5rem; right: 1.5rem;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 6rem;
+  color: var(--gold);
+  line-height: 1;
+  opacity: 0.35;
+  font-weight: 300;
+}
+.testimonial-card p {
+  font-family: 'Fraunces', serif;
+  font-size: 1.08rem;
+  line-height: 1.65;
+  color: var(--cream);
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+  font-weight: 300;
+}
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--hairline);
+}
+.testimonial-author-avatar {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-bright), var(--gold-deep));
+  display: grid;
+  place-items: center;
+  color: var(--slate-deep);
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+.testimonial-author-info strong {
+  display: block;
+  font-size: 0.92rem;
+  color: var(--cream);
+  font-weight: 500;
+}
+.testimonial-author-info span {
+  font-size: 0.75rem;
+  color: var(--whisper);
+  letter-spacing: 0.06em;
+}
+
+/* ========== CONTACT ========== */
+.contact {
+  background: linear-gradient(180deg, var(--slate-abyss) 0%, var(--slate-deep) 50%, var(--slate) 100%);
+  text-align: center;
+  padding: 11rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+.contact::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 25% 30%, rgba(201,169,97,0.12) 0%, transparent 40%),
+    radial-gradient(circle at 75% 70%, rgba(201,169,97,0.08) 0%, transparent 40%);
+  pointer-events: none;
+}
+.contact-inner {
+  max-width: 850px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.contact .section-eyebrow { justify-content: center; }
+.contact .section-eyebrow::before { display: none; }
+.contact .section-eyebrow::after {
+  content: '';
+  width: 32px; height: 1px;
+  background: var(--gold);
+}
+
+.contact-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  line-height: 1.05;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  letter-spacing: -0.025em;
+}
+.contact-title em { font-style: italic; color: var(--gold); font-weight: 400; }
+
+.contact-sub {
+  font-size: 1.12rem;
+  color: var(--whisper);
+  max-width: 560px;
+  margin: 0 auto 3rem;
+  line-height: 1.75;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 4rem;
+  text-align: left;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.contact-block {
+  padding: 2rem;
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  background: rgba(13, 26, 43, 0.4);
+  backdrop-filter: blur(12px);
+  transition: all 0.5s var(--ease-out-expo);
+  position: relative;
+  overflow: hidden;
+}
+.contact-block::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(201,169,97,0.1), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.contact-block:hover {
+  border-color: var(--gold);
+  transform: translateY(-6px);
+  background: rgba(36, 63, 99, 0.5);
+}
+.contact-block:hover::before { opacity: 1; }
+.contact-block-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.85rem;
+  position: relative;
+}
+.contact-block-value {
+  font-family: 'Fraunces', serif;
+  font-size: 1.18rem;
+  color: var(--cream);
+  word-break: break-word;
+  position: relative;
+}
+.contact-block a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.contact-block a:hover { color: var(--gold); }
+
+/* ========== FOOTER ========== */
+footer {
+  background: var(--slate-abyss);
+  padding: 4rem 3rem 2rem;
+  border-top: 1px solid var(--hairline);
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 4rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--hairline);
+  margin-bottom: 2rem;
+}
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.footer-brand img {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: var(--cream);
+  padding: 3px;
+}
+.footer-brand-text {
+  font-family: 'Fraunces', serif;
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+.footer-brand-text em {
+  display: block;
+  font-style: italic;
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 300;
+}
+.footer-tag {
+  color: var(--whisper);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  max-width: 320px;
+}
+.footer-col h5 {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+}
+.footer-col ul {
+  list-style: none;
+}
+.footer-col li {
+  margin-bottom: 0.6rem;
+  font-size: 0.88rem;
+  color: var(--whisper);
+}
+.footer-col a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-col a:hover { color: var(--gold); }
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.78rem;
+  color: var(--whisper-dim);
+  letter-spacing: 0.05em;
+}
+.footer-bottom em {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  color: var(--gold);
+}
+
+/* ========== REVEAL ANIMATIONS ========== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.2s var(--ease-out-expo), transform 1.2s var(--ease-out-expo);
+}
+.reveal.in { opacity: 1; transform: none; }
+
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s var(--ease-out-expo), transform 1s var(--ease-out-expo);
+}
+.reveal-stagger.in > * { opacity: 1; transform: none; }
+.reveal-stagger.in > *:nth-child(1) { transition-delay: 0.05s; }
+.reveal-stagger.in > *:nth-child(2) { transition-delay: 0.12s; }
+.reveal-stagger.in > *:nth-child(3) { transition-delay: 0.2s; }
+.reveal-stagger.in > *:nth-child(4) { transition-delay: 0.28s; }
+.reveal-stagger.in > *:nth-child(5) { transition-delay: 0.36s; }
+.reveal-stagger.in > *:nth-child(6) { transition-delay: 0.44s; }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 980px) {
+  nav { padding: 1rem 1.5rem; }
+  nav.scrolled { padding: 0.85rem 1.5rem; }
+  .nav-links { display: none; }
+  .nav-mobile-toggle { display: block; }
+
+  .hero { padding: 5.5rem 0 3rem; min-height: auto; }
+  .hero-eyebrow, .hero-sub, .hero-actions { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .hero-title { padding: 0 1rem; white-space: normal; font-size: clamp(2.6rem, 11vw, 5rem); }
+  .scroll-cue { display: none; }
+
+  .counselors { padding: 5rem 1.5rem; }
+  .counselors-header { grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 3rem; }
+  .counselor-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+  .counselor-profile { grid-template-columns: 1fr; }
+  .profile-visual { min-height: 340px; }
+  .profile-body { padding: 2rem; }
+  .profile-actions { flex-direction: column; align-items: flex-start; gap: 1rem; }
+
+  section { padding: 5rem 1.5rem; }
+  .about { grid-template-columns: 1fr; gap: 3.5rem; }
+  .about-visual { max-width: 320px; margin: 0 auto; }
+  .credentials { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .credential { padding-left: 0; border-left: none; padding-top: 1rem; border-top: 1px solid var(--hairline); }
+  .credential:nth-child(-n+2) { border-top: none; padding-top: 0; }
+
+  .specialties-header { grid-template-columns: 1fr; gap: 1.5rem; }
+  .specialty-grid { grid-template-columns: 1fr; }
+  .specialty { padding: 2.25rem; }
+
+  .approach { grid-template-columns: 1fr; gap: 3rem; }
+  .approach-quote { position: static; padding: 2.25rem; }
+  .approach-quote p { font-size: 1.25rem; }
+
+  .testimonials-header { grid-template-columns: 1fr; gap: 1.5rem; }
+  .testimonial-card { flex: 0 0 320px; padding: 2rem; }
+
+  .contact { padding: 6rem 1.5rem; }
+  .contact-grid { grid-template-columns: 1fr; gap: 1rem; }
+
+  .footer-top { grid-template-columns: 1fr; gap: 2.5rem; }
+  .marquee-track span { font-size: 1.3rem; gap: 3rem; }
+  .marquee-track { gap: 3rem; }
+
+  body { cursor: auto; }
+  .cursor, .cursor-ring { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Loader -->
+<div class="loader" aria-hidden="true">
+  <div class="loader-mark">Bright Mind <em>Mental Health</em></div>
+</div>
+
+<!-- Custom cursor -->
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+
+<!-- Aurora bg -->
+<div class="aurora" aria-hidden="true"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo" data-hover>
+    <div class="badge"><img src="logo.jpeg" alt="" /></div>
+    <div class="wordmark">
+      Bright Mind
+      <em>Mental Health</em>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#counselors" data-hover>Counselors</a></li>
+    <li><a href="#about" data-hover>About</a></li>
+    <li><a href="#specialties" data-hover>Specialties</a></li>
+    <li><a href="#approach" data-hover>Approach</a></li>
+    <li><a href="#voices" data-hover>Voices</a></li>
+    <li><a href="https://therapyfinder.com/therapist/anna-rondon-licensed-mental-health-counselor-pembroke-pines-fl" class="nav-cta" data-hover target="_blank">Book a Consult</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-text">
+    <h1 class="hero-title">
+      <span class="line-mask"><span>Take life in <em>baby steps.</em></span></span>
+    </h1>
+    <p class="hero-sub">
+      Compassionate, evidence-based mental health counseling.<br/>
+      For adolescents, children, adults, and families.<br/>
+      A steady place to begin.
+    </p>
+    <div class="hero-actions">
+      <a href="#counselors" class="btn-magnetic" data-hover data-magnetic>
+        <span>Choose Your Counselor</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="scroll-cue">Scroll</div>
+</header>
+
+<!-- COUNSELOR PICKER -->
+<section id="counselors" class="counselors">
+  <div class="counselors-header reveal">
+    <div>
+      <div class="section-eyebrow">Our Counselors</div>
+      <h2 class="section-title">Choose your <em>counselor.</em></h2>
+    </div>
+    <p>
+      The right therapeutic relationship is the heart of the work. Meet the counselor you'll walk with — select a profile below to see specialties, approach, and how to begin.
+    </p>
+  </div>
+
+  <div class="counselor-grid reveal-stagger">
+    <!-- Anna Rondon (real, selectable) -->
+    <article class="counselor-card" data-state="available" data-counselor="anna" data-hover>
+      <div class="counselor-badge">Now Accepting</div>
+      <div class="counselor-photo">
+        <img src="anna-headshot.jpeg" alt="Anna Rondon, Licensed Mental Health Counselor" />
+      </div>
+      <div class="counselor-info">
+        <h3>Anna <em>Rondon</em></h3>
+        <div class="credentials-line">MS · LMHC · NCC</div>
+        <p class="role">Licensed Mental Health Counselor. Adolescents, children, adults, and families.</p>
+        <span class="counselor-select">Select Anna →</span>
+      </div>
+    </article>
+
+    <!-- Placeholder slots — easy to fill in later -->
+    <article class="counselor-card" data-state="coming-soon" data-hover>
+      <div class="counselor-badge muted">Coming Soon</div>
+      <div class="counselor-photo">✦</div>
+      <div class="counselor-info">
+        <h3>Joining <em>Soon</em></h3>
+        <div class="credentials-line">— · — · —</div>
+        <p class="role">A second counselor is joining the practice. Profile available soon.</p>
+        <span class="counselor-select" style="opacity:0.5">Not yet available</span>
+      </div>
+    </article>
+
+    <article class="counselor-card" data-state="coming-soon" data-hover>
+      <div class="counselor-badge muted">Coming Soon</div>
+      <div class="counselor-photo">✦</div>
+      <div class="counselor-info">
+        <h3>Joining <em>Soon</em></h3>
+        <div class="credentials-line">— · — · —</div>
+        <p class="role">A third counselor is joining the practice. Profile available soon.</p>
+        <span class="counselor-select" style="opacity:0.5">Not yet available</span>
+      </div>
+    </article>
+  </div>
+
+  <!-- Selected profile panel — populated dynamically -->
+  <div class="counselor-profile" id="counselorProfile" aria-live="polite">
+    <button class="profile-close" id="profileClose" aria-label="Close profile" data-hover>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="profile-visual">
+      <img id="profileImg" src="" alt="" />
+      <div class="profile-visual-tag">
+        <strong>Now Accepting</strong>
+        <span id="profileTag"></span>
+      </div>
+    </div>
+    <div class="profile-body">
+      <div class="profile-eyebrow">Your Counselor</div>
+      <h3 id="profileName"></h3>
+      <div class="profile-creds" id="profileCreds"></div>
+      <p class="profile-bio" id="profileBio"></p>
+      <div>
+        <div class="profile-spec-label">Areas of Focus</div>
+      </div>
+      <div class="profile-spec-chips" id="profileChips"></div>
+      <div class="profile-actions">
+        <a href="https://therapyfinder.com/therapist/anna-rondon-licensed-mental-health-counselor-pembroke-pines-fl" class="btn-magnetic" data-hover data-magnetic id="profileBookBtn" target="_blank">
+          <span>Book with Anna</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#approach" class="btn-ghost" data-hover>See Her Approach</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Adolescents</span><span>Children</span><span>Adults</span><span>Anxiety</span><span>Depression</span><span>ADHD</span><span>Mood Disorders</span><span>Personality Disorders</span><span>Family Dynamics</span>
+    <span>Adolescents</span><span>Children</span><span>Adults</span><span>Anxiety</span><span>Depression</span><span>ADHD</span><span>Mood Disorders</span><span>Personality Disorders</span><span>Family Dynamics</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about">
+    <div class="about-visual reveal">
+      <div class="about-orbit" data-hover>
+        <svg viewBox="0 0 200 200">
+          <defs><path id="aboutCirc" d="M 100, 100 m -92, 0 a 92,92 0 1,1 184,0 a 92,92 0 1,1 -184,0" /></defs>
+          <text><textPath href="#aboutCirc">· Compassion · Clarity · Courage · Calm · Compassion · Clarity · Courage · Calm ·</textPath></text>
+        </svg>
+      </div>
+      <div class="about-logo-wrap" data-hover>
+        <img src="logo.jpeg" alt="Bright Mind Mental Health" />
+      </div>
+      <span class="about-dot tl"></span>
+      <span class="about-dot br"></span>
+    </div>
+
+    <div class="about-content reveal">
+      <div class="section-eyebrow">About Anna</div>
+      <h2 class="section-title">A practice grounded in <em>presence</em>, not pressure.</h2>
+      <p>
+        Anna Rondon is a Licensed Mental Health Counselor and National Certified Counselor based in the Miami area, with telehealth services serving clients across the state of Florida. Her practice is built on a simple conviction: real change rarely arrives in a single leap. It comes in small, deliberate steps — taken with someone who sees you clearly and walks alongside you.
+      </p>
+      <p>
+        With clinical experience spanning forensic psychology and juvenile services, Anna brings a deep understanding of diverse behavioral and emotional challenges. She is especially passionate about working with adolescents, while also providing therapeutic support to children, adults, and families navigating high-risk seasons of life.
+      </p>
+
+      <div class="credentials reveal-stagger">
+        <div class="credential">
+          <div class="credential-num">MS</div>
+          <div class="credential-label">Master of Science<br/>Clinical Psychology</div>
+        </div>
+        <div class="credential">
+          <div class="credential-num">LMHC</div>
+          <div class="credential-label">Licensed<br/>Mental Health</div>
+        </div>
+        <div class="credential">
+          <div class="credential-num">NCC</div>
+          <div class="credential-label">National Cert.<br/>Counselor</div>
+        </div>
+        <div class="credential">
+          <div class="credential-num">TF-CBT</div>
+          <div class="credential-label">Trauma-Focused<br/>Certified</div>
+        </div>
+        <div class="credential">
+          <div class="credential-num">C-DBT</div>
+          <div class="credential-label">Dialectical<br/>Behavioral Cert.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIALTIES -->
+<section id="specialties" class="specialties">
+  <div class="specialties-header reveal">
+    <div>
+      <div class="section-eyebrow">Areas of Focus</div>
+      <h2 class="section-title">Care, calibrated to <em>who you are.</em></h2>
+    </div>
+    <p>
+      Therapy is not one-size-fits-all. Each focus area below reflects a distinct way of listening — to a child finding their voice, an adolescent finding their footing, a family finding its rhythm again.
+    </p>
+  </div>
+
+  <div class="specialty-grid reveal-stagger">
+    <div class="specialty" data-hover data-tilt>
+      <span class="specialty-num">i.</span>
+      <svg class="specialty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+        <circle cx="12" cy="8" r="4"/>
+        <path d="M4 22c0-4 4-7 8-7s8 3 8 7"/>
+        <path d="M9 6c.5-1 1.5-2 3-2"/>
+      </svg>
+      <h3>Children & <em>Adolescents</em></h3>
+      <p>Developmentally attuned therapy for children and teens navigating big feelings, school stress, social challenges, and the work of growing up. Anna's specialty.</p>
+      <span class="specialty-tag">Anna's primary focus</span>
+    </div>
+
+    <div class="specialty" data-hover data-tilt>
+      <span class="specialty-num">ii.</span>
+      <svg class="specialty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+        <path d="M12 2v6"/><circle cx="12" cy="12" r="4"/><path d="M12 16v6"/><path d="M5 12h2"/><path d="M17 12h2"/>
+      </svg>
+      <h3>Adults <em>in Transition</em></h3>
+      <p>For the in-between seasons: identity, relationships, career uncertainty, and the slow work of becoming. A space to think out loud, without rush.</p>
+      <span class="specialty-tag">Individual therapy</span>
+    </div>
+
+    <div class="specialty" data-hover data-tilt>
+      <span class="specialty-num">iii.</span>
+      <svg class="specialty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+        <circle cx="9" cy="9" r="3"/><circle cx="17" cy="11" r="2.5"/><circle cx="6" cy="16" r="2"/>
+        <path d="M9 12v3M14 12l-3 3M9 18v2"/>
+      </svg>
+      <h3>Family <em>Dynamics</em></h3>
+      <p>Restoring communication, repairing rupture, and helping families build the kind of trust that holds — even through difficult conversations.</p>
+      <span class="specialty-tag">Family work</span>
+    </div>
+
+    <div class="specialty" data-hover data-tilt>
+      <span class="specialty-num">iv.</span>
+      <svg class="specialty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+        <path d="M12 2L2 7v6c0 5 4 9 10 9s10-4 10-9V7l-10-5z"/>
+        <path d="M9 12l2 2 4-4"/>
+      </svg>
+      <h3>High-Risk <em>Support</em></h3>
+      <p>Specialized care for individuals navigating crisis, complex trauma, and behavioral challenges — informed by forensic and juvenile services experience.</p>
+      <span class="specialty-tag">Crisis-informed</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONDITIONS BAR -->
+<section class="conditions" id="conditions">
+  <div class="conditions-inner reveal">
+    <div class="conditions-label">Anna has specialized experience treating</div>
+    <div class="conditions-grid reveal-stagger">
+      <span class="condition-chip" data-hover>Anxiety</span>
+      <span class="condition-chip" data-hover>Depression</span>
+      <span class="condition-chip" data-hover>ADHD</span>
+      <span class="condition-chip" data-hover>Stress</span>
+      <span class="condition-chip" data-hover>Mood Disorders</span>
+      <span class="condition-chip" data-hover>Personality Disorders</span>
+      <span class="condition-chip" data-hover>Emotional Regulation</span>
+      <span class="condition-chip" data-hover>Adolescent Identity</span>
+      <span class="condition-chip" data-hover>Family Conflict</span>
+      <span class="condition-chip" data-hover>Behavioral Challenges</span>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section id="approach">
+  <div class="approach">
+    <div class="reveal">
+      <div class="section-eyebrow">The Approach</div>
+      <h2 class="section-title">Small steps. <em>Real ground.</em></h2>
+      <ul class="approach-list">
+        <li class="approach-step" data-hover>
+          <div>
+            <h4>We meet</h4>
+            <p>An introductory conversation to understand what brought you here and what you're hoping for. Fit matters — and there's no pressure to continue.</p>
+          </div>
+        </li>
+        <li class="approach-step" data-hover>
+          <div>
+            <h4>We listen, fully</h4>
+            <p>Before any framework or technique, the work begins with being heard. Without rush. Without a script. Without judgment.</p>
+          </div>
+        </li>
+        <li class="approach-step" data-hover>
+          <div>
+            <h4>We map a path</h4>
+            <p>Together, we set goals that feel honest and reachable — drawing from evidence-based modalities including CBT, DBT, Functional Family Therapy, Systems Theory, attachment-based work, and trauma-informed care.</p>
+          </div>
+        </li>
+        <li class="approach-step" data-hover>
+          <div>
+            <h4>We walk it</h4>
+            <p>Therapy isn't a destination — it's a steady practice of returning to yourself, building insight, resilience, and emotional well-being. One baby step at a time.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <aside class="approach-quote reveal">
+      <div class="approach-quote-mark">"</div>
+      <p>You don't have to have it all figured out to begin. You only need to take the next small step — and not take it alone.</p>
+      <cite>— Anna Rondon, LMHC</cite>
+    </aside>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="voices" class="testimonials">
+  <div class="testimonials-inner">
+    <div class="testimonials-header reveal">
+      <div>
+        <div class="section-eyebrow">In Their Words</div>
+        <h2 class="section-title">What clients <em>quietly say.</em></h2>
+      </div>
+      <p>The work is private. The progress, theirs. These reflections are shared with permission — and with names changed when asked.</p>
+    </div>
+  </div>
+
+  <div class="testimonial-track-wrap">
+    <div class="testimonial-track">
+      <div class="testimonial-card" data-hover>
+        <p>For the first time in years, my daughter looks forward to her sessions. Anna has a way of making her feel like the smartest person in the room.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-author-avatar">M</div>
+          <div class="testimonial-author-info"><strong>Maria L.</strong><span>Parent client</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card" data-hover>
+        <p>Anna doesn't rush. She doesn't try to fix. She just stays with you, until you find your own footing again. That has been everything.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-author-avatar">J</div>
+          <div class="testimonial-author-info"><strong>Jordan R.</strong><span>Young adult client</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card" data-hover>
+        <p>Our family had done therapy before. This was the first time it actually changed how we spoke to each other on a Tuesday night.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-author-avatar">D</div>
+          <div class="testimonial-author-info"><strong>The D. Family</strong><span>Family clients</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card" data-hover>
+        <p>She held space for the hardest things I have ever said out loud — and somehow none of it scared her. That changed everything.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-author-avatar">S</div>
+          <div class="testimonial-author-info"><strong>Sasha K.</strong><span>Individual client</span></div>
+        </div>
+      </div>
+      <!-- duplicate -->
+      <div class="testimonial-card" data-hover>
+        <p>For the first time in years, my daughter looks forward to her sessions. Anna has a way of making her feel like the smartest person in the room.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-author-avatar">M</div>
+          <div class="testimonial-author-info"><strong>Maria L.</strong><span>Parent client</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card" data-hover>
+        <p>Anna doesn't rush. She doesn't try to fix. She just stays with you, until you find your own footing again. That has been everything.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-author-avatar">J</div>
+          <div class="testimonial-author-info"><strong>Jordan R.</strong><span>Young adult client</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card" data-hover>
+        <p>Our family had done therapy before. This was the first time it actually changed how we spoke to each other on a Tuesday night.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-author-avatar">D</div>
+          <div class="testimonial-author-info"><strong>The D. Family</strong><span>Family clients</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card" data-hover>
+        <p>She held space for the hardest things I have ever said out loud — and somehow none of it scared her. That changed everything.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-author-avatar">S</div>
+          <div class="testimonial-author-info"><strong>Sasha K.</strong><span>Individual client</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="contact-inner reveal">
+    <div class="section-eyebrow">Begin</div>
+    <h1 class="contact-title">Take the <em>first step</em>, today.</h1>
+    <p class="contact-sub">
+      Reaching out is the start of a conversation — not a commitment. Confidential, judgment-free, and entirely yours to lead. We'll find a time that works.
+    </p>
+
+    <a href="tel:+19542829668" class="btn-magnetic" data-hover data-magnetic>
+      <span>Call (954) 282-9668</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+
+    <div class="contact-grid reveal-stagger">
+      <div class="contact-block" data-hover>
+        <div class="contact-block-label">Phone</div>
+        <div class="contact-block-value"><a href="tel:+19542829668">(954) 282-9668</a></div>
+      </div>
+      <div class="contact-block" data-hover>
+        <div class="contact-block-label">Email</div>
+        <div class="contact-block-value"><a href="mailto:anna@brightmindmental.com">anna@brightmindmental.com</a></div>
+      </div>
+      <div class="contact-block" data-hover>
+        <div class="contact-block-label">In-Person</div>
+        <div class="contact-block-value">Miami area<br/>South Florida</div>
+      </div>
+      <div class="contact-block" data-hover>
+        <div class="contact-block-label">Telehealth</div>
+        <div class="contact-block-value">Serving all of<br/>Florida</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">
+        <img src="logo.jpeg" alt="" />
+        <div class="footer-brand-text">
+          Bright Mind
+          <em>Mental Health</em>
+        </div>
+      </div>
+      <p class="footer-tag">
+        Compassionate, evidence-based mental health counseling. Take life in baby steps — and not alone.
+      </p>
+    </div>
+    <div class="footer-col">
+      <h5>Explore</h5>
+      <ul>
+        <li><a href="#about" data-hover>About Anna</a></li>
+        <li><a href="#specialties" data-hover>Specialties</a></li>
+        <li><a href="#approach" data-hover>The Approach</a></li>
+        <li><a href="#voices" data-hover>Voices</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Connect</h5>
+      <ul>
+        <li><a href="tel:+19542829668" data-hover>(954) 282-9668</a></li>
+        <li><a href="mailto:anna@brightmindmental.com" data-hover>anna@brightmindmental.com</a></li>
+        <li>Miami area · In-person</li>
+        <li>Telehealth · All of Florida</li>
+        <li>National Certified Counselor</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Anna Rondon, MS, LMHC, NCC · brightmindmental.com</span>
+    <em>Take life in baby steps.</em>
+  </div>
+</footer>
+
+<script>
+(() => {
+  /* ---------- Loader unlock ---------- */
+  setTimeout(() => document.body.classList.add('loaded'), 100);
+
+  /* ---------- Sticky nav ---------- */
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    nav.classList.toggle('scrolled', window.scrollY > 30);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* ---------- Reveal on scroll ---------- */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach((el) => io.observe(el));
+
+  /* ---------- Custom cursor ---------- */
+  const cursor = document.querySelector('.cursor');
+  const ring = document.querySelector('.cursor-ring');
+  if (matchMedia('(hover: hover)').matches && cursor && ring) {
+    let mx = window.innerWidth / 2, my = window.innerHeight / 2;
+    let rx = mx, ry = my;
+    window.addEventListener('mousemove', (e) => {
+      mx = e.clientX; my = e.clientY;
+      cursor.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
+    });
+    const tick = () => {
+      rx += (mx - rx) * 0.18;
+      ry += (my - ry) * 0.18;
+      ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
+      requestAnimationFrame(tick);
+    };
+    tick();
+    document.querySelectorAll('[data-hover]').forEach((el) => {
+      el.addEventListener('mouseenter', () => { cursor.classList.add('is-hover'); ring.classList.add('is-hover'); });
+      el.addEventListener('mouseleave', () => { cursor.classList.remove('is-hover'); ring.classList.remove('is-hover'); });
+    });
+  }
+
+  /* ---------- Magnetic buttons ---------- */
+  document.querySelectorAll('[data-magnetic]').forEach((btn) => {
+    btn.addEventListener('mousemove', (e) => {
+      const r = btn.getBoundingClientRect();
+      const x = e.clientX - r.left - r.width / 2;
+      const y = e.clientY - r.top - r.height / 2;
+      btn.style.transform = `translate(${x * 0.25}px, ${y * 0.35}px)`;
+    });
+    btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+  });
+
+  /* ---------- Specialty card spotlight ---------- */
+  document.querySelectorAll('.specialty').forEach((card) => {
+    card.addEventListener('mousemove', (e) => {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', `${e.clientX - r.left}px`);
+      card.style.setProperty('--my', `${e.clientY - r.top}px`);
+    });
+  });
+
+  /* ---------- Subtle hero parallax ---------- */
+  const parallax = document.querySelector('[data-parallax]');
+  if (parallax) {
+    const factor = parseFloat(parallax.dataset.parallax) || 0.05;
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY * factor;
+      parallax.style.transform = `translateY(${y}px)`;
+    }, { passive: true });
+  }
+
+  /* ---------- Counselor Picker ---------- */
+  const counselorData = {
+    anna: {
+      name: 'Anna <em>Rondon</em>',
+      creds: 'MS, LMHC, NCC — Licensed Mental Health Counselor',
+      img: 'anna-headshot.jpeg',
+      alt: 'Anna Rondon, Licensed Mental Health Counselor',
+      tag: 'Anna · In-person & Telehealth',
+      bio: 'Anna is a Licensed Mental Health Counselor and National Certified Counselor based in the Miami area, with telehealth services serving clients across Florida. With clinical experience spanning forensic psychology and juvenile services, she brings a deep understanding of diverse behavioral and emotional challenges. She is especially passionate about working with adolescents — and also provides therapeutic support to children, adults, and families navigating high-risk seasons of life.',
+      chips: ['Adolescents', 'Children', 'Adults', 'Family Dynamics', 'Anxiety', 'Depression', 'ADHD', 'Mood Disorders', 'Personality Disorders', 'High-Risk Support'],
+      bookLabel: 'Book with Anna'
+    }
+  };
+
+  const cards = document.querySelectorAll('.counselor-card[data-state="available"]');
+  const profile = document.getElementById('counselorProfile');
+  const profileImg = document.getElementById('profileImg');
+  const profileName = document.getElementById('profileName');
+  const profileCreds = document.getElementById('profileCreds');
+  const profileBio = document.getElementById('profileBio');
+  const profileChips = document.getElementById('profileChips');
+  const profileTag = document.getElementById('profileTag');
+  const profileBookBtn = document.getElementById('profileBookBtn');
+  const profileClose = document.getElementById('profileClose');
+
+  const populateProfile = (key) => {
+    const data = counselorData[key];
+    if (!data) return;
+    profileImg.src = data.img;
+    profileImg.alt = data.alt;
+    profileName.innerHTML = data.name;
+    profileCreds.textContent = data.creds;
+    profileBio.textContent = data.bio;
+    profileTag.textContent = data.tag;
+    profileChips.innerHTML = data.chips.map((c) => `<span class="profile-spec-chip" data-hover>${c}</span>`).join('');
+    profileBookBtn.querySelector('span').textContent = data.bookLabel;
+  };
+
+  const openProfile = (key, card) => {
+    populateProfile(key);
+    cards.forEach((c) => c.classList.remove('is-active'));
+    if (card) card.classList.add('is-active');
+    profile.classList.add('is-open');
+    // Smooth scroll so the panel lands nicely under the grid
+    setTimeout(() => {
+      profile.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 200);
+  };
+
+  const closeProfile = () => {
+    profile.classList.remove('is-open');
+    cards.forEach((c) => c.classList.remove('is-active'));
+  };
+
+  cards.forEach((card) => {
+    card.addEventListener('click', (e) => {
+      e.preventDefault();
+      const key = card.dataset.counselor;
+      // Toggle off if clicking the same active card
+      if (card.classList.contains('is-active')) { closeProfile(); return; }
+      openProfile(key, card);
+    });
+  });
+
+  profileClose.addEventListener('click', closeProfile);
+
+  // Auto-open Anna's profile if URL hash is #counselors&anna or via ?counselor=anna
+  const hashHasAnna = location.hash === '#counselors-anna' || new URLSearchParams(location.search).get('counselor') === 'anna';
+  if (hashHasAnna) {
+    const annaCard = document.querySelector('.counselor-card[data-counselor="anna"]');
+    setTimeout(() => openProfile('anna', annaCard), 800);
+  }
+})();
+</script>
+
+</body>
+</html>
