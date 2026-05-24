@@ -153,19 +153,24 @@ body::before {
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
-  padding: 1.75rem 3rem;
+  padding: 0.4rem 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 100;
-  transition: padding 0.5s var(--ease-out-expo), background 0.5s ease, backdrop-filter 0.5s ease, border-color 0.5s ease;
+  transition: padding 0.5s var(--ease-out-expo), background 0.5s ease, backdrop-filter 0.5s ease, border-color 0.5s ease, transform 0.4s var(--ease-out-expo);
   border-bottom: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
 }
 nav.scrolled {
-  padding: 1rem 3rem;
-  background: rgba(13, 26, 43, 0.75);
-  backdrop-filter: blur(20px) saturate(160%);
-  border-bottom-color: var(--hairline);
+  padding: 0.4rem 3rem;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+nav.hidden {
+  transform: translateY(-100%);
 }
 
 .nav-logo {
@@ -173,22 +178,22 @@ nav.scrolled {
   align-items: center;
   gap: 0.9rem;
   text-decoration: none;
-  color: var(--cream);
+  color: var(--ink);
 }
 .nav-logo .badge {
-  width: 44px; height: 44px;
-  border-radius: 50%;
-  background: var(--cream);
-  padding: 3px;
-  overflow: hidden;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.6s var(--ease-out-expo);
+  background: transparent;
+  border: none;
+  padding: 0;
 }
-.nav-logo .badge img { width: 100%; height: 100%; object-fit: contain; }
+.nav-logo .badge img { height: 80px; width: auto; object-fit: contain; }
 .nav-logo:hover .badge { transform: rotate(-12deg) scale(1.05); }
 
 .nav-logo .wordmark {
+  display: none;
   font-family: 'Fraunces', serif;
   font-weight: 400;
   font-size: 1rem;
@@ -211,7 +216,7 @@ nav.scrolled {
   align-items: center;
 }
 .nav-links a {
-  color: var(--whisper);
+  color: var(--slate-mid);
   text-decoration: none;
   font-size: 0.8rem;
   font-weight: 400;
@@ -228,7 +233,7 @@ nav.scrolled {
   background: var(--gold);
   transition: width 0.5s var(--ease-out-expo);
 }
-.nav-links a:hover { color: var(--cream); }
+.nav-links a:hover { color: var(--gold); }
 .nav-links a:hover::after { width: 100%; }
 
 .nav-cta {
@@ -269,6 +274,22 @@ nav.scrolled {
   text-align: center;
   z-index: 1;
 }
+.hero-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 999;
+  opacity: 1;
+  transition: opacity 0.8s var(--ease-out-expo);
+}
+.hero-video.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .hero-text {
   width: 100%;
 }
@@ -1649,10 +1670,11 @@ footer {
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 980px) {
-  nav { padding: 1rem 1.5rem; }
-  nav.scrolled { padding: 0.85rem 1.5rem; }
+  nav { padding: 0.4rem 1.5rem; }
+  nav.scrolled { padding: 0.4rem 1.5rem; }
   .nav-links { display: none; }
   .nav-mobile-toggle { display: block; }
+  .nav-logo .badge img { height: 60px; }
 
   .hero { padding: 5.5rem 0 3rem; min-height: auto; }
   .hero-eyebrow, .hero-sub, .hero-actions { padding-left: 1.5rem; padding-right: 1.5rem; }
@@ -1696,6 +1718,34 @@ footer {
   .cursor, .cursor-ring { display: none; }
 }
 
+@media (max-width: 640px) {
+  nav { padding: 0.3rem 1rem; }
+  nav.scrolled { padding: 0.3rem 1rem; }
+  .nav-logo .badge img { height: 50px; }
+
+  .hero { padding: 4rem 0 2rem; }
+  .hero-eyebrow, .hero-sub, .hero-actions { padding-left: 1rem; padding-right: 1rem; }
+  .hero-title { padding: 0 0.5rem; font-size: clamp(2rem, 10vw, 4rem); }
+
+  .counselors { padding: 3.5rem 1rem; }
+  .counselor-grid { gap: 1rem; }
+  .counselor-profile { gap: 1rem; }
+  .profile-visual { min-height: 280px; }
+  .profile-body { padding: 1.5rem; }
+
+  section { padding: 3.5rem 1rem; }
+  .specialty { padding: 1.75rem; }
+  .testimonial-card { flex: 0 0 280px; padding: 1.5rem; }
+
+  .contact { padding: 4rem 1rem; }
+
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.25rem; }
+  p { font-size: 0.95rem; }
+
+  body { cursor: auto; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -1703,6 +1753,7 @@ footer {
     transition-duration: 0.01ms !important;
   }
 }
+
 </style>
 </head>
 <body>
@@ -1722,7 +1773,7 @@ footer {
 <!-- NAV -->
 <nav id="nav">
   <a href="#" class="nav-logo" data-hover>
-    <div class="badge"><img src="logo.jpeg" alt="" /></div>
+    <div class="badge"><img src="elements_only_final Logo.png" alt="" /></div>
     <div class="wordmark">
       Bright Mind
       <em>Mental Health</em>
@@ -1740,6 +1791,9 @@ footer {
 
 <!-- HERO -->
 <header class="hero">
+  <video id="heroVideo" class="hero-video" autoplay muted playsinline>
+    <source src="videos/logo_animationmp_.mp4" type="video/mp4">
+  </video>
   <div class="hero-text">
     <h1 class="hero-title">
       <span class="line-mask"><span>Take life in <em>baby steps.</em></span></span>
@@ -1777,7 +1831,7 @@ footer {
     <article class="counselor-card" data-state="available" data-counselor="anna" data-hover>
       <div class="counselor-badge">Now Accepting</div>
       <div class="counselor-photo">
-        <img src="anna-headshot.jpeg" alt="Anna Rondon, Licensed Mental Health Counselor" />
+        <img src="Head Shot.jpeg" alt="Anna Rondon, Licensed Mental Health Counselor" />
       </div>
       <div class="counselor-info">
         <h3>Anna <em>Rondon</em></h3>
@@ -1862,7 +1916,7 @@ footer {
         </svg>
       </div>
       <div class="about-logo-wrap" data-hover>
-        <img src="logo.jpeg" alt="Bright Mind Mental Health" />
+        <img src="elements_only_final Logo.png" alt="Bright Mind Mental Health" />
       </div>
       <span class="about-dot tl"></span>
       <span class="about-dot br"></span>
@@ -2139,7 +2193,7 @@ footer {
   <div class="footer-top">
     <div>
       <div class="footer-brand">
-        <img src="logo.jpeg" alt="" />
+        <img src="elements_only_final Logo.png" alt="" />
         <div class="footer-brand-text">
           Bright Mind
           <em>Mental Health</em>
@@ -2181,9 +2235,37 @@ footer {
   setTimeout(() => document.body.classList.add('loaded'), 100);
 
   /* ---------- Sticky nav ---------- */
+  /* ========== HERO VIDEO FADE ========== */
+  const heroVideo = document.getElementById('heroVideo');
+  if (heroVideo) {
+    heroVideo.addEventListener('ended', () => {
+      heroVideo.classList.add('fade-out');
+    });
+
+    // Fallback: fade out after 8 seconds if video duration is unknown
+    setTimeout(() => {
+      if (heroVideo && !heroVideo.classList.contains('fade-out')) {
+        heroVideo.classList.add('fade-out');
+      }
+    }, 8000);
+  }
+
   const nav = document.getElementById('nav');
+  let lastScrollY = 0;
+
   const onScroll = () => {
-    nav.classList.toggle('scrolled', window.scrollY > 30);
+    const currentScrollY = window.scrollY;
+
+    nav.classList.toggle('scrolled', currentScrollY > 30);
+
+    // Hide navbar when scrolling down, show when scrolling up
+    if (currentScrollY > lastScrollY && currentScrollY > 80) {
+      nav.classList.add('hidden');
+    } else {
+      nav.classList.remove('hidden');
+    }
+
+    lastScrollY = currentScrollY;
   };
   window.addEventListener('scroll', onScroll, { passive: true });
 
@@ -2256,7 +2338,7 @@ footer {
     anna: {
       name: 'Anna <em>Rondon</em>',
       creds: 'MS, LMHC, NCC — Licensed Mental Health Counselor',
-      img: 'anna-headshot.jpeg',
+      img: 'Head Shot.jpeg',
       alt: 'Anna Rondon, Licensed Mental Health Counselor',
       tag: 'Anna · In-person & Telehealth',
       bio: 'Anna is a Licensed Mental Health Counselor and National Certified Counselor based in the Miami area, with telehealth services serving clients across Florida. With clinical experience spanning forensic psychology and juvenile services, she brings a deep understanding of diverse behavioral and emotional challenges. She is especially passionate about working with adolescents — and also provides therapeutic support to children, adults, and families navigating high-risk seasons of life.',
@@ -2323,6 +2405,7 @@ footer {
     const annaCard = document.querySelector('.counselor-card[data-counselor="anna"]');
     setTimeout(() => openProfile('anna', annaCard), 800);
   }
+
 })();
 </script>
 
