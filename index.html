@@ -113,42 +113,6 @@ body::before {
   .cursor, .cursor-ring { display: none; }
 }
 
-/* — Loader (page reveal) — */
-.loader {
-  position: fixed; inset: 0;
-  background: var(--slate-abyss);
-  z-index: 10000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-  animation: loaderOut 1.6s 1.2s var(--ease-in-out-cubic) forwards;
-}
-.loader-mark {
-  font-family: 'Fraunces', serif;
-  font-style: italic;
-  font-weight: 300;
-  font-size: 1.5rem;
-  color: var(--gold);
-  opacity: 0;
-  animation: loaderFade 1.2s ease forwards, loaderFadeOut 0.5s 1s ease forwards;
-}
-.loader::before, .loader::after {
-  content: '';
-  position: absolute;
-  left: 0; right: 0;
-  height: 50vh;
-  background: var(--slate-abyss);
-  z-index: -1;
-}
-.loader::before { top: 0; animation: panelUp 1.2s 1.4s var(--ease-in-out-cubic) forwards; }
-.loader::after { bottom: 0; animation: panelDown 1.2s 1.4s var(--ease-in-out-cubic) forwards; }
-@keyframes loaderFade { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: none; } }
-@keyframes loaderFadeOut { to { opacity: 0; } }
-@keyframes loaderOut { 99% { pointer-events: none; } 100% { pointer-events: none; visibility: hidden; } }
-@keyframes panelUp { to { transform: translateY(-100%); } }
-@keyframes panelDown { to { transform: translateY(100%); } }
-
 /* ========== NAV ========== */
 nav {
   position: fixed;
@@ -1758,11 +1722,6 @@ footer {
 </style>
 </head>
 <body>
-
-<!-- Loader -->
-<div class="loader" aria-hidden="true">
-  <div class="loader-mark">Bright Mind <em>Mental Health</em></div>
-</div>
 
 <!-- Custom cursor -->
 <div class="cursor" aria-hidden="true"></div>
