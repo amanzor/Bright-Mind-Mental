@@ -372,21 +372,21 @@ section:has(.profiles-section) {
 /* ========== MAP & CONTACT SECTION ========== */
 .contactus-section {
   display: grid;
-  grid-template-columns: 45% 55%;
+  grid-template-columns: 55% 45%;
   gap: 4rem;
   align-items: start;
-  margin-top: 4rem;
-}
-
-.contactus-section .contact-grid {
-  grid-column: 1;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
 .contactus-section .contactus-map {
+  grid-column: 1;
+}
+
+.contactus-section .contact-grid {
   grid-column: 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
 }
 
 .contactus-map {
@@ -678,8 +678,8 @@ section:has(.profiles-section) {
 
 /* ========== CONNECT SECTION ========== */
 .connect-section {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
   border-top: 1px solid var(--hairline);
 }
 
@@ -842,10 +842,9 @@ footer {
 /* ========== RESPONSIVE ========== */
 @media (max-width: 1200px) {
   .nav-links { gap: 1.75rem; }
-  .contact-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
   .contactus-section { grid-template-columns: 1fr; gap: 3rem; }
-  .contactus-section .contact-grid { grid-column: auto; }
   .contactus-section .contactus-map { grid-column: auto; }
+  .contactus-section .contact-grid { grid-column: auto; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
   .contactus-map { aspect-ratio: 16/9; }
   .profiles-grid { grid-template-columns: repeat(2, 1fr); }
 }
