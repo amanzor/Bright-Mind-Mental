@@ -1163,18 +1163,28 @@ section { padding: 9rem 3rem; position: relative; z-index: 1; }
 .specialty-tag {
   display: inline-block;
   margin-top: 1.25rem;
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--slate-abyss);
+  background: var(--gold);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
   position: relative;
-  padding-bottom: 3px;
+  transition: all 0.3s var(--ease-out-expo);
 }
 .specialty-tag::after {
   content: '→';
   margin-left: 0.5rem;
   display: inline-block;
   transition: transform 0.4s var(--ease-out-expo);
+}
+.specialty:hover .specialty-tag {
+  background: var(--cream);
+  color: var(--slate-abyss);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(201, 169, 97, 0.2);
 }
 .specialty:hover .specialty-tag::after { transform: translateX(6px); }
 
