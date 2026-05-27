@@ -1352,6 +1352,77 @@ section { padding: 9rem 3rem; position: relative; z-index: 1; }
   box-shadow: 0 8px 24px rgba(201, 169, 97, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.4);
 }
 
+.condition-chip.active {
+  border-color: var(--cream);
+  background: linear-gradient(135deg, var(--cream) 0%, var(--cream-warm) 100%);
+  color: var(--slate-abyss);
+  box-shadow: 0 8px 24px rgba(201, 169, 97, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.4);
+}
+
+/* Conditions Definitions */
+.conditions-definitions {
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--hairline);
+}
+
+.definition-item {
+  display: none;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.5s var(--ease-out-expo);
+  margin-bottom: 2rem;
+}
+
+.definition-item.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.definition-item h4 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.definition-item p {
+  color: var(--whisper);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.definition-item p strong {
+  color: var(--cream);
+  font-weight: 600;
+}
+
+.definition-item ul {
+  list-style: none;
+  padding-left: 1.5rem;
+}
+
+.definition-item li {
+  color: var(--whisper);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 0.6rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.definition-item li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 600;
+}
+
 /* ========== APPROACH ========== */
 .approach {
   display: grid;
@@ -2131,16 +2202,138 @@ footer {
   <div class="conditions-inner reveal">
     <div class="conditions-label">We specialize in treating</div>
     <div class="conditions-grid reveal-stagger">
-      <span class="condition-chip" data-hover>Anxiety</span>
-      <span class="condition-chip" data-hover>Depression</span>
-      <span class="condition-chip" data-hover>ADHD</span>
-      <span class="condition-chip" data-hover>Stress</span>
-      <span class="condition-chip" data-hover>Mood Disorders</span>
-      <span class="condition-chip" data-hover>Personality Disorders</span>
-      <span class="condition-chip" data-hover>Emotional Regulation</span>
-      <span class="condition-chip" data-hover>Adolescent Identity</span>
-      <span class="condition-chip" data-hover>Family Conflict</span>
-      <span class="condition-chip" data-hover>Behavioral Challenges</span>
+      <button class="condition-chip" data-condition="anxiety" data-hover>Anxiety</button>
+      <button class="condition-chip" data-condition="depression" data-hover>Depression</button>
+      <button class="condition-chip" data-condition="adhd" data-hover>ADHD</button>
+      <button class="condition-chip" data-condition="stress" data-hover>Stress</button>
+      <button class="condition-chip" data-condition="mood-disorders" data-hover>Mood Disorders</button>
+      <button class="condition-chip" data-condition="personality-disorders" data-hover>Personality Disorders</button>
+      <button class="condition-chip" data-condition="emotional-regulation" data-hover>Emotional Regulation</button>
+      <button class="condition-chip" data-condition="adolescent-identity" data-hover>Adolescent Identity</button>
+      <button class="condition-chip" data-condition="family-conflict" data-hover>Family Conflict</button>
+      <button class="condition-chip" data-condition="behavioral-challenges" data-hover>Behavioral Challenges</button>
+    </div>
+    <div class="conditions-definitions" id="conditionsDefinitions">
+      <div class="definition-item" data-condition="anxiety">
+        <h4>Anxiety</h4>
+        <p><strong>Definition:</strong> Excessive worry, fear, or nervousness that persists and interferes with daily functioning. Anxiety disorders involve anticipating future threats and can manifest physically and mentally.</p>
+        <p><strong>Common Symptoms:</strong></p>
+        <ul>
+          <li>Persistent worry or racing thoughts</li>
+          <li>Physical tension, restlessness, or trembling</li>
+          <li>Sleep disturbances and concentration difficulties</li>
+          <li>Panic attacks or sudden intense fear</li>
+          <li>Avoidance of triggering situations</li>
+        </ul>
+      </div>
+      <div class="definition-item" data-condition="depression">
+        <h4>Depression</h4>
+        <p><strong>Definition:</strong> A persistent mood disorder characterized by deep sadness, loss of interest in activities, and a pervasive sense of hopelessness. Depression affects how individuals think, feel, and function daily.</p>
+        <p><strong>Common Symptoms:</strong></p>
+        <ul>
+          <li>Persistent sadness, emptiness, or numbness</li>
+          <li>Loss of interest in previously enjoyed activities</li>
+          <li>Fatigue, low energy, and sleep changes</li>
+          <li>Difficulty concentrating or making decisions</li>
+          <li>Feelings of worthlessness or guilt</li>
+        </ul>
+      </div>
+      <div class="definition-item" data-condition="adhd">
+        <h4>ADHD</h4>
+        <p><strong>Definition:</strong> Attention-Deficit/Hyperactivity Disorder is a neurodevelopmental condition affecting attention, impulse control, and executive functioning. It impacts organization, time management, and emotional regulation.</p>
+        <p><strong>Common Symptoms:</strong></p>
+        <ul>
+          <li>Difficulty sustaining attention or focusing</li>
+          <li>Impulsive decision-making or interrupting others</li>
+          <li>Difficulty organizing tasks and managing time</li>
+          <li>Restlessness, fidgeting, or excessive talking</li>
+          <li>Forgetfulness and difficulty following instructions</li>
+        </ul>
+      </div>
+      <div class="definition-item" data-condition="stress">
+        <h4>Stress</h4>
+        <p><strong>Definition:</strong> The body's response to demands or threats. While some stress is normal, chronic stress overwhelms coping mechanisms and impacts physical and mental health significantly.</p>
+        <p><strong>Common Symptoms:</strong></p>
+        <ul>
+          <li>Physical tension, headaches, or muscle aches</li>
+          <li>Rapid heartbeat, difficulty breathing, or chest tightness</li>
+          <li>Irritability, mood swings, or emotional overwhelm</li>
+          <li>Sleep disruption and appetite changes</li>
+          <li>Difficulty concentrating or making decisions</li>
+        </ul>
+      </div>
+      <div class="definition-item" data-condition="mood-disorders">
+        <h4>Mood Disorders</h4>
+        <p><strong>Definition:</strong> Conditions characterized by significant disturbances in emotional state, including depression, bipolar disorder, and cyclothymia. They affect overall emotional regulation and life functioning.</p>
+        <p><strong>Common Symptoms:</strong></p>
+        <ul>
+          <li>Persistent sadness, emptiness, or elevated mood</li>
+          <li>Extreme mood swings or cycling between states</li>
+          <li>Changes in energy, sleep, and motivation</li>
+          <li>Difficulty maintaining relationships or work performance</li>
+          <li>Thoughts of hopelessness or worthlessness</li>
+        </ul>
+      </div>
+      <div class="definition-item" data-condition="personality-disorders">
+        <h4>Personality Disorders</h4>
+        <p><strong>Definition:</strong> Enduring patterns of inner experience and behavior that deviate from cultural expectations, causing distress or impairment. They affect how individuals relate to others and perceive themselves.</p>
+        <p><strong>Common Symptoms:</strong></p>
+        <ul>
+          <li>Pervasive patterns of thinking, feeling, or behaving</li>
+          <li>Difficulty in relationships and social functioning</li>
+          <li>Rigid or maladaptive coping strategies</li>
+          <li>Emotional dysregulation or instability</li>
+          <li>Limited insight into impact on others</li>
+        </ul>
+      </div>
+      <div class="definition-item" data-condition="emotional-regulation">
+        <h4>Emotional Regulation</h4>
+        <p><strong>Definition:</strong> The ability to manage and respond to emotional experiences in healthy ways. Difficulties with emotional regulation involve struggling to control, understand, or express emotions appropriately.</p>
+        <p><strong>Common Symptoms:</strong></p>
+        <ul>
+          <li>Intense or overwhelming emotional responses</li>
+          <li>Difficulty identifying or naming emotions</li>
+          <li>Rapid mood shifts or emotional volatility</li>
+          <li>Impulsive behaviors driven by emotions</li>
+          <li>Difficulty calming down or self-soothing</li>
+        </ul>
+      </div>
+      <div class="definition-item" data-condition="adolescent-identity">
+        <h4>Adolescent Identity</h4>
+        <p><strong>Definition:</strong> The process of developing a sense of self during teenage years. Adolescent identity concerns involve struggles with self-concept, belonging, and navigating peer relationships and personal values.</p>
+        <p><strong>Common Symptoms:</strong></p>
+        <ul>
+          <li>Uncertainty about personal values or beliefs</li>
+          <li>Concern about peer acceptance and fitting in</li>
+          <li>Exploring sexual orientation or gender identity</li>
+          <li>Conflict between personal desires and expectations</li>
+          <li>Self-consciousness or social anxiety</li>
+        </ul>
+      </div>
+      <div class="definition-item" data-condition="family-conflict">
+        <h4>Family Conflict</h4>
+        <p><strong>Definition:</strong> Persistent disagreements, communication breakdowns, or relational stress within family systems. Family conflict can involve parent-child tension, sibling rivalry, or generational differences affecting family functioning.</p>
+        <p><strong>Common Symptoms:</strong></p>
+        <ul>
+          <li>Frequent arguments or heated disagreements</li>
+          <li>Poor communication and misunderstandings</li>
+          <li>Emotional distance or withdrawal from family</li>
+          <li>Difficulty resolving differences or compromising</li>
+          <li>Impact on individual emotional health and well-being</li>
+        </ul>
+      </div>
+      <div class="definition-item" data-condition="behavioral-challenges">
+        <h4>Behavioral Challenges</h4>
+        <p><strong>Definition:</strong> Difficulties with behavior control, impulse management, or conduct that interferes with functioning at home, school, or in social settings. Often rooted in emotional, developmental, or environmental factors.</p>
+        <p><strong>Common Symptoms:</strong></p>
+        <ul>
+          <li>Aggression, defiance, or oppositional behavior</li>
+          <li>Difficulty following rules or respecting authority</li>
+          <li>Impulsive or reckless decision-making</li>
+          <li>Negative peer interactions or social conflicts</li>
+          <li>Consequences in academic or home environments</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -2485,6 +2678,37 @@ footer {
     const annaCard = document.querySelector('.counselor-card[data-counselor="anna"]');
     setTimeout(() => openProfile('anna', annaCard), 800);
   }
+
+  /* ---------- Condition definitions interactive toggle ---------- */
+  const conditionChips = document.querySelectorAll('.condition-chip');
+  const definitionItems = document.querySelectorAll('.definition-item');
+
+  conditionChips.forEach((chip) => {
+    chip.addEventListener('click', (e) => {
+      e.preventDefault();
+      const condition = chip.dataset.condition;
+      const correspondingDefinition = document.querySelector(`.definition-item[data-condition="${condition}"]`);
+
+      if (!correspondingDefinition) return;
+
+      // Check if this chip is already active
+      const isCurrentlyActive = chip.classList.contains('active');
+
+      // Close all definitions and deactivate all chips (accordion behavior)
+      definitionItems.forEach((def) => def.classList.remove('active'));
+      conditionChips.forEach((c) => c.classList.remove('active'));
+
+      // If it wasn't active, open it; if it was active, leave it closed (toggle)
+      if (!isCurrentlyActive) {
+        chip.classList.add('active');
+        correspondingDefinition.classList.add('active');
+        // Smooth scroll to the definition
+        setTimeout(() => {
+          correspondingDefinition.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
+      }
+    });
+  });
 
 })();
 </script>
