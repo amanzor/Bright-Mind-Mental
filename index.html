@@ -50,43 +50,77 @@
 </head>
 <body>
     <div class="transition-container" id="transitionContainer">
-        <video id="transitionVideo" muted playsinline>
+        <video id="transitionVideo" autoplay muted playsinline preload="auto" crossorigin="anonymous">
             <source src="logo_animationmp_.mp4" type="video/mp4">
+            Your browser does not support the video tag.
         </video>
     </div>
 
     <script>
         const video = document.getElementById('transitionVideo');
         const container = document.getElementById('transitionContainer');
-        const startTime = 5; // Start at 5 seconds (0.05 in the 100 second scale)
-        const endTime = 10;  // End at 10 seconds (0.1 in the 100 second scale)
-        const clipDuration = endTime - startTime; // 5 seconds
+        const startTime = 5; // Start at 5 seconds
+        const endTime = 10;  // End at 10 seconds
+        let isPlaying = false;
+        let hasRedirected = false;
+
+        function redirectToMain() {
+            if (hasRedirected) return;
+            hasRedirected = true;
+            container.classList.add('fade-out');
+            setTimeout(function() {
+                window.location.href = 'main.html';
+            }, 800);
+        }
 
         // Wait for video to be loaded, then seek to start position
         video.addEventListener('loadedmetadata', function() {
+            console.log('Video loaded. Duration:', video.duration);
             video.currentTime = startTime;
-            video.play();
+            isPlaying = true;
+        }, { once: true });
+
+        // Handle autoplay
+        video.addEventListener('play', function() {
+            console.log('Video started playing');
         });
 
         // Monitor video playback and stop at end time
         video.addEventListener('timeupdate', function() {
-            if (video.currentTime >= endTime) {
+            if (isPlaying && video.currentTime >= endTime) {
                 video.pause();
-                // Fade out and redirect
-                container.classList.add('fade-out');
-                setTimeout(function() {
-                    window.location.href = 'main.html';
-                }, 800);
+                console.log('Video ended at', video.currentTime);
+                isPlaying = false;
+                redirectToMain();
             }
         });
 
-        // Fallback: if video somehow doesn't play, go to main site after timeout
+        // Error handling
+        video.addEventListener('error', function() {
+            console.error('Video load error:', video.error);
+            redirectToMain();
+        });
+
+        video.addEventListener('stalled', function() {
+            console.warn('Video stalled');
+            redirectToMain();
+        });
+
+        // Fallback: if video hasn't started after 2 seconds, redirect
         setTimeout(function() {
             if (video.paused && video.currentTime < startTime) {
-                // Video didn't start, redirect
-                window.location.href = 'main.html';
+                console.warn('Video did not start, redirecting');
+                redirectToMain();
             }
-        }, 500);
+        }, 2000);
+
+        // Safety timeout: if still on transition page after 15 seconds, redirect
+        setTimeout(function() {
+            if (!hasRedirected) {
+                console.warn('Safety timeout reached, redirecting');
+                redirectToMain();
+            }
+        }, 15000);
     </script>
 </body>
 </html>
