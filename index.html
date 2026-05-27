@@ -1966,7 +1966,7 @@ footer {
 }
 
 @media (max-width: 640px) {
-  /* Navigation - Improved mobile spacing */
+  /* Navigation - Improved mobile spacing with icons */
   nav {
     padding: 0.75rem 1rem;
     justify-content: space-between;
@@ -1975,7 +1975,59 @@ footer {
   .nav-logo { margin: 0; }
   .nav-logo .badge img { height: 50px; }
   .nav-mobile-toggle { display: block; }
-  .nav-links { display: none; }
+
+  /* Mobile Navigation - Icon-based links */
+  .nav-links {
+    display: flex !important;
+    gap: 0.5rem;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+  }
+  .nav-links li {
+    display: flex;
+    align-items: center;
+  }
+  .nav-links a {
+    min-height: 40px;
+    min-width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--cream);
+    text-decoration: none;
+    border: 1px solid var(--hairline);
+    border-radius: 50%;
+    transition: all 0.3s var(--ease-out-expo);
+    padding: 0 !important;
+  }
+  .nav-links a:hover {
+    background: rgba(201, 169, 97, 0.1);
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  /* Icon content for navigation links */
+  .nav-links a[href="#counselors"]::before { content: "👥"; }
+  .nav-links a[href="#about"]::before { content: "ℹ"; }
+  .nav-links a[href="#specialties"]::before { content: "✓"; }
+  .nav-links a[href="#approach"]::before { content: "💭"; }
+  .nav-links a[href="#voices"]::before { content: "💬"; }
+  .nav-links a[href*="contactus"]::before { content: "✉"; }
+
+  /* Hide text, show icons only */
+  .nav-links a {
+    font-size: 0;
+  }
+  .nav-links a::before {
+    font-size: 1.2rem;
+  }
 
   /* Hero Section - Better alignment and spacing */
   .hero {
@@ -2031,7 +2083,7 @@ footer {
     gap: 1rem;
   }
   .profile-visual {
-    min-height: 240px;
+    min-height: 180px;
   }
   .profile-body {
     padding: 1.75rem;
