@@ -1299,6 +1299,71 @@ section { padding: 9rem 3rem; position: relative; z-index: 1; }
 }
 .specialty:hover .specialty-tag::after { transform: translateX(6px); }
 
+/* Specialty Descriptions */
+.specialty-descriptions {
+  margin-top: 4rem;
+  padding-top: 4rem;
+  border-top: 1px solid var(--hairline);
+}
+
+.specialty-description {
+  display: none;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.5s var(--ease-out-expo);
+  margin-bottom: 2.5rem;
+}
+
+.specialty-description.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.specialty-description h4 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.specialty-description p {
+  color: var(--whisper);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.specialty-description p strong {
+  color: var(--cream);
+  font-weight: 600;
+}
+
+.specialty-description ul {
+  list-style: none;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.specialty-description li {
+  color: var(--whisper);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 0.6rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.specialty-description li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 600;
+}
+
 /* ========== CONDITIONS BAR ========== */
 .conditions {
   padding: 5rem 3rem;
@@ -2160,7 +2225,7 @@ footer {
       </svg>
       <h3>Children & <em>Adolescents</em></h3>
       <p>Developmentally attuned therapy for children and teens navigating big feelings, school stress, social challenges, and the work of growing up. Anna's specialty.</p>
-      <span class="specialty-tag">Anna's primary focus</span>
+      <button class="specialty-tag" data-specialty="children-adolescents" data-hover>Anna's primary focus</button>
     </div>
 
     <div class="specialty" data-hover data-tilt>
@@ -2170,7 +2235,7 @@ footer {
       </svg>
       <h3>Adults <em>in Transition</em></h3>
       <p>For the in-between seasons: identity, relationships, career uncertainty, and the slow work of becoming. A space to think out loud, without rush.</p>
-      <span class="specialty-tag">Individual therapy</span>
+      <button class="specialty-tag" data-specialty="adults-transition" data-hover>Individual therapy</button>
     </div>
 
     <div class="specialty" data-hover data-tilt>
@@ -2181,7 +2246,7 @@ footer {
       </svg>
       <h3>Family <em>Dynamics</em></h3>
       <p>Restoring communication, repairing rupture, and helping families build the kind of trust that holds — even through difficult conversations.</p>
-      <span class="specialty-tag">Family work</span>
+      <button class="specialty-tag" data-specialty="family-dynamics" data-hover>Family work</button>
     </div>
 
     <div class="specialty" data-hover data-tilt>
@@ -2192,7 +2257,70 @@ footer {
       </svg>
       <h3>High-Risk <em>Support</em></h3>
       <p>Specialized care for individuals navigating crisis, complex trauma, and behavioral challenges — informed by forensic and juvenile services experience.</p>
-      <span class="specialty-tag">Crisis-informed</span>
+      <button class="specialty-tag" data-specialty="high-risk-support" data-hover>Crisis-informed</button>
+    </div>
+  </div>
+
+  <!-- Specialty Descriptions -->
+  <div class="specialty-descriptions" id="specialtyDescriptions">
+    <div class="specialty-description" data-specialty="children-adolescents">
+      <h4>Children & Adolescents: Developmentally Attuned Care</h4>
+      <p><strong>Purpose:</strong> This therapeutic approach is specially designed for the unique developmental needs of children and teenagers. It recognizes that kids and teens process emotions, relationships, and challenges differently than adults.</p>
+      <p><strong>Focus Areas:</strong></p>
+      <ul>
+        <li>Emotional development and expression in age-appropriate ways</li>
+        <li>School-related stress, academic pressures, and learning challenges</li>
+        <li>Peer relationships, bullying, and social integration</li>
+        <li>Family dynamics and parent-child communication</li>
+        <li>Identity formation, self-esteem, and belonging</li>
+        <li>Behavioral challenges and impulse control</li>
+      </ul>
+      <p><strong>Why it Matters:</strong> Early intervention during childhood and adolescence can prevent patterns from becoming entrenched. This is Anna's primary specialty, drawing on her deep experience with young people.</p>
+    </div>
+
+    <div class="specialty-description" data-specialty="adults-transition">
+      <h4>Adults in Transition: Finding Clarity in Life's In-Between Seasons</h4>
+      <p><strong>Purpose:</strong> Life transitions are disorienting. Whether it's a career shift, relationship change, identity exploration, or life stage transition, adults need a space to think deeply and find solid ground.</p>
+      <p><strong>Focus Areas:</strong></p>
+      <ul>
+        <li>Career transitions, job dissatisfaction, and professional identity</li>
+        <li>Relationship uncertainty, dating, partnership challenges</li>
+        <li>Identity exploration and personal authenticity</li>
+        <li>Life purpose and meaning-making</li>
+        <li>Grief and loss during transitions</li>
+        <li>Building resilience through change</li>
+      </ul>
+      <p><strong>Why it Matters:</strong> Transitions are not emergencies—they're invitations to understand yourself more deeply. This approach honors the complexity of adult life without rushing the process.</p>
+    </div>
+
+    <div class="specialty-description" data-specialty="family-dynamics">
+      <h4>Family Dynamics: Restoring Connection and Trust</h4>
+      <p><strong>Purpose:</strong> Families are complex systems. When communication breaks down or old patterns create distance, family therapy helps restore understanding, heal ruptures, and rebuild the foundation of trust.</p>
+      <p><strong>Focus Areas:</strong></p>
+      <ul>
+        <li>Parent-child conflict and communication breakdowns</li>
+        <li>Sibling relationships and family roles</li>
+        <li>Blended family challenges and adjustment</li>
+        <li>Generational patterns and inherited dynamics</li>
+        <li>Grief and loss as a family system</li>
+        <li>Rebuilding trust after rupture or betrayal</li>
+      </ul>
+      <p><strong>Why it Matters:</strong> Families are where we learn to relate. Healing family relationships creates ripples that affect all areas of life—work, friendships, romantic relationships, and sense of belonging.</p>
+    </div>
+
+    <div class="specialty-description" data-specialty="high-risk-support">
+      <h4>High-Risk Support: Crisis, Trauma, and Complex Challenges</h4>
+      <p><strong>Purpose:</strong> Some seasons of life are darker and more complex. High-risk support provides specialized, trauma-informed care for individuals navigating crisis, complex trauma, behavioral challenges, and the aftermath of loss.</p>
+      <p><strong>Focus Areas:</strong></p>
+      <ul>
+        <li>Crisis intervention and stabilization</li>
+        <li>Trauma processing and healing from complex or ongoing trauma</li>
+        <li>Suicidal ideation and self-harm behaviors</li>
+        <li>Behavioral challenges and conduct difficulties</li>
+        <li>Substance use and addiction concerns</li>
+        <li>Forensic and juvenile justice system involvement</li>
+      </ul>
+      <p><strong>Why it Matters:</strong> High-risk seasons require specialized understanding. Anna's background in forensic psychology and juvenile services means she brings both clinical expertise and deep compassion to the darkest, hardest moments.</p>
     </div>
   </div>
 </section>
@@ -2705,6 +2833,37 @@ footer {
         // Smooth scroll to the definition
         setTimeout(() => {
           correspondingDefinition.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
+      }
+    });
+  });
+
+  /* ---------- Specialty descriptions interactive toggle ---------- */
+  const specialtyTags = document.querySelectorAll('.specialty-tag');
+  const specialtyDescriptions = document.querySelectorAll('.specialty-description');
+
+  specialtyTags.forEach((tag) => {
+    tag.addEventListener('click', (e) => {
+      e.preventDefault();
+      const specialty = tag.dataset.specialty;
+      const correspondingDescription = document.querySelector(`.specialty-description[data-specialty="${specialty}"]`);
+
+      if (!correspondingDescription) return;
+
+      // Check if this tag is already active
+      const isCurrentlyActive = tag.classList.contains('active');
+
+      // Close all descriptions and deactivate all tags (accordion behavior)
+      specialtyDescriptions.forEach((desc) => desc.classList.remove('active'));
+      specialtyTags.forEach((t) => t.classList.remove('active'));
+
+      // If it wasn't active, open it; if it was active, leave it closed (toggle)
+      if (!isCurrentlyActive) {
+        tag.classList.add('active');
+        correspondingDescription.classList.add('active');
+        // Smooth scroll to the description
+        setTimeout(() => {
+          correspondingDescription.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }, 100);
       }
     });
