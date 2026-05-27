@@ -345,16 +345,14 @@ nav.hidden {
   justify-content: center;
   text-align: center;
   z-index: 1;
-  margin-top: 85vh;
 }
 .hero-video {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 85vh;
-  object-fit: contain;
-  object-position: center;
+  height: 100vh;
+  object-fit: cover;
   z-index: 9999;
   opacity: 1;
   transition: opacity 0.8s var(--ease-out-expo);
@@ -1925,14 +1923,9 @@ footer {
   .nav-mobile-toggle { display: block; }
   .nav-logo .badge img { height: 60px; }
 
-  .hero-video {
-    height: 85vh;
-  }
-
   .hero {
     padding: 5.5rem 0 3rem;
     min-height: auto;
-    margin-top: 85vh;
   }
   .hero-eyebrow, .hero-sub, .hero-actions { padding-left: 1.5rem; padding-right: 1.5rem; }
   .hero-title { padding: 0 1rem; white-space: normal; font-size: clamp(2.6rem, 11vw, 5rem); }
@@ -2039,16 +2032,10 @@ footer {
     font-size: 1.2rem;
   }
 
-  /* Hero Video - Mobile optimized */
-  .hero-video {
-    height: 50vh;
-  }
-
   /* Hero Section - Better alignment and spacing */
   .hero {
     padding: 4.5rem 1rem 2.5rem;
     text-align: center;
-    margin-top: 50vh;
   }
   .hero-eyebrow {
     padding: 0;
@@ -2342,7 +2329,7 @@ footer {
 </nav>
 
 <!-- INTRO VIDEO SPLASH -->
-<video id="heroVideo" class="hero-video" autoplay muted playsinline>
+<video id="heroVideo" class="hero-video" autoplay playsinline>
   <source src="videos/logo_animationmp_.mp4" type="video/mp4">
 </video>
 
