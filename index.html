@@ -2331,7 +2331,7 @@ footer {
 </nav>
 
 <!-- INTRO VIDEO SPLASH -->
-<video id="heroVideo" class="hero-video" autoplay playsinline>
+<video id="heroVideo" class="hero-video" autoplay muted playsinline>
   <source src="videos/logo_animationmp_.mp4" type="video/mp4">
 </video>
 
@@ -2943,6 +2943,19 @@ footer {
     if (nav) {
       nav.classList.add('hidden');
     }
+
+    // Unmute video once it starts playing (for autoplay with sound)
+    const unmuteVideo = () => {
+      if (heroVideo) {
+        heroVideo.muted = false;
+        heroVideo.volume = 1;
+      }
+    };
+
+    // Try to unmute on play
+    heroVideo.addEventListener('play', unmuteVideo);
+    // Also try immediately in case video starts before we can listen
+    setTimeout(unmuteVideo, 100);
 
     heroVideo.addEventListener('ended', () => {
       heroVideo.classList.add('fade-out');
