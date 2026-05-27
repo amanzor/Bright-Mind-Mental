@@ -89,6 +89,103 @@ body::before {
   100% { transform: translate(-5%, 5%) scale(1.1); }
 }
 
+/* — Metallic/Brushed Gold Shine Effect — */
+@keyframes goldShimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+/* Gold text elements - brushed metal effect with depth */
+h1, h2, h3, h4, h5, h6, .section-eyebrow, .specialty-num {
+  position: relative;
+}
+
+/* Apply to any element with gold color */
+[style*="--gold"], .nav-links a, .section-eyebrow, .specialty-num, .specialty-tag, .profile-body h3 em, .counselor-info h3 em, .specialty h3 em {
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    0 1px 2px rgba(0, 0, 0, 0.3),
+    -1px 0 1px rgba(255, 255, 255, 0.1),
+    1px 0 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Gold backgrounds - metallic gradient effect */
+[style*="background: var(--gold)"], .btn-gold {
+  background: linear-gradient(
+    135deg,
+    var(--gold) 0%,
+    var(--gold-bright) 50%,
+    var(--gold) 100%
+  ) !important;
+  background-size: 200% 200%;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.3),
+    0 4px 12px rgba(201, 169, 97, 0.25);
+  position: relative;
+}
+
+/* Subtle shimmer animation on hover for gold elements */
+.profile-card:hover, .specialty:hover, button:hover, a:hover {
+  position: relative;
+}
+
+/* Custom cursor enhancement with gold shine */
+.cursor {
+  box-shadow: 0 0 12px rgba(201, 169, 97, 0.6), 0 0 24px rgba(201, 169, 97, 0.3);
+}
+.cursor-ring {
+  box-shadow: inset 0 0 8px rgba(201, 169, 97, 0.4);
+}
+
+/* Brushed Gold Text Styling - Specific Classes */
+.hero-eyebrow, .section-eyebrow, .specialty-num, .profile-label {
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.5),
+    -1px -1px 2px rgba(255, 255, 255, 0.15),
+    1px 1px 2px rgba(0, 0, 0, 0.4);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+}
+
+.nav-links a, .nav-logo .wordmark em {
+  text-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.3),
+    0 0 6px rgba(201, 169, 97, 0.2);
+}
+
+/* Enhanced gold button styling with metallic gradient */
+.nav-cta, .btn-primary, button[style*="var(--gold)"], a.btn {
+  background: linear-gradient(
+    180deg,
+    var(--gold-bright) 0%,
+    var(--gold) 50%,
+    var(--gold-deep) 100%
+  ) !important;
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.4),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.2),
+    0 4px 12px rgba(201, 169, 97, 0.3),
+    0 0 20px rgba(201, 169, 97, 0.1);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.nav-cta:hover, button:hover {
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.4),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.2),
+    0 8px 24px rgba(201, 169, 97, 0.4),
+    0 0 30px rgba(201, 169, 97, 0.2);
+}
+
+/* Gold accent text elements */
+em, .accent-gold, [style*="color: var(--gold)"] {
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    -0.5px -0.5px 1px rgba(255, 255, 255, 0.2),
+    0.5px 0.5px 1px rgba(0, 0, 0, 0.3);
+}
+
 /* — Custom cursor — */
 .cursor {
   position: fixed;
@@ -209,7 +306,7 @@ nav.hidden {
 .nav-links a:hover::after { width: 100%; }
 
 .nav-cta {
-  background: var(--gold);
+  background: linear-gradient(180deg, var(--gold-bright) 0%, var(--gold) 50%, var(--gold-deep) 100%);
   color: var(--slate-deep) !important;
   padding: 0.75rem 1.5rem;
   border: 1px solid var(--gold);
@@ -217,12 +314,14 @@ nav.hidden {
   letter-spacing: 0.12em !important;
   font-weight: 500;
   transition: background 0.35s ease, border-color 0.35s ease, transform 0.4s var(--ease-out-expo), box-shadow 0.5s ease;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4), inset 0 -2px 4px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(201, 169, 97, 0.3);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 .nav-cta:hover {
-  background: var(--gold-bright);
+  background: linear-gradient(180deg, var(--gold-bright) 0%, var(--gold) 40%, var(--gold-deep) 100%);
   border-color: var(--gold-bright);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px -6px var(--gold-glow), 0 0 0 4px rgba(201, 169, 97, 0.12);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4), inset 0 -2px 4px rgba(0, 0, 0, 0.2), 0 8px 24px rgba(201, 169, 97, 0.4), 0 0 30px rgba(201, 169, 97, 0.2);
 }
 
 .nav-mobile-toggle {
@@ -459,7 +558,7 @@ section:has(.profiles-section) {
   height: 70px;
   border-radius: 50%;
   border: 2px solid var(--gold);
-  background: rgba(201, 169, 97, 0.12);
+  background: linear-gradient(135deg, rgba(224, 198, 136, 0.15) 0%, rgba(201, 169, 97, 0.12) 100%);
   color: var(--gold-bright);
   display: flex;
   align-items: center;
@@ -469,6 +568,7 @@ section:has(.profiles-section) {
   text-decoration: none;
   flex-shrink: 0;
   position: relative;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.2), 0 4px 12px rgba(201, 169, 97, 0.15);
 }
 
 .social-button::before {
@@ -487,13 +587,14 @@ section:has(.profiles-section) {
   stroke: currentColor;
   fill: currentColor;
   stroke-width: 1;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
 }
 
 .social-button:hover {
   border-color: var(--gold-bright);
-  background: rgba(201, 169, 97, 0.22);
+  background: linear-gradient(135deg, rgba(224, 198, 136, 0.28) 0%, rgba(201, 169, 97, 0.22) 100%);
   transform: translateY(-8px) scale(1.08);
-  box-shadow: 0 16px 48px rgba(201, 169, 97, 0.35);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.3), 0 16px 48px rgba(201, 169, 97, 0.4), 0 0 24px rgba(201, 169, 97, 0.2);
   color: var(--gold-bright);
 }
 
