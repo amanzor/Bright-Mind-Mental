@@ -378,12 +378,7 @@ section:has(.profiles-section) {
   margin-top: 2rem;
 }
 
-.contactus-section .contactus-map {
-  grid-column: 1;
-}
-
 .contactus-section .contact-grid {
-  grid-column: 2;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
@@ -1054,6 +1049,11 @@ footer {
 <!-- CONTACT INFO & MAP -->
 <section>
   <div class="contactus-section reveal">
+    <!-- Google Maps -->
+    <div class="contactus-map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3585.3421234567!2d-80.2818!3d26.0063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9aca12345678%3A0x0!2s10081%20Pines%20Blvd%20Suite%20B%2C%20Pembroke%20Pines%2C%20FL%2033024!5e0!3m2!1sen!2sus!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
     <!-- Contact Grid -->
     <div class="contact-grid reveal-stagger">
       <div class="contact-block" data-hover>
@@ -1072,11 +1072,6 @@ footer {
         <div class="contact-block-label">Telehealth</div>
         <div class="contact-block-value">Serving all of<br/>Florida</div>
       </div>
-    </div>
-
-    <!-- Google Maps -->
-    <div class="contactus-map">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3585.3421234567!2d-80.2818!3d26.0063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9aca12345678%3A0x0!2s10081%20Pines%20Blvd%20Suite%20B%2C%20Pembroke%20Pines%2C%20FL%2033024!5e0!3m2!1sen!2sus!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
 </section>
