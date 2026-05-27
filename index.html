@@ -346,61 +346,6 @@ nav.hidden {
   text-align: center;
   z-index: 1;
 }
-.video-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 10000;
-  background: var(--slate-abyss);
-}
-
-.hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 1;
-  transition: opacity 0.8s var(--ease-out-expo);
-}
-.hero-video.fade-out {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.video-play-btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 120px;
-  height: 120px;
-  background: rgba(201, 169, 97, 0.2);
-  border: 2px solid var(--gold);
-  border-radius: 50%;
-  color: var(--gold);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10001;
-  transition: all 0.4s var(--ease-out-expo);
-  backdrop-filter: blur(10px);
-}
-.video-play-btn:hover {
-  background: rgba(201, 169, 97, 0.4);
-  transform: translate(-50%, -50%) scale(1.1);
-  box-shadow: 0 0 40px rgba(201, 169, 97, 0.3);
-}
-.video-play-btn.hidden {
-  display: none;
-  pointer-events: none;
-}
 
 .hero-text {
   width: 100%;
@@ -2368,17 +2313,6 @@ footer {
 </nav>
 
 <!-- INTRO VIDEO SPLASH -->
-<div class="video-container">
-  <video id="heroVideo" class="hero-video" playsinline>
-    <source src="videos/logo_animationmp_.mp4" type="video/mp4">
-  </video>
-  <button id="videoPlayBtn" class="video-play-btn" aria-label="Play video">
-    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="40" cy="40" r="39" stroke="currentColor" stroke-width="2"/>
-      <path d="M32 25L32 55L56 40Z" fill="currentColor"/>
-    </svg>
-  </button>
-</div>
 
 <!-- HERO -->
 <header class="hero">
@@ -2980,51 +2914,7 @@ footer {
 
   /* ---------- Sticky nav ---------- */
   /* ========== HERO VIDEO FADE ========== */
-  const heroVideo = document.getElementById('heroVideo');
-  const videoPlayBtn = document.getElementById('videoPlayBtn');
   const nav = document.getElementById('nav');
-
-  if (heroVideo && videoPlayBtn) {
-    // Hide nav by default while showing play button
-    if (nav) {
-      nav.classList.add('hidden');
-    }
-
-    // Play video when button is clicked
-    videoPlayBtn.addEventListener('click', () => {
-      heroVideo.muted = false;
-      heroVideo.play().catch(err => {
-        console.log('Video play failed:', err);
-      });
-      videoPlayBtn.classList.add('hidden');
-    });
-
-    // Hide button when video plays
-    heroVideo.addEventListener('play', () => {
-      videoPlayBtn.classList.add('hidden');
-    });
-
-    // Handle video ended
-    heroVideo.addEventListener('ended', () => {
-      heroVideo.classList.add('fade-out');
-      // Show nav when video ends
-      if (nav) {
-        nav.classList.remove('hidden');
-      }
-    });
-
-    // Fallback: fade out after 12 seconds if video doesn't end
-    setTimeout(() => {
-      if (heroVideo && !heroVideo.classList.contains('fade-out')) {
-        heroVideo.classList.add('fade-out');
-        // Show nav after timeout
-        if (nav) {
-          nav.classList.remove('hidden');
-        }
-        videoPlayBtn.classList.add('hidden');
-      }
-    }, 12000);
-  }
   let lastScrollY = 0;
 
   const onScroll = () => {
