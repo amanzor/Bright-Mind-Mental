@@ -1966,29 +1966,235 @@ footer {
 }
 
 @media (max-width: 640px) {
-  nav { padding: 0.3rem 1rem; }
-  nav.scrolled { padding: 0.3rem 1rem; }
+  /* Navigation - Improved mobile spacing */
+  nav {
+    padding: 0.75rem 1rem;
+    justify-content: space-between;
+  }
+  nav.scrolled { padding: 0.75rem 1rem; }
+  .nav-logo { margin: 0; }
   .nav-logo .badge img { height: 50px; }
+  .nav-mobile-toggle { display: block; }
+  .nav-links { display: none; }
 
-  .hero { padding: 4rem 0 2rem; }
-  .hero-eyebrow, .hero-sub, .hero-actions { padding-left: 1rem; padding-right: 1rem; }
-  .hero-title { padding: 0 0.5rem; font-size: clamp(2rem, 10vw, 4rem); }
+  /* Hero Section - Better alignment and spacing */
+  .hero {
+    padding: 4.5rem 1rem 2.5rem;
+    text-align: center;
+  }
+  .hero-eyebrow {
+    padding: 0;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .hero-title {
+    padding: 0 0.5rem;
+    font-size: clamp(1.75rem, 9vw, 3rem);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+  .hero-sub {
+    padding: 0 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+  .hero-actions {
+    padding: 0 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .hero-actions a, .hero-actions button {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
 
-  .counselors { padding: 3.5rem 1rem; }
-  .counselor-grid { gap: 1rem; }
-  .counselor-profile { gap: 1rem; }
-  .profile-visual { min-height: 280px; }
-  .profile-body { padding: 1.5rem; }
+  /* Counselor Section - Better card alignment */
+  .counselors {
+    padding: 3.5rem 1rem;
+  }
+  .counselors-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  .counselors-header h2 {
+    margin-bottom: 1rem;
+  }
+  .counselor-grid {
+    gap: 1.5rem;
+  }
+  .counselor-profile {
+    gap: 1rem;
+  }
+  .profile-visual {
+    min-height: 300px;
+  }
+  .profile-body {
+    padding: 1.75rem;
+    text-align: center;
+  }
+  .profile-body h3 {
+    margin-bottom: 0.5rem;
+  }
+  .profile-label {
+    margin-bottom: 1rem;
+  }
+  .profile-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
 
-  section { padding: 3.5rem 1rem; }
-  .specialty { padding: 1.75rem; }
-  .testimonial-card { flex: 0 0 280px; padding: 1.5rem; }
+  /* Sections - Better spacing and alignment */
+  section {
+    padding: 4rem 1rem;
+  }
+  section h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  section h3 {
+    margin-bottom: 1rem;
+  }
 
-  .contact { padding: 4rem 1rem; }
+  /* About Section */
+  .about {
+    text-align: center;
+  }
+  .about-visual {
+    max-width: 100%;
+    margin: 0 auto 2rem;
+  }
+  .credentials {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .credential {
+    padding: 1.5rem 0;
+    border-left: none;
+    border-top: 1px solid var(--hairline);
+    text-align: center;
+  }
+  .credential:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
 
-  h2 { font-size: 1.75rem; }
-  h3 { font-size: 1.25rem; }
-  p { font-size: 0.95rem; }
+  /* Specialties Section */
+  .specialties-header {
+    text-align: center;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .specialty-grid {
+    grid-template-columns: 1fr;
+    border-left: none;
+  }
+  .specialty {
+    padding: 2rem;
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid var(--hairline);
+    text-align: center;
+  }
+  .specialty:first-child {
+    border-top: none;
+  }
+  .specialty h3 {
+    margin-bottom: 0.75rem;
+  }
+
+  /* Approach Section */
+  .approach {
+    text-align: center;
+  }
+  .approach-quote {
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+  .approach-quote p {
+    font-size: 1.1rem;
+  }
+
+  /* Testimonials Section */
+  .testimonials-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  .testimonial-card {
+    flex: 0 0 100%;
+    padding: 1.75rem;
+    text-align: center;
+  }
+  .testimonial-card blockquote {
+    margin-bottom: 1rem;
+  }
+
+  /* Contact Section */
+  .contact {
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+  .contact h2 {
+    margin-bottom: 2.5rem;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+  .contact-block {
+    padding: 1.5rem;
+    text-align: center;
+  }
+  .contact-block a, .contact-block button {
+    min-height: 44px;
+    display: inline-block;
+    margin-top: 0.75rem;
+  }
+
+  /* Footer */
+  .footer-top {
+    text-align: center;
+  }
+  .footer-content {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .marquee-track {
+    font-size: 1.1rem;
+    gap: 2rem;
+  }
+
+  /* Typography - Mobile optimized */
+  h2 {
+    font-size: 1.75rem;
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+  p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  /* Button accessibility - Touch targets */
+  button, a.btn, .btn-primary, .nav-cta {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.75rem 1.5rem !important;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
 
   body { cursor: auto; }
 }
