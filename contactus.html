@@ -411,43 +411,57 @@ section:has(.profiles-section) {
   gap: 2rem;
 }
 
+.profiles-social {
+  padding-top: 4rem;
+  margin-top: 4rem;
+  padding-bottom: 3rem;
+  border-top: 2px solid rgba(201, 169, 97, 0.25);
+}
+
 .social-header {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .social-header .section-eyebrow {
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
+  color: var(--gold-bright);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
 }
 
 .social-header h3 {
   font-family: 'Fraunces', serif;
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-weight: 400;
   font-style: italic;
-  color: var(--cream);
-  margin-bottom: 0.5rem;
+  color: var(--gold-bright);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
 }
 
 .social-header p {
-  font-size: 0.95rem;
-  color: var(--whisper);
-  line-height: 1.6;
+  font-size: 1rem;
+  color: var(--cream);
+  line-height: 1.7;
+  max-width: 500px;
 }
 
 .social-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
-  margin-top: 2rem;
+  gap: 2rem;
+  margin-top: 2.5rem;
 }
 
 .social-button {
-  width: 56px;
-  height: 56px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  border: 1px solid var(--hairline);
-  background: var(--slate-mid);
-  color: var(--gold);
+  border: 2px solid var(--gold);
+  background: rgba(201, 169, 97, 0.12);
+  color: var(--gold-bright);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -455,21 +469,32 @@ section:has(.profiles-section) {
   cursor: none;
   text-decoration: none;
   flex-shrink: 0;
+  position: relative;
+}
+
+.social-button::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: rgba(201, 169, 97, 0.05);
+  z-index: -1;
+  transition: background 0.4s ease;
 }
 
 .social-button svg {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   stroke: currentColor;
-  fill: none;
-  stroke-width: 1.5;
+  fill: currentColor;
+  stroke-width: 1;
 }
 
 .social-button:hover {
-  border-color: var(--gold);
-  background: rgba(201, 169, 97, 0.08);
-  transform: translateY(-6px);
-  box-shadow: 0 12px 32px rgba(201, 169, 97, 0.2);
+  border-color: var(--gold-bright);
+  background: rgba(201, 169, 97, 0.22);
+  transform: translateY(-8px) scale(1.08);
+  box-shadow: 0 16px 48px rgba(201, 169, 97, 0.35);
   color: var(--gold-bright);
 }
 
@@ -884,9 +909,16 @@ footer {
   .contactus-section { gap: 1.5rem; }
   .contactus-map { aspect-ratio: 4/3; }
 
-  .social-buttons { gap: 1rem; }
-  .social-button { width: 48px; height: 48px; }
-  .social-button svg { width: 20px; height: 20px; }
+  .social-buttons { gap: 1.5rem; }
+  .social-button { width: 62px; height: 62px; }
+  .social-button svg { width: 26px; height: 26px; }
+
+  .profiles-social { padding-top: 3rem; margin-top: 3rem; padding-bottom: 2rem; }
+  .social-header h3 { font-size: 1.6rem; }
+  .social-header p { font-size: 0.9rem; }
+  .social-buttons { gap: 1.2rem; margin-top: 1.5rem; }
+  .social-button { width: 56px; height: 56px; }
+  .social-button svg { width: 24px; height: 24px; }
 
   .connect-section h3 { font-size: 1.4rem; }
   .connect-section p { font-size: 0.9rem; }
