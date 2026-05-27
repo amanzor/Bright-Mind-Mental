@@ -348,12 +348,11 @@ nav.hidden {
 }
 .hero-video {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  inset: 0;
+  width: 100vw;
   height: 100vh;
   object-fit: cover;
-  z-index: 9999;
+  z-index: 10000;
   opacity: 1;
   transition: opacity 0.8s var(--ease-out-expo);
   pointer-events: none;
@@ -2934,20 +2933,33 @@ footer {
   /* ---------- Sticky nav ---------- */
   /* ========== HERO VIDEO FADE ========== */
   const heroVideo = document.getElementById('heroVideo');
+  const nav = document.getElementById('nav');
+
   if (heroVideo) {
+    // Hide nav while video is playing
+    if (nav) {
+      nav.classList.add('hidden');
+    }
+
     heroVideo.addEventListener('ended', () => {
       heroVideo.classList.add('fade-out');
+      // Show nav when video ends
+      if (nav) {
+        nav.classList.remove('hidden');
+      }
     });
 
     // Fallback: fade out after 8 seconds if video duration is unknown
     setTimeout(() => {
       if (heroVideo && !heroVideo.classList.contains('fade-out')) {
         heroVideo.classList.add('fade-out');
+        // Show nav after timeout
+        if (nav) {
+          nav.classList.remove('hidden');
+        }
       }
     }, 8000);
   }
-
-  const nav = document.getElementById('nav');
   let lastScrollY = 0;
 
   const onScroll = () => {
