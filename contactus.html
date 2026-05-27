@@ -417,13 +417,6 @@ section:has(.profiles-section) {
   gap: 2rem;
 }
 
-.profiles-social {
-  padding-top: 2rem;
-  padding-bottom: 0;
-  margin-top: 0;
-  border-top: 2px solid rgba(201, 169, 97, 0.25);
-}
-
 .social-header {
   margin-bottom: 1.5rem;
 }
@@ -704,33 +697,58 @@ section:has(.profiles-section) {
 
 /* ========== CONNECT SECTION ========== */
 .connect-section {
-  padding-top: 4rem;
-  padding-bottom: 2rem;
-  border-top: 1px solid var(--hairline);
+  padding: 6rem 3rem;
+}
+
+.profiles-social {
+  max-width: 520px;
+  padding: 3.5rem;
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  background: rgba(13, 26, 43, 0.4);
+  backdrop-filter: blur(12px);
+  position: relative;
+  overflow: hidden;
+}
+
+.profiles-social::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(201,169,97,0.1), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.profiles-social:hover::before {
+  opacity: 1;
 }
 
 .connect-section .social-header {
-  text-align: center;
+  text-align: left;
   margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 1;
 }
 
 .connect-section .section-eyebrow {
-  justify-content: center;
-  margin-bottom: 1rem;
+  justify-content: flex-start;
+  margin-bottom: 0.75rem;
 }
 
 .connect-section .section-eyebrow::before {
-  display: none;
+  display: block;
 }
 
 .connect-section h3 {
   font-family: 'Fraunces', serif;
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
   line-height: 1.1;
   font-weight: 300;
   letter-spacing: -0.02em;
   margin-bottom: 1rem;
-  text-align: center;
+  text-align: left;
 }
 
 .connect-section h3 em {
@@ -740,16 +758,17 @@ section:has(.profiles-section) {
 }
 
 .connect-section p {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--whisper);
   line-height: 1.6;
-  max-width: 600px;
-  margin: 0 auto 2rem;
+  margin-bottom: 2rem;
 }
 
 .connect-section .social-buttons {
-  justify-content: center;
+  justify-content: flex-start;
   margin-top: 0;
+  position: relative;
+  z-index: 1;
 }
 
 /* ========== FOOTER ========== */
@@ -873,7 +892,9 @@ footer {
   .contactus-section .contact-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
   .contactus-map { aspect-ratio: 16/9; }
   .profiles-grid { grid-template-columns: repeat(2, 1fr); }
-  .profiles-social { padding-top: 1.5rem; }
+
+  .connect-section { padding: 5rem 3rem; }
+  .profiles-social { max-width: 480px; padding: 3rem; }
 }
 
 @media (max-width: 980px) {
@@ -895,6 +916,9 @@ footer {
 
   .profiles-grid { grid-template-columns: 1fr; }
 
+  .profiles-social { max-width: 100%; padding: 2.5rem; }
+  .connect-section h3 { font-size: 1.8rem; }
+
   .footer-top { grid-template-columns: 1fr; gap: 2.5rem; }
 }
 
@@ -904,7 +928,7 @@ footer {
   .nav-logo .badge img { height: 50px; }
 
   section { padding: 3.5rem 1rem; }
-  .connect-section { padding: 2.5rem 1rem; }
+  .connect-section { padding: 3rem 1rem; }
   .hero { padding-top: 4rem; }
   .hero-title { font-size: clamp(1.8rem, 8vw, 3rem); }
   .hero-sub { font-size: 1rem; margin-bottom: 2rem; }
@@ -921,15 +945,12 @@ footer {
   .social-button { width: 62px; height: 62px; }
   .social-button svg { width: 26px; height: 26px; }
 
-  .profiles-social { padding-top: 1.5rem; margin-top: 0; padding-bottom: 0; }
-  .social-header h3 { font-size: 1.6rem; }
-  .social-header p { font-size: 0.9rem; }
+  .profiles-social { max-width: 100%; padding: 2rem; }
+  .connect-section h3 { font-size: 1.5rem; }
+  .connect-section p { font-size: 0.85rem; }
   .social-buttons { gap: 1.2rem; margin-top: 1.5rem; }
   .social-button { width: 56px; height: 56px; }
   .social-button svg { width: 24px; height: 24px; }
-
-  .connect-section h3 { font-size: 1.4rem; }
-  .connect-section p { font-size: 0.9rem; }
 
   .profiles-grid { gap: 1.5rem; }
   .profile-card { padding: 2rem 1.5rem; }
@@ -1074,46 +1095,49 @@ footer {
           <div class="contact-block-value">Serving all of<br/>Florida</div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
 
-      <!-- Connect Section -->
-      <div class="profiles-social reveal">
-        <div class="social-header">
-          <div class="section-eyebrow">Connect</div>
-          <h3>Follow us on <em>social.</em></h3>
-        </div>
+<!-- CONNECT SECTION -->
+<section class="connect-section">
+  <div class="profiles-social reveal">
+    <div class="social-header">
+      <div class="section-eyebrow">Follow</div>
+      <h3>Connect with us on <em>social.</em></h3>
+      <p>Stay updated with insights, resources, and wellness tips. Connect with Bright Mind Mental Health across your favorite platforms.</p>
+    </div>
 
-        <div class="social-buttons">
-          <!-- Facebook -->
-          <a href="#" class="social-button" data-hover title="Facebook">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-            </svg>
-          </a>
+    <div class="social-buttons">
+      <!-- Facebook -->
+      <a href="#" class="social-button" data-hover title="Facebook" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+      </a>
 
-          <!-- Instagram -->
-          <a href="#" class="social-button" data-hover title="Instagram">
-            <svg viewBox="0 0 24 24">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/>
-              <path d="M12 16c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z" fill="none" stroke="currentColor" stroke-width="2"/>
-              <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
-            </svg>
-          </a>
+      <!-- Instagram -->
+      <a href="#" class="social-button" data-hover title="Instagram" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2.165" y="2.165" width="19.67" height="19.67" rx="4.878" ry="4.878" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="12" cy="12" r="3.6" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="18.406" cy="5.594" r="0.9" fill="currentColor"/>
+        </svg>
+      </a>
 
-          <!-- LinkedIn -->
-          <a href="#" class="social-button" data-hover title="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
-            </svg>
-          </a>
+      <!-- LinkedIn -->
+      <a href="#" class="social-button" data-hover title="LinkedIn" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.722-2.004 1.418-.103.249-.129.597-.129.946v5.441h-3.554s.047-8.733 0-9.633h3.554v1.364c.429-.661 1.196-1.6 2.905-1.6 2.121 0 3.71 1.386 3.71 4.365v5.504zM5.337 8.855c-1.144 0-1.915-.762-1.915-1.715 0-.953.77-1.715 1.958-1.715 1.187 0 1.927.762 1.948 1.715 0 .953-.761 1.715-1.991 1.715zm1.581 11.597H3.635V9.819h3.283v10.633zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+      </a>
 
-          <!-- X (Twitter) -->
-          <a href="#" class="social-button" data-hover title="X">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.654l-5.207-6.807-5.974 6.807H2.882l7.725-8.835L1.254 2.25h6.554l4.702 6.217 5.733-6.217zM17.534 19.09h1.885L6.455 4.26H4.46l13.074 14.83z" />
-            </svg>
-          </a>
-        </div>
-      </div>
+      <!-- X (Twitter) -->
+      <a href="#" class="social-button" data-hover title="X" aria-label="X">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.514l-5.106-6.694-5.828 6.694H2.422l7.723-8.835L1.254 2.25h6.554l4.6 6.084 5.313-6.084zM17.002 18.808h1.844L6.983 4.126H5.025l11.977 14.682z"/>
+        </svg>
+      </a>
     </div>
   </div>
 </section>
