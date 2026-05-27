@@ -465,6 +465,204 @@ section {
   color: var(--gold-bright);
 }
 
+/* ========== PROFESSIONAL PROFILES ========== */
+.profiles-section {
+  margin-top: 7rem;
+  padding-top: 4rem;
+  border-top: 1px solid var(--hairline);
+}
+
+.profiles-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.profiles-header .section-eyebrow {
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.profiles-header .section-eyebrow::before { display: none; }
+.profiles-header .section-eyebrow::after {
+  content: '';
+  width: 32px; height: 1px;
+  background: var(--gold);
+  margin-left: 1rem;
+}
+
+.profiles-header h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+.profiles-header h2 em {
+  font-style: italic;
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.profiles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.profile-card {
+  padding: 2.5rem 2rem;
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  background: rgba(13, 26, 43, 0.4);
+  backdrop-filter: blur(12px);
+  transition: all 0.5s var(--ease-out-expo);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.profile-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(201,169,97,0.1), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.profile-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-6px);
+  background: rgba(36, 63, 99, 0.5);
+}
+
+.profile-card:hover::before { opacity: 1; }
+
+.profile-name {
+  font-family: 'Fraunces', serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--cream);
+  position: relative;
+  z-index: 1;
+}
+
+.profile-name em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.profile-description {
+  font-size: 0.9rem;
+  color: var(--whisper);
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+  flex-grow: 1;
+}
+
+.profile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+.profile-link,
+.profile-book-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.4s var(--ease-out-expo);
+  text-transform: uppercase;
+  cursor: none;
+}
+
+.profile-link {
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  background: transparent;
+}
+
+.profile-link:hover {
+  background: rgba(201, 169, 97, 0.08);
+  color: var(--gold-bright);
+  border-color: var(--gold-bright);
+  transform: translateY(-2px);
+}
+
+.profile-book-btn {
+  background: var(--gold);
+  color: var(--slate-deep);
+  border: 1px solid var(--gold);
+  font-weight: 600;
+}
+
+.profile-book-btn:hover {
+  background: var(--gold-bright);
+  border-color: var(--gold-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(201, 169, 97, 0.25);
+}
+
+.zocdoc-booking {
+  grid-column: 1 / -1;
+  max-width: 500px;
+  margin: 2rem auto 0;
+  padding: 2.5rem 2rem;
+  border: 2px solid var(--gold);
+  background: linear-gradient(135deg, rgba(201,169,97,0.08) 0%, rgba(13,26,43,0.4) 100%);
+  text-align: center;
+}
+
+.zocdoc-booking h4 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.zocdoc-booking-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: var(--gold);
+  color: var(--slate-deep);
+  border: 1px solid var(--gold);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: all 0.4s var(--ease-out-expo);
+  cursor: none;
+  text-transform: uppercase;
+}
+
+.zocdoc-booking-btn:hover {
+  background: var(--gold-bright);
+  border-color: var(--gold-bright);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(201, 169, 97, 0.25);
+}
+
 /* ========== FOOTER ========== */
 footer {
   background: var(--slate-abyss);
@@ -750,6 +948,75 @@ footer {
           <svg viewBox="0 0 24 24" fill="currentColor">
             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.654l-5.207-6.807-5.974 6.807H2.882l7.725-8.835L1.254 2.25h6.554l4.702 6.217 5.733-6.217zM17.534 19.09h1.885L6.455 4.26H4.46l13.074 14.83z" />
           </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROFESSIONAL PROFILES -->
+  <div class="profiles-section reveal">
+    <div class="profiles-header">
+      <div class="section-eyebrow">Professional Profiles</div>
+      <h2>Where to <em>book.</em></h2>
+    </div>
+
+    <div class="profiles-grid">
+      <!-- Psychology Today Profile -->
+      <div class="profile-card" data-hover>
+        <div class="profile-name">Psychology <em>Today</em></div>
+        <p class="profile-description">
+          Find Anna's full profile on Psychology Today and read verified reviews from her clients. Connect directly through their platform.
+        </p>
+        <div class="profile-actions">
+          <a href="https://www.psychologytoday.com/us/therapists/anna-rondon-miami-lakes-fl/1400674" class="profile-link" data-hover target="_blank">
+            View Profile
+          </a>
+          <a href="https://therapyfinder.com/therapist/anna-rondon-licensed-mental-health-counselor-pembroke-pines-fl" class="profile-book-btn" data-hover target="_blank">
+            Book a Consult
+          </a>
+        </div>
+      </div>
+
+      <!-- SimplePractice Profile -->
+      <div class="profile-card" data-hover>
+        <div class="profile-name">Simple <em>Practice</em></div>
+        <p class="profile-description">
+          Access Anna's SimplePractice profile for direct booking, secure messaging, and appointment management. Modern therapy made simple.
+        </p>
+        <div class="profile-actions">
+          <a href="https://therapyfinder.com/therapist/anna-rondon-licensed-mental-health-counselor-pembroke-pines-fl" class="profile-link" data-hover target="_blank">
+            View Profile
+          </a>
+          <a href="https://therapyfinder.com/therapist/anna-rondon-licensed-mental-health-counselor-pembroke-pines-fl" class="profile-book-btn" data-hover target="_blank">
+            Book Now
+          </a>
+        </div>
+      </div>
+
+      <!-- ZocDoc Profile -->
+      <div class="profile-card" data-hover>
+        <div class="profile-name">Zoc <em>Doc</em></div>
+        <p class="profile-description">
+          Discover Anna on ZocDoc, read patient reviews, and book appointments directly. Part of the trusted healthcare network.
+        </p>
+        <div class="profile-actions">
+          <a href="https://www.zocdoc.com/professional/anna-rondon-lmhc-780402" class="profile-link" data-hover target="_blank">
+            View Profile
+          </a>
+          <a href="https://www.zocdoc.com/booking-link/practice/bright-mind-mental-health-llc-179087" class="profile-book-btn" data-hover target="_blank">
+            Book Appointment
+          </a>
+        </div>
+      </div>
+
+      <!-- Special ZocDoc Booking Section -->
+      <div class="zocdoc-booking">
+        <h4>Direct ZocDoc Booking</h4>
+        <p style="color: var(--whisper); margin-bottom: 1.5rem; font-size: 0.9rem;">
+          Schedule your appointment directly with Bright Mind Mental Health through ZocDoc.
+        </p>
+        <a href="https://www.zocdoc.com/booking-link/practice/bright-mind-mental-health-llc-179087" class="zocdoc-booking-btn" data-hover target="_blank">
+          Schedule via ZocDoc
         </a>
       </div>
     </div>
