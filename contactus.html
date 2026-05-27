@@ -241,6 +241,10 @@ section {
   z-index: 1;
 }
 
+section:has(.profiles-section) {
+  padding-bottom: 2rem;
+}
+
 .section-eyebrow {
   display: flex;
   align-items: center;
@@ -467,9 +471,9 @@ section {
 
 /* ========== PROFESSIONAL PROFILES ========== */
 .profiles-section {
-  margin-top: 7rem;
-  padding-top: 4rem;
-  border-top: 1px solid var(--hairline);
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
 }
 
 .profiles-header {
@@ -835,9 +839,6 @@ footer {
   .profile-name { font-size: 1.1rem; }
   .profile-description { font-size: 0.85rem; }
   .profile-link, .profile-book-btn { padding: 0.7rem 1rem; font-size: 0.8rem; }
-  .zocdoc-booking { padding: 2rem 1.5rem; margin-top: 1.5rem; }
-  .zocdoc-booking h4 { font-size: 1rem; margin-bottom: 0.75rem; }
-  .zocdoc-booking-btn { padding: 0.85rem 1.5rem; font-size: 0.85rem; }
 
   .footer-top { gap: 1.5rem; padding-bottom: 2rem; margin-bottom: 1.5rem; }
   .footer-brand { margin-bottom: 1rem; }
@@ -942,17 +943,6 @@ footer {
             Book Appointment
           </a>
         </div>
-      </div>
-
-      <!-- Special ZocDoc Booking Section -->
-      <div class="zocdoc-booking">
-        <h4>Direct ZocDoc Booking</h4>
-        <p style="color: var(--whisper); margin-bottom: 1.5rem; font-size: 0.9rem;">
-          Schedule your appointment directly with Bright Mind Mental Health through ZocDoc.
-        </p>
-        <a href="https://www.zocdoc.com/booking-link/practice/bright-mind-mental-health-llc-179087" class="zocdoc-booking-btn" data-hover target="_blank">
-          Schedule via ZocDoc
-        </a>
       </div>
     </div>
   </div>
