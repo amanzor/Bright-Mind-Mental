@@ -1302,7 +1302,7 @@ section { padding: 9rem 3rem; position: relative; z-index: 1; }
 /* ========== CONDITIONS BAR ========== */
 .conditions {
   padding: 5rem 3rem;
-  background: var(--slate-abyss);
+  background: linear-gradient(135deg, var(--slate-abyss) 0%, rgba(13, 26, 43, 0.8) 100%);
   position: relative;
 }
 .conditions-inner {
@@ -1312,32 +1312,44 @@ section { padding: 9rem 3rem; position: relative; z-index: 1; }
 .conditions-label {
   font-family: 'Fraunces', serif;
   font-style: italic;
-  font-size: 1.1rem;
-  color: var(--whisper);
-  margin-bottom: 2.5rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--gold);
+  margin-bottom: 3rem;
   text-align: center;
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.5),
+    -1px -1px 2px rgba(255, 255, 255, 0.15),
+    1px 1px 2px rgba(0, 0, 0, 0.4);
+  letter-spacing: 0.05em;
 }
 .conditions-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  gap: 1rem;
   justify-content: center;
 }
 .condition-chip {
-  padding: 0.6rem 1.25rem;
-  border: 1px solid var(--hairline);
+  padding: 0.8rem 1.5rem;
+  border: 2px solid var(--gold);
   border-radius: 999px;
-  font-size: 0.85rem;
-  color: var(--whisper);
-  letter-spacing: 0.04em;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--slate-abyss);
+  background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 100%);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   transition: all 0.4s var(--ease-out-expo);
   cursor: none;
+  box-shadow: 0 4px 12px rgba(201, 169, 97, 0.25), inset 0 1px 2px rgba(255, 255, 255, 0.3);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 .condition-chip:hover {
-  border-color: var(--gold);
-  color: var(--cream);
-  background: rgba(201,169,97,0.05);
-  transform: translateY(-2px);
+  border-color: var(--cream);
+  background: linear-gradient(135deg, var(--cream) 0%, var(--cream-warm) 100%);
+  color: var(--slate-abyss);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(201, 169, 97, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.4);
 }
 
 /* ========== APPROACH ========== */
@@ -2117,7 +2129,7 @@ footer {
 <!-- CONDITIONS BAR -->
 <section class="conditions" id="conditions">
   <div class="conditions-inner reveal">
-    <div class="conditions-label">Anna has specialized experience treating</div>
+    <div class="conditions-label">We specialize in treating</div>
     <div class="conditions-grid reveal-stagger">
       <span class="condition-chip" data-hover>Anxiety</span>
       <span class="condition-chip" data-hover>Depression</span>
