@@ -2007,19 +2007,24 @@ footer {
     color: var(--gold);
   }
 
-  /* Icon content for navigation links */
-  .nav-links a[href="#about"]::before { content: "👤"; }
-  .nav-links a[href="#specialties"]::before { content: "⭐"; }
-  .nav-links a[href="#approach"]::before { content: "🎯"; }
-  .nav-links a[href="#voices"]::before { content: "👥"; }
-  .nav-links a[href*="contactus"]::before { content: "📞"; }
-
-  /* Hide text, show icons only */
-  .nav-links a {
-    font-size: 0;
+  /* Mobile nav - show only Contact Us button */
+  .nav-links {
+    display: flex !important;
+    gap: 0.5rem;
+    align-items: center;
   }
-  .nav-links a::before {
-    font-size: 1.2rem;
+
+  /* Hide all nav links except Contact Us button */
+  .nav-links li:not(:last-child) {
+    display: none;
+  }
+
+  /* Contact Us button stays visible */
+  .nav-links .nav-cta {
+    display: inline-flex;
+    padding: 0.6rem 1rem;
+    font-size: 0.7rem;
+    white-space: nowrap;
   }
 
   /* Hero Section - Better alignment and spacing */
