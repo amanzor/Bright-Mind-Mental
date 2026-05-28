@@ -675,6 +675,13 @@ nav.hidden {
   max-width: 460px;
 }
 
+.counselors-header-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
 .counselor-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -2343,9 +2350,15 @@ footer {
       <div class="section-eyebrow">Our Counselors</div>
       <h2 class="section-title">Choose your <em>counselor.</em></h2>
     </div>
-    <p>
-      The right therapeutic relationship is the heart of the work. Meet the counselor you'll walk with — select a profile below to see specialties, approach, and how to begin.
-    </p>
+    <div class="counselors-header-content">
+      <p>
+        The right therapeutic relationship is the heart of the work. Meet the counselor you'll walk with — select a profile below to see specialties, approach, and how to begin.
+      </p>
+      <a href="#counselors?view=cards" class="btn-magnetic" data-hover data-magnetic>
+        <span>Meet Our Counselors</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
   </div>
 
   <div class="counselor-grid reveal-stagger">
@@ -3068,6 +3081,13 @@ footer {
   if (hashHasAnna) {
     const annaCard = document.querySelector('.counselor-card[data-counselor="anna"]');
     setTimeout(() => openProfile('anna', annaCard), 800);
+  }
+
+  // Handle ?view=cards parameter - hide profile section to show cards only
+  const urlParams = new URLSearchParams(location.search);
+  const viewMode = urlParams.get('view');
+  if (viewMode === 'cards') {
+    counselorProfile.style.display = 'none';
   }
 
   /* ---------- Condition definitions interactive toggle ---------- */
