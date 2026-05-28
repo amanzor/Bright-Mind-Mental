@@ -1970,61 +1970,52 @@ footer {
   .nav-logo .badge img { height: 50px; }
   .nav-mobile-toggle { display: block; }
 
-  /* Mobile Navigation - Icon-based links */
+  /* Mobile Navigation - Show only Contact Us button */
   .nav-links {
     display: flex !important;
-    gap: 0.5rem;
-    position: absolute;
-    right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
+    gap: 0;
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
     list-style: none;
     padding: 0;
     margin: 0;
     align-items: center;
   }
   .nav-links li {
+    display: none;
+  }
+  .nav-links li:last-child {
     display: flex;
     align-items: center;
   }
   .nav-links a {
-    min-height: 44px;
-    min-width: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
+    font-size: 0.75rem;
     color: var(--cream);
     text-decoration: none;
-    border: 1px solid var(--hairline);
-    border-radius: 50%;
+    border: none;
+    border-radius: 0;
     transition: all 0.3s var(--ease-out-expo);
     padding: 0 !important;
+    min-height: auto;
+    min-width: auto;
   }
   .nav-links a:hover {
-    background: rgba(201, 169, 97, 0.1);
-    border-color: var(--gold);
+    background: transparent;
+    border-color: transparent;
     color: var(--gold);
   }
-
-  /* Mobile nav - show only Contact Us button */
-  .nav-links {
-    display: flex !important;
-    gap: 0.5rem;
-    align-items: center;
-  }
-
-  /* Hide all nav links except Contact Us button */
-  .nav-links li:not(:last-child) {
-    display: none;
-  }
-
-  /* Contact Us button stays visible */
   .nav-links .nav-cta {
-    display: inline-flex;
-    padding: 0.6rem 1rem;
-    font-size: 0.7rem;
+    background: linear-gradient(180deg, var(--gold-bright) 0%, var(--gold) 50%, var(--gold-deep) 100%);
+    color: var(--slate-deep) !important;
+    padding: 0.65rem 1.2rem !important;
+    border: 1px solid var(--gold);
+    border-radius: 999px;
+    font-size: 0.7rem !important;
+    font-weight: 500;
     white-space: nowrap;
+    display: inline-flex;
   }
 
   /* Hero Section - Better alignment and spacing */
