@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Our Counselors | Bright Mind Mental Health | Anna Rondon, LMHC</title>
+<meta name="description" content="Meet our licensed mental health counselors. Anna Rondon, MS, LMHC specializes in anxiety therapy, depression counseling, and adolescent therapy. Select a profile to learn more." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,200;1,9..144,300;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   BRIGHT MIND MENTAL HEALTH — v2
+   Editorial-luxury · Slate-teal + antique gold · Motion-rich
+========================================================= */
+:root {
+  --ink: #0a1422;
+  --slate-abyss: #0d1a2b;
+  --slate-deep: #11203a;
+  --slate: #1a2f4d;
+  --slate-mid: #243f63;
+  --slate-soft: #2f4e76;
+  --gold: #c9a961;
+  --gold-bright: #e0c688;
+  --gold-deep: #9a7f3f;
+  --gold-glow: rgba(201, 169, 97, 0.5);
+  --cream: #f4ede0;
+  --cream-warm: #ebe2cd;
+  --paper: #e8dfc8;
+  --whisper: rgba(244, 237, 224, 0.62);
+  --whisper-dim: rgba(244, 237, 224, 0.32);
+  --hairline: rgba(201, 169, 97, 0.18);
+  --hairline-soft: rgba(244, 237, 224, 0.08);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-cubic: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Manrope', system-ui, sans-serif;
+  background: var(--slate-abyss);
+  color: var(--cream);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  cursor: none;
+}
+@media (hover: none) { body { cursor: auto; } }
+
+/* — Atmospheric grain — */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.97 0 0 0 0 0.93 0 0 0 0 0.78 0 0 0 0.6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.045;
+  z-index: 999;
+  mix-blend-mode: overlay;
+}
+
+/* — Aurora glow behind hero — */
+.aurora {
+  position: fixed;
+  inset: -20% -10% auto auto;
+  width: 80vw;
+  height: 80vh;
+  background:
+    radial-gradient(circle at 70% 30%, rgba(201,169,97,0.18) 0%, transparent 45%),
+    radial-gradient(circle at 30% 60%, rgba(47,78,118,0.5) 0%, transparent 50%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+  animation: aurora 18s ease-in-out infinite alternate;
+}
+@keyframes aurora {
+  0% { transform: translate(0,0) scale(1); }
+  100% { transform: translate(-5%, 5%) scale(1.1); }
+}
+
+/* Gold text elements - brushed metal effect with depth */
+h1, h2, h3, h4, h5, h6, .section-eyebrow, .specialty-num {
+  position: relative;
+}
+
+/* Apply to any element with gold color */
+[style*="--gold"], .nav-links a, .section-eyebrow, .specialty-num, .specialty-tag, .profile-body h3 em, .counselor-info h3 em, .specialty h3 em {
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    0 1px 2px rgba(0, 0, 0, 0.3),
+    -1px 0 1px rgba(255, 255, 255, 0.1),
+    1px 0 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom cursor enhancement with gold shine */
+.cursor {
+  box-shadow: 0 0 12px rgba(201, 169, 97, 0.6), 0 0 24px rgba(201, 169, 97, 0.3);
+}
+.cursor-ring {
+  box-shadow: inset 0 0 8px rgba(201, 169, 97, 0.4);
+}
+
+/* Brushed Gold Text Styling */
+.hero-eyebrow, .section-eyebrow, .specialty-num, .profile-label,
+.nav-links a, .nav-logo .wordmark em,
+.counselor-info h3 em, .specialty h3 em, .profile-body h3 em,
+.contact-title em, .footer-col a:hover,
+.marquee-track span:hover, .marquee-text span:hover,
+[style*="color: var(--gold)"], em {
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.5),
+    -1px -1px 2px rgba(255, 255, 255, 0.15),
+    1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.hero-eyebrow, .section-eyebrow, .specialty-num, .profile-label {
+  font-weight: 500;
+  letter-spacing: 0.15em;
+}
+
+/* — Custom cursor — */
+.cursor {
+  position: fixed;
+  top: 0; left: 0;
+  width: 10px; height: 10px;
+  background: var(--gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s var(--ease-out-expo), height 0.3s var(--ease-out-expo), background 0.3s ease;
+  mix-blend-mode: difference;
+}
+.cursor-ring {
+  position: fixed;
+  top: 0; left: 0;
+  width: 36px; height: 36px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.25s var(--ease-out-expo), width 0.3s var(--ease-out-expo), height 0.3s var(--ease-out-expo), border-color 0.3s ease, opacity 0.3s ease;
+  opacity: 0.7;
+}
+.cursor.is-hover { width: 30px; height: 30px; opacity: 0; }
+.cursor-ring.is-hover { width: 64px; height: 64px; border-color: var(--gold-bright); background: rgba(201,169,97,0.08); }
+
+@media (hover: none) {
+  .cursor, .cursor-ring { display: none; }
+}
+
+/* ========== NAV ========== */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  padding: 0.4rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  transition: padding 0.5s var(--ease-out-expo), background 0.5s ease, backdrop-filter 0.5s ease, border-color 0.5s ease, transform 0.4s var(--ease-out-expo);
+  border-bottom: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+}
+nav.scrolled {
+  padding: 0.4rem 3rem;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+nav.hidden {
+  transform: translateY(-100%);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  text-decoration: none;
+  color: var(--ink);
+}
+.nav-logo .badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.6s var(--ease-out-expo);
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+.nav-logo .badge img { height: 80px; width: auto; object-fit: contain; }
+.nav-logo:hover .badge { transform: rotate(-12deg) scale(1.05); }
+
+.nav-logo .wordmark {
+  display: none;
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+}
+.nav-logo .wordmark em {
+  display: block;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 0.78rem;
+  color: var(--gold);
+  letter-spacing: 0.04em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  align-items: center;
+}
+.nav-links a {
+  color: var(--slate-mid);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  position: relative;
+  transition: color 0.3s ease;
+}
+.nav-links a:not(.nav-cta)::after {
+  content: '';
+  position: absolute;
+  bottom: -6px; left: 0;
+  width: 0; height: 1px;
+  background: var(--gold);
+  transition: width 0.5s var(--ease-out-expo);
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-cta {
+  background: linear-gradient(180deg, var(--gold-bright) 0%, var(--gold) 50%, var(--gold-deep) 100%);
+  color: var(--slate-deep) !important;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  letter-spacing: 0.12em !important;
+  font-weight: 500;
+  transition: background 0.35s ease, border-color 0.35s ease, transform 0.4s var(--ease-out-expo), box-shadow 0.5s ease;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4), inset 0 -2px 4px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(201, 169, 97, 0.3);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.nav-cta:hover {
+  background: linear-gradient(180deg, var(--gold-bright) 0%, var(--gold) 40%, var(--gold-deep) 100%);
+  border-color: var(--gold-bright);
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4), inset 0 -2px 4px rgba(0, 0, 0, 0.2), 0 8px 24px rgba(201, 169, 97, 0.4), 0 0 30px rgba(201, 169, 97, 0.2);
+}
+
+.nav-mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--cream);
+  cursor: none;
+  width: 32px; height: 32px;
+}
+
+/* ========== HERO/PAGE HEADER ========== */
+.page-header {
+  position: relative;
+  min-height: 40vh;
+  padding: 8rem 3rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 1;
+  background: linear-gradient(180deg, var(--slate-abyss) 0%, var(--slate-deep) 100%);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.page-header-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--gold);
+  font-size: 0.78rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.page-header-eyebrow::before {
+  content: '';
+  width: 40px; height: 1px;
+  background: var(--gold);
+}
+
+.page-header-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1;
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  color: var(--cream);
+  margin-bottom: 0.5rem;
+}
+.page-header-title em {
+  font-style: italic;
+  color: var(--gold);
+  font-weight: 400;
+}
+
+/* ========== COUNSELOR PICKER ========== */
+.counselors {
+  padding: 4rem 3rem 7rem;
+  position: relative;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, var(--slate-abyss) 0%, var(--slate-deep) 100%);
+  border-top: 1px solid var(--hairline);
+  overflow: hidden;
+}
+.counselors::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(201,169,97,0.06) 0%, transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(47,78,118,0.4) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.counselors-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: end;
+  margin-bottom: 5rem;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+.counselors-header p {
+  color: var(--whisper);
+  font-size: 1.02rem;
+  line-height: 1.85;
+  max-width: 460px;
+}
+
+.counselors-header-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.counselor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.counselor-card {
+  position: relative;
+  background: var(--slate);
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: none;
+  transition: transform 0.6s var(--ease-out-expo), border-color 0.5s ease, box-shadow 0.5s ease;
+}
+.counselor-card[data-state="available"]:hover {
+  transform: translateY(-8px);
+  border-color: var(--gold);
+  box-shadow: 0 30px 60px -20px rgba(0,0,0,0.5);
+}
+.counselor-card[data-state="available"].is-active {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px var(--gold), 0 30px 60px -20px rgba(0,0,0,0.5);
+}
+
+.counselor-card[data-state="coming-soon"] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.counselor-card[data-state="coming-soon"] .counselor-photo {
+  background: linear-gradient(135deg, var(--slate-mid), var(--slate-soft));
+  display: grid;
+  place-items: center;
+  color: var(--whisper-dim);
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+.counselor-photo {
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  position: relative;
+  background: var(--slate-mid);
+}
+.counselor-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s var(--ease-out-expo);
+  filter: contrast(1.02) saturate(0.95);
+}
+.counselor-card:hover .counselor-photo img { transform: scale(1.06); }
+
+.counselor-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(13,26,43,0.75) 100%);
+  pointer-events: none;
+}
+
+.counselor-badge {
+  position: absolute;
+  top: 1rem; left: 1rem;
+  z-index: 2;
+  background: var(--gold);
+  color: var(--slate-deep);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+}
+.counselor-badge.muted {
+  background: transparent;
+  color: var(--whisper);
+  border: 1px solid var(--hairline);
+}
+
+.counselor-info {
+  padding: 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+.counselor-info h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.55rem;
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.01em;
+}
+.counselor-info h3 em { font-style: italic; color: var(--gold); }
+.counselor-info .credentials-line {
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+.counselor-info .role {
+  font-size: 0.92rem;
+  color: var(--whisper);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+.counselor-select {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--gold);
+  transition: gap 0.4s var(--ease-out-expo);
+}
+.counselor-card[data-state="available"]:hover .counselor-select { gap: 1rem; }
+
+/* — Selected profile panel — */
+.counselor-profile {
+  margin-top: 4rem;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  background: linear-gradient(135deg, var(--slate-deep), var(--slate));
+  border: 1px solid var(--gold);
+  border-radius: 6px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 0;
+  position: relative;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    max-height 0.9s var(--ease-out-expo),
+    opacity 0.7s var(--ease-out-expo),
+    transform 0.9s var(--ease-out-expo),
+    margin-top 0.5s var(--ease-out-expo);
+  pointer-events: none;
+}
+.counselor-profile.is-open {
+  max-height: 1400px;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.profile-close {
+  position: absolute;
+  top: 1.25rem; right: 1.25rem;
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--hairline);
+  background: rgba(13,26,43,0.6);
+  color: var(--cream);
+  display: grid;
+  place-items: center;
+  cursor: none;
+  z-index: 3;
+  transition: all 0.4s var(--ease-out-expo);
+  backdrop-filter: blur(8px);
+}
+.profile-close:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: rotate(90deg);
+}
+
+.profile-visual {
+  position: relative;
+  overflow: hidden;
+  min-height: 380px;
+}
+.profile-visual img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: contrast(1.02) saturate(0.95);
+}
+.profile-visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 40%, rgba(13,26,43,0.6) 100%);
+}
+
+.profile-visual-tag {
+  position: absolute;
+  bottom: 1.5rem; left: 1.5rem;
+  z-index: 2;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  color: var(--cream);
+  font-size: 1.05rem;
+}
+.profile-visual-tag strong {
+  display: block;
+  font-style: normal;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.35rem;
+  font-weight: 500;
+}
+
+.profile-body {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.profile-eyebrow {
+  font-size: 0.74rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+.profile-eyebrow::before {
+  content: '';
+  width: 26px; height: 1px;
+  background: var(--gold);
+}
+
+.profile-body h3 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--cream);
+}
+.profile-body h3 em { font-style: italic; color: var(--gold); font-weight: 400; }
+
+.profile-creds {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--gold);
+}
+
+.profile-bio {
+  color: var(--whisper);
+  font-size: 0.97rem;
+  line-height: 1.8;
+}
+
+.profile-spec-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--whisper-dim);
+  margin-top: 0.5rem;
+}
+.profile-spec-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+.profile-spec-chip {
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  color: var(--whisper);
+  letter-spacing: 0.03em;
+  transition: all 0.3s ease;
+}
+.profile-spec-chip:hover {
+  border-color: var(--gold);
+  color: var(--cream);
+}
+
+.profile-actions {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Magnetic button */
+.btn-magnetic {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: var(--gold);
+  color: var(--slate-deep);
+  padding: 1.05rem 2.2rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s ease;
+}
+.btn-magnetic::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--cream);
+  transform: translateY(101%);
+  transition: transform 0.6s var(--ease-out-expo);
+}
+.btn-magnetic span, .btn-magnetic svg {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.4s var(--ease-out-expo);
+}
+.btn-magnetic:hover::before { transform: translateY(0); }
+.btn-magnetic:hover { box-shadow: 0 20px 50px -15px var(--gold-glow); }
+.btn-magnetic:hover svg { transform: translateX(6px); }
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 6px;
+}
+.btn-ghost::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%; height: 1px;
+  background: var(--gold);
+  transform-origin: right;
+  transform: scaleX(1);
+  transition: transform 0.5s var(--ease-out-expo);
+}
+.btn-ghost:hover::after { transform-origin: left; transform: scaleX(0); animation: ghostLine 0.8s 0.3s var(--ease-out-expo) forwards; }
+@keyframes ghostLine {
+  0% { transform-origin: left; transform: scaleX(0); }
+  100% { transform-origin: left; transform: scaleX(1); }
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background: var(--slate-abyss);
+  padding: 4rem 3rem 2rem;
+  border-top: 1px solid var(--hairline);
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 4rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--hairline);
+  margin-bottom: 2rem;
+}
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.footer-brand img {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: var(--cream);
+  padding: 3px;
+}
+.footer-brand-text {
+  font-family: 'Fraunces', serif;
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+.footer-brand-text em {
+  display: block;
+  font-style: italic;
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 300;
+}
+.footer-tag {
+  color: var(--whisper);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  max-width: 320px;
+}
+.footer-col h5 {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+}
+.footer-col ul {
+  list-style: none;
+}
+.footer-col li {
+  margin-bottom: 0.6rem;
+  font-size: 0.88rem;
+  color: var(--whisper);
+}
+.footer-col a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-col a:hover { color: var(--gold); }
+
+.footer-cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+  margin-bottom: 1rem;
+}
+.footer-cta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.78rem;
+  color: var(--whisper-dim);
+  letter-spacing: 0.05em;
+}
+.footer-bottom em {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  color: var(--gold);
+}
+
+/* ========== REVEAL ANIMATIONS ========== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.2s var(--ease-out-expo), transform 1.2s var(--ease-out-expo);
+}
+.reveal.in { opacity: 1; transform: none; }
+
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s var(--ease-out-expo), transform 1s var(--ease-out-expo);
+}
+.reveal-stagger.in > * { opacity: 1; transform: none; }
+.reveal-stagger.in > *:nth-child(1) { transition-delay: 0.05s; }
+.reveal-stagger.in > *:nth-child(2) { transition-delay: 0.12s; }
+.reveal-stagger.in > *:nth-child(3) { transition-delay: 0.2s; }
+.reveal-stagger.in > *:nth-child(4) { transition-delay: 0.28s; }
+.reveal-stagger.in > *:nth-child(5) { transition-delay: 0.36s; }
+.reveal-stagger.in > *:nth-child(6) { transition-delay: 0.44s; }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 980px) {
+  nav { padding: 0.4rem 1.5rem; }
+  nav.scrolled { padding: 0.4rem 1.5rem; }
+  .nav-links { display: none; }
+  .nav-mobile-toggle { display: block; }
+  .nav-logo .badge img { height: 60px; }
+
+  .page-header { min-height: 30vh; padding: 6rem 1.5rem 2rem; }
+  .page-header-title { font-size: clamp(1.5rem, 4vw, 3rem); }
+
+  .counselors { padding: 5rem 1.5rem; }
+  .counselors-header { grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 3rem; }
+  .counselor-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+  .counselor-profile { grid-template-columns: 1fr; }
+  .profile-visual { min-height: 280px; }
+  .profile-body { padding: 2rem; }
+  .profile-actions { flex-direction: column; align-items: flex-start; gap: 1rem; }
+
+  .footer-top { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+
+@media (max-width: 640px) {
+  nav {
+    padding: 0.75rem 1rem;
+    justify-content: space-between;
+  }
+  nav.scrolled { padding: 0.75rem 1rem; }
+  .nav-logo { margin: 0; }
+  .nav-logo .badge img { height: 50px; }
+  .nav-mobile-toggle { display: block; }
+
+  .nav-links {
+    display: flex !important;
+    gap: 0.5rem;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+  }
+  .nav-links li {
+    display: flex;
+    align-items: center;
+  }
+  .nav-links a {
+    min-height: 40px;
+    min-width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--cream);
+    text-decoration: none;
+    border: 1px solid var(--hairline);
+    border-radius: 50%;
+    transition: all 0.3s var(--ease-out-expo);
+    padding: 0 !important;
+  }
+  .nav-links a:hover {
+    background: rgba(201, 169, 97, 0.1);
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .nav-links a[href="index.html"]::before { content: "🏠"; }
+  .nav-links a[href="#about"]::before { content: "ℹ"; }
+  .nav-links a[href="#specialties"]::before { content: "✓"; }
+  .nav-links a[href="#approach"]::before { content: "💭"; }
+  .nav-links a[href="#voices"]::before { content: "💬"; }
+  .nav-links a[href*="contactus"]::before { content: "✉"; }
+
+  .nav-links a {
+    font-size: 0;
+  }
+  .nav-links a::before {
+    font-size: 1.2rem;
+  }
+
+  .page-header { min-height: 25vh; padding: 5rem 1rem 1.5rem; }
+  .page-header-title { font-size: clamp(1.25rem, 8vw, 2rem); }
+
+  .counselors {
+    padding: 3.5rem 1rem;
+  }
+  .counselors-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  .counselors-header h2 {
+    margin-bottom: 1rem;
+  }
+  .counselor-grid {
+    gap: 1.5rem;
+  }
+
+  .counselor-card {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  .counselor-photo {
+    aspect-ratio: 3/4;
+  }
+  .counselor-badge {
+    top: 0.75rem;
+    left: 0.75rem;
+    font-size: 0.55rem;
+    padding: 0.3rem 0.6rem;
+  }
+  .counselor-info {
+    padding: 1.25rem;
+  }
+  .counselor-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+  }
+  .counselor-info .credentials-line {
+    font-size: 0.65rem;
+    margin-bottom: 0.75rem;
+  }
+  .counselor-info .role {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+  .counselor-select {
+    font-size: 0.7rem;
+  }
+
+  .counselor-profile {
+    gap: 1rem;
+    grid-template-columns: 1fr;
+    margin-top: 2.5rem;
+  }
+  .profile-visual {
+    min-height: 180px;
+  }
+  .profile-body {
+    padding: 1.75rem;
+    text-align: center;
+  }
+  .profile-body h3 {
+    margin-bottom: 0.5rem;
+  }
+  .profile-label {
+    margin-bottom: 1rem;
+  }
+  .profile-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-top {
+    text-align: center;
+  }
+
+  body { cursor: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<!-- Custom cursor -->
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+
+<!-- Aurora bg -->
+<div class="aurora"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo" data-hover>
+    <div class="badge"><img src="elements_only_final Logo.png" alt="Bright Mind Mental Health" /></div>
+    <div class="wordmark">
+      Bright Mind
+      <em>Mental Health</em>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" data-hover>Home</a></li>
+    <li><a href="index.html#about" data-hover>About</a></li>
+    <li><a href="index.html#specialties" data-hover>Specialties</a></li>
+    <li><a href="index.html#approach" data-hover>Approach</a></li>
+    <li><a href="index.html#voices" data-hover>Voices</a></li>
+    <li><a href="https://amanzor.github.io/Bright-Mind-Mental/contactus" class="nav-cta" data-hover>Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="page-header reveal">
+  <div class="page-header-eyebrow">Our Counselors</div>
+  <h1 class="page-header-title">Meet Our <em>Team.</em></h1>
+</section>
+
+<!-- COUNSELOR PICKER -->
+<section id="counselors" class="counselors">
+  <div class="counselors-header reveal">
+    <div>
+      <div class="section-eyebrow">Our Counselors</div>
+      <h2 class="section-title">Choose your <em>counselor.</em></h2>
+    </div>
+    <div class="counselors-header-content">
+      <p>
+        The right therapeutic relationship is the heart of the work. Meet the counselor you'll walk with — select a profile below to see specialties, approach, and how to begin.
+      </p>
+    </div>
+  </div>
+
+  <div class="counselor-grid reveal-stagger">
+    <!-- Anna Rondon (real, selectable) -->
+    <article class="counselor-card" data-state="available" data-counselor="anna" data-hover>
+      <div class="counselor-badge">Now Accepting</div>
+      <div class="counselor-photo">
+        <img src="Head Shot.jpeg" alt="Anna Rondon, Licensed Mental Health Counselor" />
+      </div>
+      <div class="counselor-info">
+        <h3>Anna <em>Rondon</em></h3>
+        <div class="credentials-line">MS · LMHC · NCC</div>
+        <p class="role">Licensed Mental Health Counselor. Adolescents, children, adults, and families.</p>
+        <span class="counselor-select">Select Anna →</span>
+      </div>
+    </article>
+
+    <!-- Placeholder slots — easy to fill in later -->
+    <article class="counselor-card" data-state="coming-soon" data-hover>
+      <div class="counselor-badge muted">Coming Soon</div>
+      <div class="counselor-photo">✦</div>
+      <div class="counselor-info">
+        <h3>Joining <em>Soon</em></h3>
+        <div class="credentials-line">— · — · —</div>
+        <p class="role">A second counselor is joining the practice. Profile available soon.</p>
+        <span class="counselor-select" style="opacity:0.5">Not yet available</span>
+      </div>
+    </article>
+
+    <article class="counselor-card" data-state="coming-soon" data-hover>
+      <div class="counselor-badge muted">Coming Soon</div>
+      <div class="counselor-photo">✦</div>
+      <div class="counselor-info">
+        <h3>Joining <em>Soon</em></h3>
+        <div class="credentials-line">— · — · —</div>
+        <p class="role">A third counselor is joining the practice. Profile available soon.</p>
+        <span class="counselor-select" style="opacity:0.5">Not yet available</span>
+      </div>
+    </article>
+  </div>
+
+  <!-- Selected profile panel — populated dynamically -->
+  <div class="counselor-profile" id="counselorProfile" aria-live="polite">
+    <button class="profile-close" id="profileClose" aria-label="Close profile" data-hover>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="profile-visual">
+      <img id="profileImg" src="" alt="" />
+      <div class="profile-visual-tag">
+        <strong>Now Accepting</strong>
+        <span id="profileTag"></span>
+      </div>
+    </div>
+    <div class="profile-body">
+      <div class="profile-eyebrow">Your Counselor</div>
+      <h3 id="profileName"></h3>
+      <div class="profile-creds" id="profileCreds"></div>
+      <p class="profile-bio" id="profileBio"></p>
+      <div>
+        <div class="profile-spec-label">Areas of Focus</div>
+      </div>
+      <div class="profile-spec-chips" id="profileChips"></div>
+      <div class="profile-actions">
+        <a href="https://therapyfinder.com/therapist/anna-rondon-licensed-mental-health-counselor-pembroke-pines-fl" class="btn-magnetic" data-hover data-magnetic id="profileBookBtn" target="_blank">
+          <span>Book with Anna</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="index.html#approach" class="btn-ghost" data-hover>See Her Approach</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">
+        <img src="elements_only_final Logo.png" alt="" />
+        <div class="footer-brand-text">
+          Bright Mind
+          <em>Mental Health</em>
+        </div>
+      </div>
+      <p class="footer-tag">
+        Compassionate, evidence-based mental health counseling in Miami, Pembroke Pines, and across Florida via telehealth. Anxiety therapy, depression counseling, and family therapy delivered with care. Take life in baby steps — and not alone.
+      </p>
+    </div>
+    <div class="footer-col">
+      <h5>Explore</h5>
+      <ul>
+        <li><a href="index.html#about" data-hover>About Anna</a></li>
+        <li><a href="index.html#specialties" data-hover>Specialties</a></li>
+        <li><a href="index.html#approach" data-hover>The Approach</a></li>
+        <li><a href="index.html#voices" data-hover>Voices</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Connect</h5>
+      <ul>
+        <li><a href="tel:+19542829668" data-hover>(954) 282-9668</a></li>
+        <li><a href="mailto:anna@brightmindmental.com" data-hover>anna@brightmindmental.com</a></li>
+        <li>Pembroke Pines & Miami · In-person</li>
+        <li>Online therapy Florida · Telehealth statewide</li>
+        <li>MS, LMHC, NCC</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-cta">
+    <a href="https://amanzor.github.io/Bright-Mind-Mental/contactus" class="btn-magnetic" data-hover data-magnetic>
+      <span>Get in Touch</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Anna Rondon, MS, LMHC, NCC · brightmindmental.com</span>
+    <em>Take life in baby steps.</em>
+  </div>
+</footer>
+
+<script>
+(() => {
+  /* ---------- Loader unlock ---------- */
+  document.body.classList.add('loaded');
+
+  /* ---------- Sticky nav ---------- */
+  const nav = document.getElementById('nav');
+  let lastScrollY = 0;
+
+  const onScroll = () => {
+    const currentScrollY = window.scrollY;
+
+    nav.classList.toggle('scrolled', currentScrollY > 30);
+
+    // Hide navbar when scrolling down, show when scrolling up
+    if (currentScrollY > lastScrollY && currentScrollY > 80) {
+      nav.classList.add('hidden');
+    } else {
+      nav.classList.remove('hidden');
+    }
+
+    lastScrollY = currentScrollY;
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* ---------- Reveal on scroll ---------- */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach((el) => io.observe(el));
+
+  /* ---------- Custom cursor ---------- */
+  const cursor = document.querySelector('.cursor');
+  const ring = document.querySelector('.cursor-ring');
+  if (matchMedia('(hover: hover)').matches && cursor && ring) {
+    let mx = window.innerWidth / 2, my = window.innerHeight / 2;
+    let rx = mx, ry = my;
+    window.addEventListener('mousemove', (e) => {
+      mx = e.clientX; my = e.clientY;
+      cursor.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
+    });
+    const tick = () => {
+      rx += (mx - rx) * 0.18;
+      ry += (my - ry) * 0.18;
+      ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
+      requestAnimationFrame(tick);
+    };
+    tick();
+    document.querySelectorAll('[data-hover]').forEach((el) => {
+      el.addEventListener('mouseenter', () => { cursor.classList.add('is-hover'); ring.classList.add('is-hover'); });
+      el.addEventListener('mouseleave', () => { cursor.classList.remove('is-hover'); ring.classList.remove('is-hover'); });
+    });
+  }
+
+  /* ---------- Magnetic buttons ---------- */
+  document.querySelectorAll('[data-magnetic]').forEach((btn) => {
+    btn.addEventListener('mousemove', (e) => {
+      const r = btn.getBoundingClientRect();
+      const x = e.clientX - r.left - r.width / 2;
+      const y = e.clientY - r.top - r.height / 2;
+      btn.style.transform = `translate(${x * 0.25}px, ${y * 0.35}px)`;
+    });
+    btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+  });
+
+  /* ---------- Counselor Picker ---------- */
+  const counselorData = {
+    anna: {
+      name: 'Anna <em>Rondon</em>',
+      creds: 'MS, LMHC, NCC — Licensed Mental Health Counselor',
+      img: 'Head Shot.jpeg',
+      alt: 'Anna Rondon, Licensed Mental Health Counselor',
+      tag: 'Anna · In-person & Telehealth',
+      bio: 'Anna is a Licensed Mental Health Counselor and National Certified Counselor based in the Miami area, with telehealth services serving clients across Florida. With clinical experience spanning forensic psychology and juvenile services, she brings a deep understanding of diverse behavioral and emotional challenges. She is especially passionate about working with adolescents — and also provides therapeutic support to children, adults, and families navigating high-risk seasons of life.',
+      chips: ['Adolescents', 'Children', 'Adults', 'Family Dynamics', 'Anxiety', 'Depression', 'ADHD', 'Mood Disorders', 'Personality Disorders', 'High-Risk Support'],
+      bookLabel: 'Book with Anna'
+    }
+  };
+
+  const profileName = document.getElementById('profileName');
+  const profileImg = document.getElementById('profileImg');
+  const profileCreds = document.getElementById('profileCreds');
+  const profileBio = document.getElementById('profileBio');
+  const profileChips = document.getElementById('profileChips');
+  const profileTag = document.getElementById('profileTag');
+  const profileBookBtn = document.getElementById('profileBookBtn');
+  const counselorProfile = document.getElementById('counselorProfile');
+  const profileClose = document.getElementById('profileClose');
+
+  const populateProfile = (key) => {
+    const data = counselorData[key];
+    if (!data) return;
+    profileName.innerHTML = data.name;
+    profileImg.src = data.img;
+    profileImg.alt = data.alt;
+    profileCreds.textContent = data.creds;
+    profileBio.textContent = data.bio;
+    profileTag.textContent = data.tag;
+    profileBookBtn.textContent = `Book with ${data.name.split('<em')[0].trim()}`;
+
+    profileChips.innerHTML = '';
+    data.chips.forEach((chip) => {
+      const chipEl = document.createElement('span');
+      chipEl.className = 'profile-spec-chip';
+      chipEl.textContent = chip;
+      profileChips.appendChild(chipEl);
+    });
+  };
+
+  const openProfile = (key, cardElement) => {
+    populateProfile(key);
+    counselorProfile.classList.add('is-open');
+    document.querySelectorAll('.counselor-card').forEach((c) => c.classList.remove('is-active'));
+    cardElement.classList.add('is-active');
+  };
+
+  const closeProfile = () => {
+    counselorProfile.classList.remove('is-open');
+    document.querySelectorAll('.counselor-card').forEach((c) => c.classList.remove('is-active'));
+  };
+
+  document.querySelectorAll('.counselor-card[data-counselor]').forEach((card) => {
+    card.addEventListener('click', () => {
+      const key = card.dataset.counselor;
+      // Toggle off if clicking the same active card
+      if (card.classList.contains('is-active')) { closeProfile(); return; }
+      openProfile(key, card);
+    });
+  });
+
+  profileClose.addEventListener('click', closeProfile);
+})();
+</script>
+
+</body>
+</html>
