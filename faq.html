@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FAQ | Bright Mind Mental Health | Common Questions</title>
+<meta name="description" content="Frequently asked questions about therapy, counseling services, telehealth, insurance, and getting started with Bright Mind Mental Health." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,200;1,9..144,300;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   BRIGHT MIND MENTAL HEALTH — FAQ PAGE
+   Editorial-luxury · Slate-teal + antique gold · Motion-rich
+========================================================= */
+:root {
+  --ink: #0a1422;
+  --slate-abyss: #0d1a2b;
+  --slate-deep: #11203a;
+  --slate: #1a2f4d;
+  --slate-mid: #243f63;
+  --slate-soft: #2f4e76;
+  --gold: #c9a961;
+  --gold-bright: #e0c688;
+  --gold-deep: #9a7f3f;
+  --gold-glow: rgba(201, 169, 97, 0.5);
+  --cream: #f4ede0;
+  --cream-warm: #ebe2cd;
+  --paper: #e8dfc8;
+  --whisper: rgba(244, 237, 224, 0.62);
+  --whisper-dim: rgba(244, 237, 224, 0.32);
+  --hairline: rgba(201, 169, 97, 0.18);
+  --hairline-soft: rgba(244, 237, 224, 0.08);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-cubic: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Manrope', system-ui, sans-serif;
+  background: var(--slate-abyss);
+  color: var(--cream);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  cursor: none;
+}
+@media (hover: none) { body { cursor: auto; } }
+
+/* — Atmospheric grain — */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.97 0 0 0 0 0.93 0 0 0 0 0.78 0 0 0 0.6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.045;
+  z-index: 999;
+  mix-blend-mode: overlay;
+}
+
+/* — Aurora glow behind hero — */
+.aurora {
+  position: fixed;
+  inset: -20% -10% auto auto;
+  width: 80vw;
+  height: 80vh;
+  background:
+    radial-gradient(circle at 70% 30%, rgba(201,169,97,0.18) 0%, transparent 45%),
+    radial-gradient(circle at 30% 60%, rgba(47,78,118,0.5) 0%, transparent 50%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+  animation: aurora 18s ease-in-out infinite alternate;
+}
+@keyframes aurora {
+  0% { transform: translate(0,0) scale(1); }
+  100% { transform: translate(-5%, 5%) scale(1.1); }
+}
+
+/* Gold text elements */
+h1, h2, h3, h4, h5, h6, .section-eyebrow, .specialty-num {
+  position: relative;
+}
+
+/* Apply to any element with gold color */
+[style*="--gold"], .nav-links a, .section-eyebrow, .specialty-num {
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    0 1px 2px rgba(0, 0, 0, 0.3),
+    -1px 0 1px rgba(255, 255, 255, 0.1),
+    1px 0 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom cursor enhancement with gold shine */
+.cursor {
+  box-shadow: 0 0 12px rgba(201, 169, 97, 0.6), 0 0 24px rgba(201, 169, 97, 0.3);
+}
+.cursor-ring {
+  box-shadow: inset 0 0 8px rgba(201, 169, 97, 0.4);
+}
+
+/* Navigation */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 64px;
+  padding: 0 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(13, 26, 43, 0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--hairline-soft);
+  z-index: 100;
+  transition: background 0.35s ease, border-color 0.35s ease;
+}
+nav.scrolled {
+  background: rgba(13, 26, 43, 0.95);
+  border-color: var(--hairline);
+}
+nav.hidden { transform: translateY(-100%); }
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  color: var(--cream);
+  transition: opacity 0.3s ease;
+}
+.nav-logo:hover { opacity: 0.8; }
+
+.nav-logo .badge {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-logo .badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.nav-logo .wordmark {
+  font-family: 'Fraunces', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.nav-logo .wordmark em {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  align-items: center;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--cream);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  transition: color 0.3s ease;
+  padding: 0.5rem 0;
+}
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+.nav-cta {
+  background: linear-gradient(180deg, var(--gold-bright) 0%, var(--gold) 50%, var(--gold-deep) 100%);
+  color: var(--slate-deep) !important;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  letter-spacing: 0.12em !important;
+  font-weight: 500;
+  transition: background 0.35s ease, border-color 0.35s ease, transform 0.4s var(--ease-out-expo), box-shadow 0.5s ease;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4), inset 0 -2px 4px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(201, 169, 97, 0.3);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.nav-cta:hover {
+  background: linear-gradient(180deg, var(--gold-bright) 0%, var(--gold) 40%, var(--gold-deep) 100%);
+  border-color: var(--gold-bright);
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4), inset 0 -2px 4px rgba(0, 0, 0, 0.2), 0 8px 24px rgba(201, 169, 97, 0.4), 0 0 30px rgba(201, 169, 97, 0.2);
+}
+
+/* PAGE HEADER */
+.page-header {
+  margin-top: 64px;
+  min-height: 40vh;
+  padding: 5rem 3rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.page-header-eyebrow {
+  font-family: 'Fraunces', serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+.page-header-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  max-width: 900px;
+}
+.page-header-title em {
+  font-style: italic;
+  color: var(--gold);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* FAQ SECTION */
+.faq-section {
+  padding: 5rem 3rem;
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.faq-item {
+  background: rgba(26, 47, 77, 0.6);
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.faq-item:hover {
+  border-color: var(--gold);
+  box-shadow: 0 8px 24px rgba(201, 169, 97, 0.15);
+}
+.faq-item.is-open {
+  border-color: var(--gold);
+  box-shadow: 0 8px 24px rgba(201, 169, 97, 0.15);
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.75rem;
+  width: 100%;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--cream);
+  transition: color 0.3s ease;
+}
+.faq-item:hover .faq-question {
+  color: var(--gold-bright);
+}
+
+.faq-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  margin-left: 1.5rem;
+  transition: transform 0.4s var(--ease-out-expo);
+}
+.faq-item.is-open .faq-toggle {
+  transform: rotate(180deg);
+}
+.faq-toggle svg {
+  stroke: var(--gold);
+  stroke-width: 2;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s var(--ease-out-expo), padding 0.4s var(--ease-out-expo);
+  padding: 0 1.75rem;
+}
+.faq-item.is-open .faq-answer {
+  max-height: 500px;
+  padding: 0 1.75rem 1.75rem 1.75rem;
+}
+.faq-answer p {
+  color: var(--whisper);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+/* Reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: revealIn 0.8s var(--ease-out-expo) forwards;
+}
+@keyframes revealIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+body.loaded .reveal {
+  animation-play-state: paused;
+}
+body.loaded .reveal.in {
+  animation-play-state: running;
+}
+
+/* FOOTER */
+footer {
+  margin-top: 5rem;
+  padding: 3rem;
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(180deg, var(--slate-abyss) 0%, var(--slate-deep) 100%);
+  border-top: 1px solid var(--hairline);
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--hairline-soft);
+}
+.footer-brand {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.footer-brand img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+.footer-brand-text {
+  font-family: 'Fraunces', serif;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+.footer-brand-text em {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+}
+.footer-tag {
+  color: var(--whisper);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-top: 1rem;
+}
+
+.footer-col h5 {
+  font-family: 'Fraunces', serif;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+  color: var(--cream);
+}
+.footer-col ul {
+  list-style: none;
+}
+.footer-col li {
+  margin-bottom: 0.75rem;
+  color: var(--whisper);
+  font-size: 0.95rem;
+}
+.footer-col a {
+  color: var(--whisper);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-col a:hover {
+  color: var(--gold);
+}
+
+.footer-cta {
+  max-width: 1200px;
+  margin: 2rem auto;
+  text-align: center;
+}
+.btn-magnetic {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: linear-gradient(180deg, var(--gold-bright) 0%, var(--gold) 50%, var(--gold-deep) 100%);
+  color: var(--slate-deep);
+  padding: 1.05rem 2.2rem;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s ease, background 0.35s ease, border-color 0.35s ease;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4), inset 0 -2px 4px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(201, 169, 97, 0.3);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.btn-magnetic:hover {
+  background: linear-gradient(180deg, var(--gold-bright) 0%, var(--gold) 40%, var(--gold-deep) 100%);
+  border-color: var(--gold-bright);
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4), inset 0 -2px 4px rgba(0, 0, 0, 0.2), 0 8px 24px rgba(201, 169, 97, 0.4), 0 0 30px rgba(201, 169, 97, 0.2);
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid var(--hairline-soft);
+  color: var(--whisper-dim);
+  font-size: 0.9rem;
+}
+.footer-bottom span { display: block; margin-bottom: 0.5rem; }
+
+/* RESPONSIVE */
+@media (max-width: 980px) {
+  nav { padding: 0 1.5rem; }
+  .page-header { padding: 4rem 1.5rem 2.5rem; }
+  .faq-section { padding: 4rem 1.5rem; }
+  .footer-top { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+
+@media (max-width: 640px) {
+  nav {
+    padding: 0 1rem;
+    height: 56px;
+  }
+  .page-header {
+    margin-top: 56px;
+    min-height: 35vh;
+    padding: 3rem 1rem 2rem;
+  }
+  .page-header-title { font-size: clamp(1.5rem, 7vw, 2rem); }
+  .faq-section { padding: 3rem 1rem; }
+  .faq-question { padding: 1.25rem; font-size: 1rem; }
+  .faq-answer { padding: 0 1.25rem; }
+  .faq-item.is-open .faq-answer { padding: 0 1.25rem 1.25rem 1.25rem; }
+  .footer-top { padding-bottom: 1.5rem; }
+  .footer-col h5 { margin-bottom: 1rem; }
+  .footer-col li { margin-bottom: 0.5rem; font-size: 0.9rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- Custom cursor -->
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+
+<!-- Aurora bg -->
+<div class="aurora"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo" data-hover>
+    <div class="badge"><img src="elements_only_final Logo.png" alt="Bright Mind Mental Health" /></div>
+    <div class="wordmark">
+      Bright Mind
+      <em>Mental Health</em>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" data-hover>Home</a></li>
+    <li><a href="index.html#about" data-hover>About</a></li>
+    <li><a href="index.html#specialties" data-hover>Specialties</a></li>
+    <li><a href="index.html#approach" data-hover>Approach</a></li>
+    <li><a href="counselors.html" data-hover>Counselors</a></li>
+    <li><a href="https://amanzor.github.io/Bright-Mind-Mental/contactus" class="nav-cta" data-hover>Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="page-header reveal">
+  <div class="page-header-eyebrow">Questions & Answers</div>
+  <h1 class="page-header-title">Frequently <em>Asked</em> Questions</h1>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-section">
+  <div class="faq-grid reveal">
+    <!-- FAQ Item 1 -->
+    <div class="faq-item" data-faq="0">
+      <button class="faq-question" data-hover>
+        <span>What does therapy involve?</span>
+        <div class="faq-toggle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+        </div>
+      </button>
+      <div class="faq-answer">
+        <p>Therapy is a collaborative, confidential process where you work with a licensed counselor to explore your thoughts, feelings, and behaviors. Through evidence-based techniques and a supportive relationship, we help you develop coping strategies, gain clarity, and move toward meaningful change. Sessions are typically 50-60 minutes and tailored to your unique needs and goals.</p>
+      </div>
+    </div>
+
+    <!-- FAQ Item 2 -->
+    <div class="faq-item" data-faq="1">
+      <button class="faq-question" data-hover>
+        <span>How long does therapy typically last?</span>
+        <div class="faq-toggle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+        </div>
+      </button>
+      <div class="faq-answer">
+        <p>The length of therapy varies based on your specific concerns and goals. Some people benefit from short-term therapy (5-10 sessions) for focused issues, while others may engage in longer-term therapy (months to years) for deeper work or ongoing support. We'll discuss your goals during your first session and adjust the timeline as needed.</p>
+      </div>
+    </div>
+
+    <!-- FAQ Item 3 -->
+    <div class="faq-item" data-faq="2">
+      <button class="faq-question" data-hover>
+        <span>Do you offer telehealth/online therapy?</span>
+        <div class="faq-toggle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+        </div>
+      </button>
+      <div class="faq-answer">
+        <p>Yes! We offer both in-person and telehealth therapy sessions. Our telehealth services are available throughout Florida, providing the same quality care from the comfort of your home. You can choose the format that works best for you, and we can discuss whether in-person or virtual sessions are most suitable for your needs.</p>
+      </div>
+    </div>
+
+    <!-- FAQ Item 4 -->
+    <div class="faq-item" data-faq="3">
+      <button class="faq-question" data-hover>
+        <span>What is your approach to therapy?</span>
+        <div class="faq-toggle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+        </div>
+      </button>
+      <div class="faq-answer">
+        <p>Our approach is grounded in presence and evidence-based practice. We integrate cognitive behavioral therapy (CBT), behavioral therapy, and other proven techniques to help you understand patterns and develop practical strategies. Above all, we believe in the power of the therapeutic relationship—a safe, non-judgmental space where real change can happen.</p>
+      </div>
+    </div>
+
+    <!-- FAQ Item 5 -->
+    <div class="faq-item" data-faq="4">
+      <button class="faq-question" data-hover>
+        <span>How do I get started?</span>
+        <div class="faq-toggle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+        </div>
+      </button>
+      <div class="faq-answer">
+        <p>Getting started is easy! You can reach out via phone at (954) 282-9668 or email anna@brightmindmental.com. You can also book directly through our booking page. We'll discuss your needs, answer any questions, and schedule your first session at a time that works for you. There's no pressure—just a conversation to see if we're a good fit.</p>
+      </div>
+    </div>
+
+    <!-- FAQ Item 6 -->
+    <div class="faq-item" data-faq="5">
+      <button class="faq-question" data-hover>
+        <span>Is therapy confidential?</span>
+        <div class="faq-toggle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+        </div>
+      </button>
+      <div class="faq-answer">
+        <p>Yes. Everything you share in therapy is confidential and protected by law. There are only a few exceptions—such as if you're in immediate danger, there's abuse of a child or vulnerable adult, or a court orders us to disclose information. We'll discuss these limits upfront so you know exactly what to expect.</p>
+      </div>
+    </div>
+
+    <!-- FAQ Item 7 -->
+    <div class="faq-item" data-faq="6">
+      <button class="faq-question" data-hover>
+        <span>Do you accept insurance?</span>
+        <div class="faq-toggle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+        </div>
+      </button>
+      <div class="faq-answer">
+        <p>We're happy to work with you on payment options. Please contact us to discuss insurance coverage or sliding scale rates. Our goal is to make therapy accessible, and we can explore options that fit your financial situation.</p>
+      </div>
+    </div>
+
+    <!-- FAQ Item 8 -->
+    <div class="faq-item" data-faq="7">
+      <button class="faq-question" data-hover>
+        <span>What if I'm not sure if therapy is right for me?</span>
+        <div class="faq-toggle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+        </div>
+      </button>
+      <div class="faq-answer">
+        <p>That's completely normal. Many people have questions or hesitations before starting therapy. Your first session is a chance to meet, ask questions, and see if we're a good fit. There's no commitment—just an opportunity to explore. We're here to help you take that first step, at whatever pace feels right.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">
+        <img src="elements_only_final Logo.png" alt="" />
+        <div class="footer-brand-text">
+          Bright Mind
+          <em>Mental Health</em>
+        </div>
+      </div>
+      <p class="footer-tag">
+        Compassionate, evidence-based mental health counseling in Miami, Pembroke Pines, and across Florida via telehealth. Anxiety therapy, depression counseling, and family therapy delivered with care. Take life in baby steps — and not alone.
+      </p>
+    </div>
+    <div class="footer-col">
+      <h5>Explore</h5>
+      <ul>
+        <li><a href="index.html#about" data-hover>About Anna</a></li>
+        <li><a href="index.html#specialties" data-hover>Specialties</a></li>
+        <li><a href="index.html#approach" data-hover>The Approach</a></li>
+        <li><a href="index.html#voices" data-hover>Voices</a></li>
+        <li><a href="blog.html" data-hover>Blog</a></li>
+        <li><a href="https://amanzor.github.io/Bright-Mind-Mental/faq.html" data-hover>FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Connect</h5>
+      <ul>
+        <li><a href="tel:+19542829668" data-hover>(954) 282-9668</a></li>
+        <li><a href="mailto:anna@brightmindmental.com" data-hover>anna@brightmindmental.com</a></li>
+        <li>Pembroke Pines & Miami · In-person</li>
+        <li>Online therapy Florida · Telehealth statewide</li>
+        <li>MS, LMHC, NCC</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-cta">
+    <a href="https://amanzor.github.io/Bright-Mind-Mental/contactus" class="btn-magnetic" data-hover data-magnetic>
+      <span>Get in Touch</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Anna Rondon, MS, LMHC, NCC · brightmindmental.com</span>
+    <em>Take life in baby steps.</em>
+  </div>
+</footer>
+
+<script>
+(() => {
+  /* ---------- Loader unlock ---------- */
+  document.body.classList.add('loaded');
+
+  /* ---------- Sticky nav ---------- */
+  const nav = document.getElementById('nav');
+  let lastScrollY = 0;
+
+  const onScroll = () => {
+    const currentScrollY = window.scrollY;
+    nav.classList.toggle('scrolled', currentScrollY > 30);
+
+    if (currentScrollY > lastScrollY && currentScrollY > 80) {
+      nav.classList.add('hidden');
+    } else {
+      nav.classList.remove('hidden');
+    }
+    lastScrollY = currentScrollY;
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* ---------- Reveal on scroll ---------- */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+  /* ---------- Custom cursor ---------- */
+  const cursor = document.querySelector('.cursor');
+  const ring = document.querySelector('.cursor-ring');
+  if (matchMedia('(hover: hover)').matches && cursor && ring) {
+    let mx = window.innerWidth / 2, my = window.innerHeight / 2;
+    let rx = mx, ry = my;
+    window.addEventListener('mousemove', (e) => {
+      mx = e.clientX; my = e.clientY;
+      cursor.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
+    });
+    const tick = () => {
+      rx += (mx - rx) * 0.18;
+      ry += (my - ry) * 0.18;
+      ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
+      requestAnimationFrame(tick);
+    };
+    tick();
+    document.querySelectorAll('[data-hover]').forEach((el) => {
+      el.addEventListener('mouseenter', () => { cursor.classList.add('is-hover'); ring.classList.add('is-hover'); });
+      el.addEventListener('mouseleave', () => { cursor.classList.remove('is-hover'); ring.classList.remove('is-hover'); });
+    });
+  }
+
+  /* ---------- Magnetic buttons ---------- */
+  document.querySelectorAll('[data-magnetic]').forEach((btn) => {
+    btn.addEventListener('mousemove', (e) => {
+      const r = btn.getBoundingClientRect();
+      const x = e.clientX - r.left - r.width / 2;
+      const y = e.clientY - r.top - r.height / 2;
+      btn.style.transform = `translate(${x * 0.25}px, ${y * 0.35}px)`;
+    });
+    btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+  });
+
+  /* ---------- FAQ Accordion ---------- */
+  document.querySelectorAll('.faq-item').forEach((item) => {
+    item.addEventListener('click', () => {
+      item.classList.toggle('is-open');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

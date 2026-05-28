@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Get in Touch — Bright Mind Mental Health</title>
-<meta name="description" content="Contact Bright Mind Mental Health. Reach out to schedule a consultation with Anna Rondon, licensed mental health counselor in Miami, with telehealth across Florida." />
+<title>Mental Health Insights — Bright Mind Mental Health</title>
+<meta name="description" content="Read articles, insights, and resources about mental health, therapy, anxiety, depression, and wellness from Bright Mind Mental Health." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,200;1,9..144,300;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 /* =========================================================
-   BRIGHT MIND MENTAL HEALTH — Contact Page
+   BRIGHT MIND MENTAL HEALTH — Blog Page
    Editorial-luxury · Slate-teal + antique gold · Motion-rich
 ========================================================= */
 :root {
@@ -89,12 +89,6 @@ body::before {
   100% { transform: translate(-5%, 5%) scale(1.1); }
 }
 
-/* — Metallic/Brushed Gold Shine Effect — */
-@keyframes goldShimmer {
-  0% { background-position: -1000px 0; }
-  100% { background-position: 1000px 0; }
-}
-
 /* Gold text elements - brushed metal effect with depth */
 h1, h2, h3, h4, h5, h6, .section-eyebrow, .specialty-num {
   position: relative;
@@ -139,7 +133,6 @@ h1, h2, h3, h4, h5, h6, .section-eyebrow, .specialty-num {
 }
 
 /* Brushed Gold Text Styling - Comprehensive Coverage */
-/* All text with gold color gets metallic shine effect */
 .hero-eyebrow, .section-eyebrow, .specialty-num, .profile-label,
 .nav-links a, .nav-logo .wordmark em,
 .counselor-info h3 em, .specialty h3 em, .profile-body h3 em,
@@ -349,11 +342,6 @@ section {
   z-index: 1;
 }
 
-section:has(.profiles-section) {
-  padding-top: 12rem;
-  padding-bottom: 2rem;
-}
-
 .section-eyebrow {
   display: flex;
   align-items: center;
@@ -388,7 +376,7 @@ section:has(.profiles-section) {
 /* ========== HERO ========== */
 .hero {
   position: relative;
-  min-height: 60vh;
+  min-height: 50vh;
   padding-top: 9rem;
   display: flex;
   flex-direction: column;
@@ -415,245 +403,15 @@ section:has(.profiles-section) {
   line-height: 1.75;
 }
 
-/* ========== CONTACT INFO GRID ========== */
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  margin-top: 0;
-  margin-bottom: 0;
-  text-align: left;
-}
-
-.contact-block {
-  padding: 1.5rem;
-  border: 1px solid var(--hairline);
-  border-radius: 4px;
-  background: rgba(13, 26, 43, 0.4);
-  backdrop-filter: blur(12px);
-  transition: all 0.5s var(--ease-out-expo);
-  position: relative;
-  overflow: hidden;
-}
-.contact-block::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 0%, rgba(201,169,97,0.1), transparent 60%);
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-.contact-block:hover {
-  border-color: var(--gold);
-  transform: translateY(-6px);
-  background: rgba(36, 63, 99, 0.5);
-}
-.contact-block:hover::before { opacity: 1; }
-
-.contact-block-label {
-  font-size: 0.65rem;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 0.5rem;
-  position: relative;
-  z-index: 1;
-}
-
-.contact-block-value {
-  font-family: 'Fraunces', serif;
-  font-size: 1rem;
-  color: var(--cream);
-  word-break: break-word;
-  position: relative;
-  z-index: 1;
-}
-
-.contact-block a {
-  color: inherit;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.contact-block a:hover { color: var(--gold); }
-
-/* ========== MAP & CONTACT SECTION ========== */
-.contactus-section {
-  display: grid;
-  grid-template-columns: 48% 52%;
-  gap: 3rem;
-  align-items: start;
-  margin-top: 2rem;
-}
-
-.contactus-right {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.contactus-section .contact-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}
-
-.contactus-map {
-  position: relative;
-  aspect-ratio: 1/1;
-  border: 1px solid var(--hairline);
-  border-radius: 4px;
-  overflow: hidden;
-  background: rgba(13, 26, 43, 0.6);
-  transition: border-color 0.5s var(--ease-out-expo), box-shadow 0.5s ease;
-}
-
-.contactus-map iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-.contactus-map:hover {
-  border-color: var(--gold);
-  box-shadow: 0 12px 32px rgba(201, 169, 97, 0.15);
-}
-
-.social-section {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.social-header {
-  margin-bottom: 1.5rem;
-}
-
-.social-header .section-eyebrow {
-  margin-bottom: 1rem;
-  color: var(--gold-bright);
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-}
-
-.social-header h3 {
-  font-family: 'Fraunces', serif;
-  font-size: 2.2rem;
-  font-weight: 400;
-  font-style: italic;
-  color: var(--gold-bright);
-  margin-bottom: 1rem;
-  letter-spacing: -0.02em;
-}
-
-.social-header p {
-  font-size: 1rem;
-  color: var(--cream);
-  line-height: 1.7;
-  max-width: 500px;
-}
-
-.social-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-top: 2.5rem;
-}
-
-.social-button {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  border: 2px solid var(--gold);
-  background: linear-gradient(135deg, rgba(224, 198, 136, 0.15) 0%, rgba(201, 169, 97, 0.12) 100%);
-  color: var(--gold-bright);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: border-color 0.4s ease, transform 0.4s var(--ease-out-expo), background 0.4s ease, box-shadow 0.5s ease;
-  cursor: none;
-  text-decoration: none;
-  flex-shrink: 0;
-  position: relative;
-  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.2), 0 4px 12px rgba(201, 169, 97, 0.15);
-}
-
-.social-button::before {
-  content: '';
-  position: absolute;
-  inset: -4px;
-  border-radius: 50%;
-  background: rgba(201, 169, 97, 0.05);
-  z-index: -1;
-  transition: background 0.4s ease;
-}
-
-.social-button svg {
-  width: 28px;
-  height: 28px;
-  stroke: currentColor;
-  fill: currentColor;
-  stroke-width: 1;
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
-}
-
-.social-button:hover {
-  border-color: var(--gold-bright);
-  background: linear-gradient(135deg, rgba(224, 198, 136, 0.28) 0%, rgba(201, 169, 97, 0.22) 100%);
-  transform: translateY(-8px) scale(1.08);
-  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.3), 0 16px 48px rgba(201, 169, 97, 0.4), 0 0 24px rgba(201, 169, 97, 0.2);
-  color: var(--gold-bright);
-}
-
-/* ========== PROFESSIONAL PROFILES ========== */
-.profiles-section {
-  margin-top: 0;
-  padding-top: 0;
-  border-top: none;
-}
-
-.profiles-header {
-  text-align: left;
-  margin-bottom: 3rem;
-}
-
-.profiles-header .section-eyebrow {
-  justify-content: flex-start;
-  margin-bottom: 0.5rem;
-}
-.profiles-header .section-eyebrow::before {
-  display: block;
-}
-.profiles-header .section-eyebrow::after {
-  display: none;
-}
-
-.profiles-header h2 {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(2rem, 5vw, 3rem);
-  line-height: 1.1;
-  font-weight: 300;
-  letter-spacing: -0.02em;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-.profiles-header h2 em {
-  font-style: italic;
-  color: var(--gold);
-  font-weight: 400;
-}
-
-.profiles-grid {
+/* ========== BLOG GRID ========== */
+.blog-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
+  margin-top: 2rem;
 }
 
-.profile-card {
+.blog-card {
   padding: 2.5rem 2rem;
   border: 1px solid var(--hairline);
   border-radius: 4px;
@@ -667,7 +425,7 @@ section:has(.profiles-section) {
   gap: 1.5rem;
 }
 
-.profile-card::before {
+.blog-card::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -676,30 +434,53 @@ section:has(.profiles-section) {
   transition: opacity 0.5s ease;
 }
 
-.profile-card:hover {
+.blog-card:hover {
   border-color: var(--gold);
   transform: translateY(-6px);
   background: rgba(36, 63, 99, 0.5);
 }
 
-.profile-card:hover::before { opacity: 1; }
+.blog-card:hover::before { opacity: 1; }
 
-.profile-name {
-  font-family: 'Fraunces', serif;
-  font-size: 1.25rem;
-  font-weight: 400;
-  color: var(--cream);
+.blog-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   position: relative;
   z-index: 1;
 }
 
-.profile-name em {
+.blog-date {
+  color: var(--whisper);
+  font-weight: 400;
+}
+
+.blog-category {
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.blog-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--cream);
+  position: relative;
+  z-index: 1;
+  line-height: 1.3;
+}
+
+.blog-title em {
   font-style: italic;
   color: var(--gold);
 }
 
-.profile-description {
-  font-size: 0.9rem;
+.blog-excerpt {
+  font-size: 0.95rem;
   color: var(--whisper);
   line-height: 1.6;
   position: relative;
@@ -707,178 +488,33 @@ section:has(.profiles-section) {
   flex-grow: 1;
 }
 
-.profile-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  position: relative;
-  z-index: 1;
-}
-
-.profile-link,
-.profile-book-btn {
+.blog-read-more {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 0.5rem;
-  padding: 0.8rem 1.25rem;
+  color: var(--gold);
+  text-decoration: none;
   font-size: 0.85rem;
   font-weight: 500;
   letter-spacing: 0.08em;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: all 0.4s var(--ease-out-expo);
   text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
   cursor: none;
 }
 
-.profile-link {
-  border: 1px solid var(--gold);
-  color: var(--gold);
-  background: transparent;
+.blog-read-more::after {
+  content: '→';
+  transition: transform 0.3s var(--ease-out-expo);
 }
 
-.profile-link:hover {
-  background: rgba(201, 169, 97, 0.08);
+.blog-read-more:hover {
   color: var(--gold-bright);
-  border-color: var(--gold-bright);
-  transform: translateY(-2px);
 }
 
-.profile-book-btn {
-  background: var(--gold);
-  color: var(--slate-deep);
-  border: 1px solid var(--gold);
-  font-weight: 600;
-}
-
-.profile-book-btn:hover {
-  background: var(--gold-bright);
-  border-color: var(--gold-bright);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(201, 169, 97, 0.25);
-}
-
-.zocdoc-booking {
-  grid-column: 1 / -1;
-  max-width: 500px;
-  margin: 2rem auto 0;
-  padding: 2.5rem 2rem;
-  border: 2px solid var(--gold);
-  background: linear-gradient(135deg, rgba(201,169,97,0.08) 0%, rgba(13,26,43,0.4) 100%);
-  text-align: center;
-}
-
-.zocdoc-booking h4 {
-  font-family: 'Fraunces', serif;
-  font-size: 1.15rem;
-  font-weight: 400;
-  color: var(--gold);
-  margin-bottom: 1rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.zocdoc-booking-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 1rem 2rem;
-  background: var(--gold);
-  color: var(--slate-deep);
-  border: 1px solid var(--gold);
-  border-radius: 4px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-decoration: none;
-  transition: all 0.4s var(--ease-out-expo);
-  cursor: none;
-  text-transform: uppercase;
-}
-
-.zocdoc-booking-btn:hover {
-  background: var(--gold-bright);
-  border-color: var(--gold-bright);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(201, 169, 97, 0.25);
-}
-
-/* ========== CONNECT SECTION ========== */
-.connect-section {
-  padding: 6rem 3rem;
-}
-
-.profiles-social {
-  max-width: 520px;
-  padding: 3.5rem;
-  border: 1px solid var(--hairline);
-  border-radius: 4px;
-  background: rgba(13, 26, 43, 0.4);
-  backdrop-filter: blur(12px);
-  position: relative;
-  overflow: hidden;
-}
-
-.profiles-social::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 0%, rgba(201,169,97,0.1), transparent 60%);
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  pointer-events: none;
-}
-
-.profiles-social:hover::before {
-  opacity: 1;
-}
-
-.connect-section .social-header {
-  text-align: left;
-  margin-bottom: 2.5rem;
-  position: relative;
-  z-index: 1;
-}
-
-.connect-section .section-eyebrow {
-  justify-content: flex-start;
-  margin-bottom: 0.75rem;
-}
-
-.connect-section .section-eyebrow::before {
-  display: block;
-}
-
-.connect-section h3 {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(1.8rem, 4vw, 2.4rem);
-  line-height: 1.1;
-  font-weight: 300;
-  letter-spacing: -0.02em;
-  margin-bottom: 1rem;
-  text-align: left;
-}
-
-.connect-section h3 em {
-  font-style: italic;
-  color: var(--gold);
-  font-weight: 400;
-}
-
-.connect-section p {
-  font-size: 0.9rem;
-  color: var(--whisper);
-  line-height: 1.6;
-  margin-bottom: 2rem;
-}
-
-.connect-section .social-buttons {
-  justify-content: flex-start;
-  margin-top: 0;
-  position: relative;
-  z-index: 1;
+.blog-read-more:hover::after {
+  transform: translateX(4px);
 }
 
 /* ========== FOOTER ========== */
@@ -994,17 +630,17 @@ footer {
   transform: none;
 }
 
+.reveal-stagger > *:nth-child(2) {
+  transition-delay: 0.15s;
+}
+.reveal-stagger > *:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
 /* ========== RESPONSIVE ========== */
 @media (max-width: 1200px) {
   .nav-links { gap: 1.75rem; }
-  .contactus-section { grid-template-columns: 1fr; gap: 2.5rem; }
-  .contactus-right { gap: 1.5rem; }
-  .contactus-section .contact-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
-  .contactus-map { aspect-ratio: 16/9; }
-  .profiles-grid { grid-template-columns: repeat(2, 1fr); }
-
-  .connect-section { padding: 5rem 3rem; }
-  .profiles-social { max-width: 480px; padding: 3rem; }
+  .blog-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 980px) {
@@ -1015,19 +651,10 @@ footer {
   .nav-mobile-toggle { display: block; }
 
   section { padding: 6rem 1.5rem; }
-  .connect-section { padding: 4rem 1.5rem; }
   .hero { padding-top: 6rem; min-height: auto; }
   .hero-title { font-size: clamp(2rem, 6vw, 3.5rem); }
 
-  .contactus-right { gap: 1rem; }
-  .contactus-section .contact-grid { grid-template-columns: 1fr; gap: 1rem; }
-  .contactus-section { grid-template-columns: 1fr; gap: 2rem; }
-  .contactus-map { aspect-ratio: 16/9; }
-
-  .profiles-grid { grid-template-columns: 1fr; }
-
-  .profiles-social { max-width: 100%; padding: 2.5rem; }
-  .connect-section h3 { font-size: 1.8rem; }
+  .blog-grid { grid-template-columns: 1fr; gap: 1.5rem; }
 
   .footer-top { grid-template-columns: 1fr; gap: 2.5rem; }
 }
@@ -1038,35 +665,14 @@ footer {
   .nav-logo .badge img { height: 50px; }
 
   section { padding: 3.5rem 1rem; }
-  .connect-section { padding: 3rem 1rem; }
   .hero { padding-top: 4rem; }
   .hero-title { font-size: clamp(1.8rem, 8vw, 3rem); }
   .hero-sub { font-size: 1rem; margin-bottom: 2rem; }
 
-  .contactus-section .contact-grid { grid-template-columns: 1fr; gap: 0.75rem; }
-  .contact-block { padding: 1.5rem; }
-  .contact-block-label { font-size: 0.65rem; margin-bottom: 0.5rem; }
-  .contact-block-value { font-size: 1rem; }
-
-  .contactus-section { gap: 1.5rem; }
-  .contactus-map { aspect-ratio: 4/3; }
-
-  .social-buttons { gap: 1.5rem; }
-  .social-button { width: 62px; height: 62px; }
-  .social-button svg { width: 26px; height: 26px; }
-
-  .profiles-social { max-width: 100%; padding: 2rem; }
-  .connect-section h3 { font-size: 1.5rem; }
-  .connect-section p { font-size: 0.85rem; }
-  .social-buttons { gap: 1.2rem; margin-top: 1.5rem; }
-  .social-button { width: 56px; height: 56px; }
-  .social-button svg { width: 24px; height: 24px; }
-
-  .profiles-grid { gap: 1.5rem; }
-  .profile-card { padding: 2rem 1.5rem; }
-  .profile-name { font-size: 1.1rem; }
-  .profile-description { font-size: 0.85rem; }
-  .profile-link, .profile-book-btn { padding: 0.7rem 1rem; font-size: 0.8rem; }
+  .blog-grid { gap: 1.25rem; }
+  .blog-card { padding: 2rem 1.5rem; }
+  .blog-title { font-size: 1.15rem; }
+  .blog-excerpt { font-size: 0.9rem; }
 
   .footer-top { gap: 1.5rem; padding-bottom: 2rem; margin-bottom: 1.5rem; }
   .footer-brand { margin-bottom: 1rem; }
@@ -1115,139 +721,101 @@ footer {
   </ul>
 </nav>
 
-<!-- PROFESSIONAL PROFILES & CONNECT -->
-<section>
-  <div class="profiles-section reveal">
-    <div class="profiles-header">
-      <div class="section-eyebrow">Professional Profiles</div>
-      <h2>Where to <em>book.</em></h2>
-    </div>
-
-    <div class="profiles-grid">
-      <!-- Psychology Today Profile -->
-      <div class="profile-card" data-hover>
-        <div class="profile-name">Psychology <em>Today</em></div>
-        <p class="profile-description">
-          Find Anna's full profile on Psychology Today and read verified reviews from her clients. Connect directly through their platform.
-        </p>
-        <div class="profile-actions">
-          <a href="https://www.psychologytoday.com/us/therapists/anna-rondon-miami-lakes-fl/1400674" class="profile-link" data-hover target="_blank">
-            View Profile
-          </a>
-          <a href="https://therapyfinder.com/therapist/anna-rondon-licensed-mental-health-counselor-pembroke-pines-fl" class="profile-book-btn" data-hover target="_blank">
-            Book a Consult
-          </a>
-        </div>
-      </div>
-
-      <!-- SimplePractice Profile -->
-      <div class="profile-card" data-hover>
-        <div class="profile-name">Simple <em>Practice</em></div>
-        <p class="profile-description">
-          Access Anna's SimplePractice profile for direct booking, secure messaging, and appointment management. Modern therapy made simple.
-        </p>
-        <div class="profile-actions">
-          <a href="https://therapyfinder.com/therapist/anna-rondon-licensed-mental-health-counselor-pembroke-pines-fl" class="profile-link" data-hover target="_blank">
-            View Profile
-          </a>
-          <a href="https://therapyfinder.com/therapist/anna-rondon-licensed-mental-health-counselor-pembroke-pines-fl" class="profile-book-btn" data-hover target="_blank">
-            Book Now
-          </a>
-        </div>
-      </div>
-
-      <!-- ZocDoc Profile -->
-      <div class="profile-card" data-hover>
-        <div class="profile-name">Zoc <em>Doc</em></div>
-        <p class="profile-description">
-          Discover Anna on ZocDoc, read patient reviews, and book appointments directly. Part of the trusted healthcare network.
-        </p>
-        <div class="profile-actions">
-          <a href="https://www.zocdoc.com/professional/anna-rondon-lmhc-780402" class="profile-link" data-hover target="_blank">
-            View Profile
-          </a>
-          <a href="https://www.zocdoc.com/booking-link/practice/bright-mind-mental-health-llc-179087" class="profile-book-btn" data-hover target="_blank">
-            Book Appointment
-          </a>
-        </div>
-      </div>
-    </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="reveal">
+    <h1 class="hero-title">Mental Health <em>Insights.</em></h1>
+    <p class="hero-sub">
+      Thoughtful articles, resources, and guidance on mental health, therapy, and wellness. Learn more about the topics that matter.
+    </p>
   </div>
 </section>
 
-<!-- CONTACT INFO & MAP -->
+<!-- BLOG GRID -->
 <section>
-  <div class="contactus-section reveal">
-    <!-- Google Maps -->
-    <div class="contactus-map">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3585.3421234567!2d-80.2818!3d26.0063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9aca12345678%3A0x0!2s10081%20Pines%20Blvd%20Suite%20B%2C%20Pembroke%20Pines%2C%20FL%2033024!5e0!3m2!1sen!2sus!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-
-    <!-- Right Column: Contact Info & Connect Section -->
-    <div class="contactus-right">
-      <!-- Contact Grid -->
-      <div class="contact-grid reveal-stagger">
-        <div class="contact-block" data-hover>
-          <div class="contact-block-label">Phone</div>
-          <div class="contact-block-value"><a href="tel:+19542829668">(954) 282-9668</a></div>
-        </div>
-        <div class="contact-block" data-hover>
-          <div class="contact-block-label">Email</div>
-          <div class="contact-block-value"><a href="mailto:anna@brightmindmental.com">anna@brightmindmental.com</a></div>
-        </div>
-        <div class="contact-block" data-hover>
-          <div class="contact-block-label">In-Person</div>
-          <div class="contact-block-value">10081 Pines Blvd<br/>Suite B, Pembroke Pines<br/>FL 33024</div>
-        </div>
-        <div class="contact-block" data-hover>
-          <div class="contact-block-label">Telehealth</div>
-          <div class="contact-block-value">Serving all of<br/>Florida</div>
-        </div>
-      </div>
-    </div>
+  <div class="reveal">
+    <div class="section-eyebrow">Resources</div>
+    <h2 class="section-title">The <em>Blog.</em></h2>
   </div>
-</section>
 
-<!-- CONNECT SECTION -->
-<section class="connect-section">
-  <div class="profiles-social reveal">
-    <div class="social-header">
-      <div class="section-eyebrow">Follow</div>
-      <h3>Connect with us on <em>social.</em></h3>
-      <p>Stay updated with insights, resources, and wellness tips. Connect with Bright Mind Mental Health across your favorite platforms.</p>
-    </div>
+  <div class="blog-grid reveal-stagger">
+    <!-- Blog Post 1 -->
+    <article class="blog-card" data-hover>
+      <div class="blog-meta">
+        <span class="blog-date">May 15, 2024</span>
+        <span class="blog-category">Mental Health</span>
+      </div>
+      <h3 class="blog-title">Understanding <em>Anxiety</em> and Its Triggers</h3>
+      <p class="blog-excerpt">
+        Learn about the nature of anxiety disorders, how to identify your personal triggers, and evidence-based strategies to manage anxious thoughts and physical symptoms.
+      </p>
+      <a href="#" class="blog-read-more" data-hover>Read More</a>
+    </article>
 
-    <div class="social-buttons">
-      <!-- Facebook -->
-      <a href="#" class="social-button" data-hover title="Facebook" aria-label="Facebook">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-        </svg>
-      </a>
+    <!-- Blog Post 2 -->
+    <article class="blog-card" data-hover>
+      <div class="blog-meta">
+        <span class="blog-date">May 8, 2024</span>
+        <span class="blog-category">Therapy</span>
+      </div>
+      <h3 class="blog-title">What to Expect in Your <em>First</em> Therapy Session</h3>
+      <p class="blog-excerpt">
+        Feeling nervous about starting therapy? This guide walks you through what to expect, how to prepare, and how to make the most of your first appointment with a counselor.
+      </p>
+      <a href="#" class="blog-read-more" data-hover>Read More</a>
+    </article>
 
-      <!-- Instagram -->
-      <a href="#" class="social-button" data-hover title="Instagram" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <rect x="2.165" y="2.165" width="19.67" height="19.67" rx="4.878" ry="4.878" fill="none" stroke="currentColor" stroke-width="1.5"/>
-          <circle cx="12" cy="12" r="3.6" fill="none" stroke="currentColor" stroke-width="1.5"/>
-          <circle cx="18.406" cy="5.594" r="0.9" fill="currentColor"/>
-        </svg>
-      </a>
+    <!-- Blog Post 3 -->
+    <article class="blog-card" data-hover>
+      <div class="blog-meta">
+        <span class="blog-date">April 30, 2024</span>
+        <span class="blog-category">Wellness</span>
+      </div>
+      <h3 class="blog-title">Building Healthy <em>Coping</em> Mechanisms</h3>
+      <p class="blog-excerpt">
+        Explore evidence-based coping strategies for managing stress, depression, and emotional challenges. From mindfulness to journaling, find tools that work for you.
+      </p>
+      <a href="#" class="blog-read-more" data-hover>Read More</a>
+    </article>
 
-      <!-- LinkedIn -->
-      <a href="#" class="social-button" data-hover title="LinkedIn" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.722-2.004 1.418-.103.249-.129.597-.129.946v5.441h-3.554s.047-8.733 0-9.633h3.554v1.364c.429-.661 1.196-1.6 2.905-1.6 2.121 0 3.71 1.386 3.71 4.365v5.504zM5.337 8.855c-1.144 0-1.915-.762-1.915-1.715 0-.953.77-1.715 1.958-1.715 1.187 0 1.927.762 1.948 1.715 0 .953-.761 1.715-1.991 1.715zm1.581 11.597H3.635V9.819h3.283v10.633zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-        </svg>
-      </a>
+    <!-- Blog Post 4 -->
+    <article class="blog-card" data-hover>
+      <div class="blog-meta">
+        <span class="blog-date">April 22, 2024</span>
+        <span class="blog-category">Family Therapy</span>
+      </div>
+      <h3 class="blog-title">Navigating <em>Family</em> Dynamics in Therapy</h3>
+      <p class="blog-excerpt">
+        Family relationships shape who we are. Discover how family therapy can help resolve conflicts, improve communication, and strengthen your bonds with loved ones.
+      </p>
+      <a href="#" class="blog-read-more" data-hover>Read More</a>
+    </article>
 
-      <!-- X (Twitter) -->
-      <a href="#" class="social-button" data-hover title="X" aria-label="X">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.514l-5.106-6.694-5.828 6.694H2.422l7.723-8.835L1.254 2.25h6.554l4.6 6.084 5.313-6.084zM17.002 18.808h1.844L6.983 4.126H5.025l11.977 14.682z"/>
-        </svg>
-      </a>
-    </div>
+    <!-- Blog Post 5 -->
+    <article class="blog-card" data-hover>
+      <div class="blog-meta">
+        <span class="blog-date">April 15, 2024</span>
+        <span class="blog-category">Depression</span>
+      </div>
+      <h3 class="blog-title">Depression: More Than Just <em>Sadness</em></h3>
+      <p class="blog-excerpt">
+        Understand the difference between sadness and clinical depression, recognize the symptoms, and learn why professional support matters in your recovery journey.
+      </p>
+      <a href="#" class="blog-read-more" data-hover>Read More</a>
+    </article>
+
+    <!-- Blog Post 6 -->
+    <article class="blog-card" data-hover>
+      <div class="blog-meta">
+        <span class="blog-date">April 8, 2024</span>
+        <span class="blog-category">Mental Health</span>
+      </div>
+      <h3 class="blog-title">The Importance of <em>Self-Care</em> in Mental Health</h3>
+      <p class="blog-excerpt">
+        Self-care isn't indulgence—it's essential maintenance. Learn practical self-care strategies you can integrate into your daily routine to support your mental wellbeing.
+      </p>
+      <a href="#" class="blog-read-more" data-hover>Read More</a>
+    </article>
   </div>
 </section>
 
@@ -1273,7 +841,6 @@ footer {
         <li><a href="main.html#specialties" data-hover>Specialties</a></li>
         <li><a href="main.html#approach" data-hover>The Approach</a></li>
         <li><a href="main.html#voices" data-hover>Voices</a></li>
-        <li><a href="blog.html" data-hover>Blog</a></li>
         <li><a href="https://amanzor.github.io/Bright-Mind-Mental/faq.html" data-hover>FAQ</a></li>
       </ul>
     </div>
