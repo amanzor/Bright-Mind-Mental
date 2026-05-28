@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Depression: More Than Just Sadness | Bright Mind Mental Health</title>
+<meta name="description" content="Explore the reality of depression beyond sadness. Understand types, symptoms, clinical depression vs. normal grief, and discover effective treatment approaches from evidence-based therapy." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,200;1,9..144,300;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   BRIGHT MIND MENTAL HEALTH — Blog Post Page
+   Editorial-luxury · Slate-teal + antique gold · Motion-rich
+========================================================= */
+:root {
+  /* Inks & Neutrals */
+  --ink: #0a1422;
+  --slate-abyss: #0d1a2b;
+  --slate-deep: #11203a;
+  --slate: #1a2f4d;
+  --slate-mid: #243f63;
+  --slate-soft: #2f4e76;
+
+  /* Gold Accents (Antique) */
+  --gold: #c9a961;
+  --gold-bright: #e0c688;
+  --gold-deep: #9a7f3f;
+  --gold-glow: rgba(201, 169, 97, 0.5);
+
+  /* Creams & Papers */
+  --cream: #f4ede0;
+  --cream-warm: #ebe2cd;
+  --paper: #e8dfc8;
+
+  /* Transparency Utilities */
+  --whisper: rgba(244, 237, 224, 0.62);
+  --whisper-dim: rgba(244, 237, 224, 0.32);
+  --hairline: rgba(201, 169, 97, 0.18);
+  --hairline-soft: rgba(244, 237, 224, 0.08);
+
+  /* Easing Curves */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-cubic: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Manrope', system-ui, sans-serif;
+  background: var(--slate-abyss);
+  color: var(--cream);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  cursor: none;
+}
+@media (hover: none) { body { cursor: auto; } }
+
+/* — Atmospheric grain — */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.97 0 0 0 0 0.93 0 0 0 0 0.78 0 0 0 0.6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.045;
+  z-index: 999;
+  mix-blend-mode: overlay;
+}
+
+/* — Aurora glow behind hero — */
+.aurora {
+  position: fixed;
+  inset: -20% -10% auto auto;
+  width: 80vw;
+  height: 80vh;
+  background:
+    radial-gradient(circle at 70% 30%, rgba(201,169,97,0.18) 0%, transparent 45%),
+    radial-gradient(circle at 30% 60%, rgba(47,78,118,0.5) 0%, transparent 50%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+  animation: aurora 18s ease-in-out infinite alternate;
+}
+@keyframes aurora {
+  0% { transform: translate(0,0) scale(1); }
+  100% { transform: translate(-5%, 5%) scale(1.1); }
+}
+
+/* Gold text elements */
+h1, h2, h3, h4, h5, h6, .section-eyebrow {
+  position: relative;
+}
+
+.nav-links a, .section-eyebrow {
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    0 1px 2px rgba(0, 0, 0, 0.3),
+    0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================================
+   NAVIGATION
+======================================================== */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 900;
+  background: rgba(10, 20, 34, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--hairline);
+  padding: 0.75rem 1rem;
+  transition: all 0.35s var(--ease-in-out-cubic);
+}
+
+nav.hide {
+  transform: translateY(-100%);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-family: 'Fraunces', serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: all 0.3s var(--ease-in-out-cubic);
+}
+.nav-logo:hover {
+  color: var(--gold-bright);
+  text-shadow: 0 0 12px rgba(201, 169, 97, 0.3);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s var(--ease-in-out-cubic);
+  position: relative;
+  display: inline-block;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s var(--ease-in-out-cubic);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .nav-links { gap: 1rem; }
+  .nav-links a { font-size: 0.75rem; }
+}
+
+/* ========================================================
+   HERO SECTION
+======================================================== */
+
+.hero {
+  position: relative;
+  z-index: 1;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+  margin-top: 3.5rem;
+}
+
+.hero-content h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  font-weight: 600;
+  color: var(--cream);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.hero-content .meta {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  color: var(--whisper);
+  font-size: 0.875rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.meta-dot {
+  width: 4px;
+  height: 4px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+
+/* ========================================================
+   CONTENT SECTION
+======================================================== */
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  background: rgba(26, 47, 77, 0.4);
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  margin-bottom: 4rem;
+}
+
+.content p {
+  margin-bottom: 1.5rem;
+  color: var(--whisper);
+  line-height: 1.8;
+}
+
+.content h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.875rem;
+  color: var(--gold);
+  margin: 2.5rem 0 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.content h2:first-child {
+  margin-top: 0;
+}
+
+.content h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.375rem;
+  color: var(--gold-bright);
+  margin: 2rem 0 0.75rem;
+  font-weight: 500;
+}
+
+.content ul, .content ol {
+  margin: 1.5rem 0 1.5rem 2rem;
+  color: var(--whisper);
+}
+
+.content li {
+  margin-bottom: 0.75rem;
+  line-height: 1.8;
+}
+
+.content strong {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.content em {
+  color: var(--gold-bright);
+  font-style: italic;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 3rem;
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  transition: all 0.3s var(--ease-in-out-cubic);
+  position: relative;
+}
+
+.back-link::before {
+  content: '← ';
+  margin-right: 0.5rem;
+}
+
+.back-link:hover {
+  color: var(--gold-bright);
+  transform: translateX(-4px);
+}
+
+/* ========================================================
+   REVEAL ANIMATIONS
+======================================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.reveal.active {
+  animation: reveal 0.8s var(--ease-out-expo) forwards;
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================================
+   FOOTER
+======================================================== */
+
+footer {
+  position: relative;
+  z-index: 1;
+  background: rgba(10, 20, 34, 0.6);
+  border-top: 1px solid var(--hairline);
+  padding: 3rem 2rem;
+  margin-top: 4rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-content p {
+  color: var(--whisper);
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: all 0.3s var(--ease-in-out-cubic);
+}
+
+.footer-links a:hover {
+  color: var(--gold-bright);
+  text-shadow: 0 0 8px rgba(201, 169, 97, 0.3);
+}
+
+/* ========================================================
+   CUSTOM CURSOR
+======================================================== */
+
+.cursor {
+  position: fixed;
+  width: 24px;
+  height: 24px;
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1000;
+  transform: translate(-50%, -50%);
+  transition: all 0.1s linear;
+  display: none;
+}
+
+.cursor.active {
+  display: block;
+}
+
+.cursor-text {
+  position: fixed;
+  font-family: 'Fraunces', serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--gold);
+  pointer-events: none;
+  z-index: 1001;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.2s linear;
+  display: none;
+}
+
+.cursor-text.active {
+  display: block;
+  opacity: 1;
+}
+
+/* ========================================================
+   RESPONSIVE
+======================================================== */
+
+@media (max-width: 980px) {
+  .hero { padding: 4rem 1.5rem 3rem; }
+  .content { padding: 2.5rem 1.5rem; }
+  footer { padding: 2.5rem 1.5rem; }
+}
+
+@media (max-width: 640px) {
+  .hero { min-height: 50vh; padding: 3rem 1rem 2rem; }
+  .hero-content h1 { font-size: 1.75rem; }
+  .hero-content .meta { gap: 1rem; font-size: 0.75rem; }
+  .content { padding: 2rem 1rem; margin-bottom: 3rem; }
+  .content h2 { font-size: 1.5rem; margin: 2rem 0 0.75rem; }
+  .content h3 { font-size: 1.125rem; }
+  .nav-links { gap: 0.75rem; }
+  footer { padding: 2rem 1rem; margin-top: 3rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="aurora"></div>
+<div class="cursor"></div>
+<div class="cursor-text"></div>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-container">
+    <a href="main.html" class="nav-logo" data-hover="home">BRIGHT MIND</a>
+    <ul class="nav-links">
+      <li><a href="main.html" data-hover="home">Home</a></li>
+      <li><a href="main.html#about" data-hover="about">About</a></li>
+      <li><a href="main.html#specialties" data-hover="specialties">Specialties</a></li>
+      <li><a href="main.html#approach" data-hover="approach">Approach</a></li>
+      <li><a href="main.html#voices" data-hover="voices">Voices</a></li>
+      <li><a href="main.html#cta" data-hover="consult">Book a Consult</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content reveal">
+    <h1>Depression: More Than Just Sadness</h1>
+    <div class="meta">
+      <span class="meta-item"><span class="meta-dot"></span>May 10, 2024</span>
+      <span class="meta-item"><span class="meta-dot"></span>Mental Health</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<main class="content reveal">
+  <a href="blog.html" class="back-link">Back to Blog</a>
+
+  <h2>Understanding Depression</h2>
+  <p>
+    Depression is far more than just feeling sad. It's a complex mental health condition that affects how a person thinks, feels, and functions in daily life. While sadness is a natural emotional response to life's challenges, clinical depression is a persistent and pervasive condition that can significantly interfere with work, relationships, sleep, appetite, and overall quality of life.
+  </p>
+
+  <h2>Depression vs. Normal Sadness</h2>
+  <p>
+    It's important to understand the distinction between normal sadness and clinical depression. <strong>Sadness is temporary</strong> and typically responds to a specific event or loss. It fades with time as we process our emotions and adapt to change.
+  </p>
+  <p>
+    <strong>Clinical depression</strong>, by contrast, is characterized by:
+  </p>
+  <ul>
+    <li><strong>Duration:</strong> Symptoms persist for at least two weeks, often lasting much longer</li>
+    <li><strong>Intensity:</strong> Feelings are significantly more severe and disruptive than typical sadness</li>
+    <li><strong>Pervasiveness:</strong> Depression affects multiple areas of life simultaneously</li>
+    <li><strong>Functionality:</strong> Daily activities become difficult or impossible to manage</li>
+    <li><strong>Physical impact:</strong> Sleep, appetite, energy, and motivation are substantially altered</li>
+  </ul>
+
+  <h2>Types of Depression</h2>
+  <p>
+    Depression is not one-size-fits-all. There are several distinct types, each with unique characteristics:
+  </p>
+
+  <h3>Major Depressive Disorder (MDD)</h3>
+  <p>
+    The most common form, characterized by persistent depressed mood and loss of interest in activities (anhedonia) for at least two weeks. Symptoms are severe enough to interfere with daily functioning.
+  </p>
+
+  <h3>Persistent Depressive Disorder (Dysthymia)</h3>
+  <p>
+    A chronic form of depression lasting two years or longer. While symptoms may be less severe than MDD, the long-term nature creates significant burden and impacts quality of life.
+  </p>
+
+  <h3>Seasonal Affective Disorder (SAD)</h3>
+  <p>
+    Depression that emerges during specific seasons, typically fall and winter when daylight hours decrease. Light therapy and seasonal lifestyle adjustments are often effective.
+  </p>
+
+  <h3>Postpartum Depression</h3>
+  <p>
+    Occurs after childbirth and involves severe depression, anxiety, and emotional instability. It's a medical condition requiring professional support, not a personal weakness or "baby blues."
+  </p>
+
+  <h2>Recognizing Depression Symptoms</h2>
+  <p>
+    Depression manifests differently in different people, but common symptoms include:
+  </p>
+  <ul>
+    <li>Persistent depressed or empty mood</li>
+    <li>Loss of interest in activities once enjoyed (anhedonia)</li>
+    <li>Significant changes in appetite or weight</li>
+    <li>Sleep disturbances (insomnia or hypersomnia)</li>
+    <li>Fatigue or loss of energy</li>
+    <li>Feelings of worthlessness or excessive guilt</li>
+    <li>Difficulty concentrating or making decisions</li>
+    <li>Thoughts of death or suicide</li>
+    <li>Physical symptoms (headaches, body aches, digestive issues)</li>
+    <li>Social withdrawal and isolation</li>
+  </ul>
+
+  <h2>The Importance of Professional Support</h2>
+  <p>
+    Depression is a medical condition, not a personal failure or weakness. <strong>Professional treatment is crucial</strong> because depression can be:
+  </p>
+  <ul>
+    <li><strong>Debilitating:</strong> Untreated depression can prevent you from functioning at work, school, and in relationships</li>
+    <li><strong>Dangerous:</strong> Depression significantly increases suicide risk, particularly when combined with substance abuse</li>
+    <li><strong>Progressive:</strong> Without treatment, depression often deepens and can become harder to treat</li>
+    <li><strong>Isolating:</strong> Depression thrives in isolation; professional support breaks the cycle</li>
+  </ul>
+
+  <h2>Evidence-Based Treatment Approaches</h2>
+
+  <h3>Psychotherapy</h3>
+  <p>
+    Therapy is highly effective for depression. Evidence-based approaches include:
+  </p>
+  <ul>
+    <li><strong>Cognitive Behavioral Therapy (CBT):</strong> Identifies and changes negative thought patterns and behaviors</li>
+    <li><strong>Acceptance and Commitment Therapy (ACT):</strong> Develops psychological flexibility and meaningful living</li>
+    <li><strong>Interpersonal Therapy (IPT):</strong> Addresses relationships and life changes contributing to depression</li>
+    <li><strong>Psychodynamic Therapy:</strong> Explores underlying patterns and unconscious influences</li>
+  </ul>
+
+  <h3>Medication</h3>
+  <p>
+    Antidepressant medications can be highly effective, particularly when combined with therapy. Common classes include SSRIs, SNRIs, and other antidepressants. A psychiatrist can determine the best option for your specific situation.
+  </p>
+
+  <h3>Lifestyle Interventions</h3>
+  <p>
+    While not a substitute for professional treatment, lifestyle changes support recovery:
+  </p>
+  <ul>
+    <li>Regular exercise (30 minutes most days)</li>
+    <li>Adequate sleep (7-9 hours nightly)</li>
+    <li>Nutrition focused on whole foods</li>
+    <li>Social connection and support</li>
+    <li>Limiting alcohol and avoiding substances</li>
+    <li>Mindfulness and meditation practices</li>
+  </ul>
+
+  <h2>Breaking the Stigma</h2>
+  <p>
+    One of the greatest obstacles to depression treatment is <em>stigma</em>. Many people struggle silently because they feel shame or believe they should "just get over it." The truth is: depression is as real as diabetes or heart disease. It's a biological, psychological, and social condition that responds to treatment.
+  </p>
+  <p>
+    Seeking help is not weakness—it's wisdom. Speaking with a therapist or doctor is a sign of self-respect and commitment to your wellbeing.
+  </p>
+
+  <h2>Moving Forward</h2>
+  <p>
+    If you're experiencing depression, remember: <strong>you are not alone, and recovery is possible.</strong> With professional support, many people with depression recover fully and go on to live fulfilling, meaningful lives. The first step is reaching out—to a trusted friend, family member, or mental health professional.
+  </p>
+  <p>
+    Depression may be challenging to navigate, but it is treatable. You deserve support, and help is available.
+  </p>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2024 Bright Mind Mental Health. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="main.html" data-hover="home">Home</a>
+      <a href="blog.html" data-hover="blog">Blog</a>
+      <a href="contactus.html" data-hover="contact">Contact</a>
+      <a href="faq.html" data-hover="faq">FAQ</a>
+    </div>
+    <p>Providing compassionate mental health counseling in Pembroke Pines, Florida and throughout Florida via telehealth.</p>
+  </div>
+</footer>
+
+<script>
+// ======= CUSTOM CURSOR =======
+const cursor = document.querySelector('.cursor');
+const cursorText = document.querySelector('.cursor-text');
+let mouseX = 0, mouseY = 0;
+let cursorX = 0, cursorY = 0;
+
+document.addEventListener('mousemove', (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+function updateCursor() {
+  cursorX += (mouseX - cursorX) * 0.1;
+  cursorY += (mouseY - cursorY) * 0.1;
+  cursor.style.left = cursorX + 'px';
+  cursor.style.top = cursorY + 'px';
+  cursorText.style.left = cursorX + 'px';
+  cursorText.style.top = cursorY + 'px';
+  requestAnimationFrame(updateCursor);
+}
+updateCursor();
+
+document.addEventListener('mouseenter', () => cursor.classList.add('active'));
+document.addEventListener('mouseleave', () => {
+  cursor.classList.remove('active');
+  cursorText.classList.remove('active');
+});
+
+document.querySelectorAll('[data-hover]').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    cursorText.textContent = el.dataset.hover;
+    cursorText.classList.add('active');
+    cursor.style.borderColor = 'var(--gold-bright)';
+  });
+  el.addEventListener('mouseleave', () => {
+    cursorText.classList.remove('active');
+    cursor.style.borderColor = 'var(--gold)';
+  });
+});
+
+// ======= NAVIGATION HIDE ON SCROLL =======
+let lastScrollY = 0;
+nav.style.transform = 'translateY(0)';
+
+window.addEventListener('scroll', () => {
+  const currentScrollY = window.scrollY;
+  if (currentScrollY > lastScrollY && currentScrollY > 100) {
+    nav.classList.add('hide');
+  } else {
+    nav.classList.remove('hide');
+  }
+  lastScrollY = currentScrollY;
+});
+
+// ======= REVEAL ANIMATIONS =======
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

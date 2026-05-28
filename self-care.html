@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Importance of Self-Care in Mental Health | Bright Mind Mental Health</title>
+<meta name="description" content="Discover practical self-care strategies to improve mental health and emotional wellbeing. Learn how self-care integrates into daily life and why it's essential for long-term mental health maintenance." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,200;1,9..144,300;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   BRIGHT MIND MENTAL HEALTH — Blog Post Page
+   Editorial-luxury · Slate-teal + antique gold · Motion-rich
+========================================================= */
+:root {
+  /* Inks & Neutrals */
+  --ink: #0a1422;
+  --slate-abyss: #0d1a2b;
+  --slate-deep: #11203a;
+  --slate: #1a2f4d;
+  --slate-mid: #243f63;
+  --slate-soft: #2f4e76;
+
+  /* Gold Accents (Antique) */
+  --gold: #c9a961;
+  --gold-bright: #e0c688;
+  --gold-deep: #9a7f3f;
+  --gold-glow: rgba(201, 169, 97, 0.5);
+
+  /* Creams & Papers */
+  --cream: #f4ede0;
+  --cream-warm: #ebe2cd;
+  --paper: #e8dfc8;
+
+  /* Transparency Utilities */
+  --whisper: rgba(244, 237, 224, 0.62);
+  --whisper-dim: rgba(244, 237, 224, 0.32);
+  --hairline: rgba(201, 169, 97, 0.18);
+  --hairline-soft: rgba(244, 237, 224, 0.08);
+
+  /* Easing Curves */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-cubic: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Manrope', system-ui, sans-serif;
+  background: var(--slate-abyss);
+  color: var(--cream);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  cursor: none;
+}
+@media (hover: none) { body { cursor: auto; } }
+
+/* — Atmospheric grain — */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.97 0 0 0 0 0.93 0 0 0 0 0.78 0 0 0 0.6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.045;
+  z-index: 999;
+  mix-blend-mode: overlay;
+}
+
+/* — Aurora glow behind hero — */
+.aurora {
+  position: fixed;
+  inset: -20% -10% auto auto;
+  width: 80vw;
+  height: 80vh;
+  background:
+    radial-gradient(circle at 70% 30%, rgba(201,169,97,0.18) 0%, transparent 45%),
+    radial-gradient(circle at 30% 60%, rgba(47,78,118,0.5) 0%, transparent 50%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+  animation: aurora 18s ease-in-out infinite alternate;
+}
+@keyframes aurora {
+  0% { transform: translate(0,0) scale(1); }
+  100% { transform: translate(-5%, 5%) scale(1.1); }
+}
+
+/* Gold text elements */
+h1, h2, h3, h4, h5, h6, .section-eyebrow {
+  position: relative;
+}
+
+.nav-links a, .section-eyebrow {
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    0 1px 2px rgba(0, 0, 0, 0.3),
+    0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================================
+   NAVIGATION
+======================================================== */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 900;
+  background: rgba(10, 20, 34, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--hairline);
+  padding: 0.75rem 1rem;
+  transition: all 0.35s var(--ease-in-out-cubic);
+}
+
+nav.hide {
+  transform: translateY(-100%);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-family: 'Fraunces', serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: all 0.3s var(--ease-in-out-cubic);
+}
+.nav-logo:hover {
+  color: var(--gold-bright);
+  text-shadow: 0 0 12px rgba(201, 169, 97, 0.3);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s var(--ease-in-out-cubic);
+  position: relative;
+  display: inline-block;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s var(--ease-in-out-cubic);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .nav-links { gap: 1rem; }
+  .nav-links a { font-size: 0.75rem; }
+}
+
+/* ========================================================
+   HERO SECTION
+======================================================== */
+
+.hero {
+  position: relative;
+  z-index: 1;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+  margin-top: 3.5rem;
+}
+
+.hero-content h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  font-weight: 600;
+  color: var(--cream);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.hero-content .meta {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  color: var(--whisper);
+  font-size: 0.875rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.meta-dot {
+  width: 4px;
+  height: 4px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+
+/* ========================================================
+   CONTENT SECTION
+======================================================== */
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  background: rgba(26, 47, 77, 0.4);
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  margin-bottom: 4rem;
+}
+
+.content p {
+  margin-bottom: 1.5rem;
+  color: var(--whisper);
+  line-height: 1.8;
+}
+
+.content h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.875rem;
+  color: var(--gold);
+  margin: 2.5rem 0 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.content h2:first-child {
+  margin-top: 0;
+}
+
+.content h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.375rem;
+  color: var(--gold-bright);
+  margin: 2rem 0 0.75rem;
+  font-weight: 500;
+}
+
+.content ul, .content ol {
+  margin: 1.5rem 0 1.5rem 2rem;
+  color: var(--whisper);
+}
+
+.content li {
+  margin-bottom: 0.75rem;
+  line-height: 1.8;
+}
+
+.content strong {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.content em {
+  color: var(--gold-bright);
+  font-style: italic;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 3rem;
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  transition: all 0.3s var(--ease-in-out-cubic);
+  position: relative;
+}
+
+.back-link::before {
+  content: '← ';
+  margin-right: 0.5rem;
+}
+
+.back-link:hover {
+  color: var(--gold-bright);
+  transform: translateX(-4px);
+}
+
+/* ========================================================
+   REVEAL ANIMATIONS
+======================================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.reveal.active {
+  animation: reveal 0.8s var(--ease-out-expo) forwards;
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================================
+   FOOTER
+======================================================== */
+
+footer {
+  position: relative;
+  z-index: 1;
+  background: rgba(10, 20, 34, 0.6);
+  border-top: 1px solid var(--hairline);
+  padding: 3rem 2rem;
+  margin-top: 4rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-content p {
+  color: var(--whisper);
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: all 0.3s var(--ease-in-out-cubic);
+}
+
+.footer-links a:hover {
+  color: var(--gold-bright);
+  text-shadow: 0 0 8px rgba(201, 169, 97, 0.3);
+}
+
+/* ========================================================
+   CUSTOM CURSOR
+======================================================== */
+
+.cursor {
+  position: fixed;
+  width: 24px;
+  height: 24px;
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1000;
+  transform: translate(-50%, -50%);
+  transition: all 0.1s linear;
+  display: none;
+}
+
+.cursor.active {
+  display: block;
+}
+
+.cursor-text {
+  position: fixed;
+  font-family: 'Fraunces', serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--gold);
+  pointer-events: none;
+  z-index: 1001;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.2s linear;
+  display: none;
+}
+
+.cursor-text.active {
+  display: block;
+  opacity: 1;
+}
+
+/* ========================================================
+   RESPONSIVE
+======================================================== */
+
+@media (max-width: 980px) {
+  .hero { padding: 4rem 1.5rem 3rem; }
+  .content { padding: 2.5rem 1.5rem; }
+  footer { padding: 2.5rem 1.5rem; }
+}
+
+@media (max-width: 640px) {
+  .hero { min-height: 50vh; padding: 3rem 1rem 2rem; }
+  .hero-content h1 { font-size: 1.75rem; }
+  .hero-content .meta { gap: 1rem; font-size: 0.75rem; }
+  .content { padding: 2rem 1rem; margin-bottom: 3rem; }
+  .content h2 { font-size: 1.5rem; margin: 2rem 0 0.75rem; }
+  .content h3 { font-size: 1.125rem; }
+  .nav-links { gap: 0.75rem; }
+  footer { padding: 2rem 1rem; margin-top: 3rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="aurora"></div>
+<div class="cursor"></div>
+<div class="cursor-text"></div>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-container">
+    <a href="main.html" class="nav-logo" data-hover="home">BRIGHT MIND</a>
+    <ul class="nav-links">
+      <li><a href="main.html" data-hover="home">Home</a></li>
+      <li><a href="main.html#about" data-hover="about">About</a></li>
+      <li><a href="main.html#specialties" data-hover="specialties">Specialties</a></li>
+      <li><a href="main.html#approach" data-hover="approach">Approach</a></li>
+      <li><a href="main.html#voices" data-hover="voices">Voices</a></li>
+      <li><a href="main.html#cta" data-hover="consult">Book a Consult</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content reveal">
+    <h1>The Importance of Self-Care in Mental Health</h1>
+    <div class="meta">
+      <span class="meta-item"><span class="meta-dot"></span>April 8, 2024</span>
+      <span class="meta-item"><span class="meta-dot"></span>Wellness</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<main class="content reveal">
+  <a href="blog.html" class="back-link">Back to Blog</a>
+
+  <h2>What is Self-Care?</h2>
+  <p>
+    Self-care is often misunderstood as indulgence or luxury—bubble baths, spa days, and relaxation. While those can be part of self-care, the concept is much deeper and more essential. <strong>True self-care is any intentional action you take to care for your physical, mental, emotional, and spiritual wellbeing.</strong> It's the practice of prioritizing your health and needs so you can show up as your best self in all areas of life.
+  </p>
+  <p>
+    Self-care is not selfish. In fact, it's foundational to mental health maintenance. When you neglect self-care, your mental and emotional resilience erode, making you more vulnerable to stress, anxiety, depression, and burnout.
+  </p>
+
+  <h2>Why Self-Care Matters for Mental Health</h2>
+  <p>
+    Think of self-care as preventative maintenance for your mind. Just as you maintain your car, home, and body through regular upkeep, your mental health requires consistent attention and care.
+  </p>
+
+  <h3>Builds Resilience</h3>
+  <p>
+    Regular self-care strengthens your capacity to handle stress and adversity. When you're well-rested, nourished, and connected, you have greater emotional resources to navigate challenges.
+  </p>
+
+  <h3>Prevents Burnout</h3>
+  <p>
+    Burnout emerges from prolonged stress without adequate recovery. Self-care practices provide the necessary rest and rejuvenation to prevent depletion.
+  </p>
+
+  <h3>Improves Coping Skills</h3>
+  <p>
+    Self-care teaches you to recognize your needs and respond to them, developing healthier coping mechanisms than avoidance, substance use, or unhealthy behaviors.
+  </p>
+
+  <h3>Enhances Self-Compassion</h3>
+  <p>
+    Taking care of yourself sends a powerful message: <em>"I am worth caring for."</em> This builds self-esteem and combats shame and self-criticism.
+  </p>
+
+  <h3>Reduces Mental Health Symptoms</h3>
+  <p>
+    Self-care practices like exercise, sleep, and social connection directly reduce symptoms of depression and anxiety and improve overall mood regulation.
+  </p>
+
+  <h2>Categories of Self-Care</h2>
+
+  <h3>Physical Self-Care</h3>
+  <p>
+    Caring for your body directly impacts your mental health:
+  </p>
+  <ul>
+    <li>Regular exercise (walking, yoga, sports, dancing)</li>
+    <li>Adequate sleep (7-9 hours nightly)</li>
+    <li>Nutritious meals and hydration</li>
+    <li>Regular medical check-ups</li>
+    <li>Limiting alcohol and avoiding harmful substances</li>
+    <li>Hygiene practices and grooming</li>
+  </ul>
+
+  <h3>Emotional Self-Care</h3>
+  <p>
+    Tending to your emotional needs:
+  </p>
+  <ul>
+    <li>Journaling or expressive writing</li>
+    <li>Allowing yourself to feel and process emotions</li>
+    <li>Setting healthy boundaries</li>
+    <li>Therapy or counseling</li>
+    <li>Practicing self-compassion and positive self-talk</li>
+    <li>Engaging in activities that bring joy</li>
+  </ul>
+
+  <h3>Social Self-Care</h3>
+  <p>
+    Nurturing meaningful connections:
+  </p>
+  <ul>
+    <li>Spending quality time with loved ones</li>
+    <li>Joining groups or communities aligned with your interests</li>
+    <li>Vulnerability and authenticity in relationships</li>
+    <li>Asking for and accepting support</li>
+    <li>Setting limits on toxic relationships</li>
+    <li>Expressing gratitude and appreciation</li>
+  </ul>
+
+  <h3>Mental/Cognitive Self-Care</h3>
+  <p>
+    Stimulating and nourishing your mind:
+  </p>
+  <ul>
+    <li>Reading, learning, or taking courses</li>
+    <li>Creative pursuits (art, music, writing, crafting)</li>
+    <li>Problem-solving and goal-setting</li>
+    <li>Limiting mental overload and digital consumption</li>
+    <li>Engaging in meaningful work or hobbies</li>
+    <li>Practicing mindfulness and meditation</li>
+  </ul>
+
+  <h3>Spiritual Self-Care</h3>
+  <p>
+    Connecting with purpose and meaning:
+  </p>
+  <ul>
+    <li>Meditation or prayer (regardless of faith tradition)</li>
+    <li>Time in nature</li>
+    <li>Volunteering or service to others</li>
+    <li>Engaging with your values and purpose</li>
+    <li>Reflection on what brings meaning to your life</li>
+    <li>Connection to something larger than yourself</li>
+  </ul>
+
+  <h2>Practical Self-Care Strategies for Daily Life</h2>
+
+  <h3>Start Small</h3>
+  <p>
+    You don't need elaborate self-care routines. <strong>Start with one small action daily.</strong> A 10-minute walk, drinking enough water, a few deep breaths—these count and compound over time.
+  </p>
+
+  <h3>Schedule It</h3>
+  <p>
+    Self-care is easy to neglect when life gets busy. Treat it like an important appointment. Block time for exercise, meditation, journaling, or whatever nourishes you.
+  </p>
+
+  <h3>Make It Non-Negotiable</h3>
+  <p>
+    View self-care as maintenance, not a luxury. Just as you brush your teeth daily, build self-care into your non-negotiable routine.
+  </p>
+
+  <h3>Identify What Works for You</h3>
+  <p>
+    Self-care is personal. What energizes one person may drain another. Experiment and notice what leaves you feeling genuinely replenished.
+  </p>
+
+  <h3>Practice Saying No</h3>
+  <p>
+    Self-care includes declining activities, obligations, and relationships that drain you. Boundaries are not selfish; they're essential for wellbeing.
+  </p>
+
+  <h3>Involve Others</h3>
+  <p>
+    Some self-care is shared. Walking with a friend, cooking with family, or group fitness classes combine self-care with social connection.
+  </p>
+
+  <h2>Overcoming Common Self-Care Obstacles</h2>
+
+  <h3>"I Don't Have Time"</h3>
+  <p>
+    You don't need hours. Even 5-10 minutes of intentional self-care matters. And ironically, self-care often creates more time and energy by reducing overwhelm and burnout.
+  </p>
+
+  <h3>"I Feel Guilty Taking Care of Myself"</h3>
+  <p>
+    This often stems from messaging that taking care of others is virtuous while caring for yourself is selfish. The truth: <strong>you can't pour from an empty cup.</strong> Self-care allows you to show up more fully for others.
+  </p>
+
+  <h3>"Self-Care Feels Frivolous"</h3>
+  <p>
+    Self-care is an investment in your mental health—as important as medical care. It prevents more serious mental health crises.
+  </p>
+
+  <h3>"I Don't Know Where to Start"</h3>
+  <p>
+    Notice what depletes you (work, caregiving, stress) and identify what replenishes you (nature, creativity, movement, rest). Start there.
+  </p>
+
+  <h2>Integrating Self-Care into Therapy</h2>
+  <p>
+    Therapy and self-care are complementary. In therapy, you address deeper patterns and build coping skills. Self-care reinforces these tools and prevents relapse. A therapist can help you identify your self-care needs and create realistic practices aligned with your life.
+  </p>
+
+  <h2>Self-Care as an Act of Self-Love</h2>
+  <p>
+    At its core, self-care is an expression of self-love and respect. It says: <em>"I am worthy of care. My wellbeing matters. I deserve to feel good."</em> These affirmations, lived through consistent self-care, transform your relationship with yourself and your mental health.
+  </p>
+  <p>
+    Mental health isn't something you achieve once and maintain effortlessly. It requires ongoing attention, care, and compassion. Self-care is the daily practice that keeps you mentally and emotionally well—not as a luxury, but as an essential foundation for living a meaningful, resilient life.
+  </p>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2024 Bright Mind Mental Health. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="main.html" data-hover="home">Home</a>
+      <a href="blog.html" data-hover="blog">Blog</a>
+      <a href="contactus.html" data-hover="contact">Contact</a>
+      <a href="faq.html" data-hover="faq">FAQ</a>
+    </div>
+    <p>Providing compassionate mental health counseling in Pembroke Pines, Florida and throughout Florida via telehealth.</p>
+  </div>
+</footer>
+
+<script>
+// ======= CUSTOM CURSOR =======
+const cursor = document.querySelector('.cursor');
+const cursorText = document.querySelector('.cursor-text');
+let mouseX = 0, mouseY = 0;
+let cursorX = 0, cursorY = 0;
+
+document.addEventListener('mousemove', (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+function updateCursor() {
+  cursorX += (mouseX - cursorX) * 0.1;
+  cursorY += (mouseY - cursorY) * 0.1;
+  cursor.style.left = cursorX + 'px';
+  cursor.style.top = cursorY + 'px';
+  cursorText.style.left = cursorX + 'px';
+  cursorText.style.top = cursorY + 'px';
+  requestAnimationFrame(updateCursor);
+}
+updateCursor();
+
+document.addEventListener('mouseenter', () => cursor.classList.add('active'));
+document.addEventListener('mouseleave', () => {
+  cursor.classList.remove('active');
+  cursorText.classList.remove('active');
+});
+
+document.querySelectorAll('[data-hover]').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    cursorText.textContent = el.dataset.hover;
+    cursorText.classList.add('active');
+    cursor.style.borderColor = 'var(--gold-bright)';
+  });
+  el.addEventListener('mouseleave', () => {
+    cursorText.classList.remove('active');
+    cursor.style.borderColor = 'var(--gold)';
+  });
+});
+
+// ======= NAVIGATION HIDE ON SCROLL =======
+let lastScrollY = 0;
+nav.style.transform = 'translateY(0)';
+
+window.addEventListener('scroll', () => {
+  const currentScrollY = window.scrollY;
+  if (currentScrollY > lastScrollY && currentScrollY > 100) {
+    nav.classList.add('hide');
+  } else {
+    nav.classList.remove('hide');
+  }
+  lastScrollY = currentScrollY;
+});
+
+// ======= REVEAL ANIMATIONS =======
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
