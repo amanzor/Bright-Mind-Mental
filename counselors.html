@@ -1071,15 +1071,17 @@ footer {
       </div>
     </article>
 
-    <!-- Placeholder slots — easy to fill in later -->
-    <article class="counselor-card" data-state="coming-soon" data-hover>
-      <div class="counselor-badge muted">Coming Soon</div>
-      <div class="counselor-photo">✦</div>
+    <!-- Jordan (Supervisor) -->
+    <article class="counselor-card" data-state="available" data-counselor="jordan" data-hover>
+      <div class="counselor-badge">Accepting Supervisees</div>
+      <div class="counselor-photo">
+        <img src="Jordan Head Shot.jpeg" alt="Jordan, Clinical Supervisor" />
+      </div>
       <div class="counselor-info">
-        <h3>Joining <em>Soon</em></h3>
-        <div class="credentials-line">— · — · —</div>
-        <p class="role">A second counselor is joining the practice. Profile available soon.</p>
-        <span class="counselor-select" style="opacity:0.5">Not yet available</span>
+        <h3>Jordan <em>Supervisor</em></h3>
+        <div class="credentials-line">MS · LMHC · NCC</div>
+        <p class="role">Clinical Supervisor. Counseling interns and supervisees seeking professional development.</p>
+        <span class="counselor-select">Select Jordan →</span>
       </div>
     </article>
 
@@ -1251,10 +1253,22 @@ footer {
       creds: 'MS, LMHC, NCC — Licensed Mental Health Counselor',
       img: 'Head Shot.jpeg',
       alt: 'Anna Rondon, Licensed Mental Health Counselor',
+      status: 'Now Accepting',
       tag: 'Anna · In-person & Telehealth',
       bio: 'Anna is a Licensed Mental Health Counselor and National Certified Counselor based in the Miami area, with telehealth services serving clients across Florida. With clinical experience spanning forensic psychology and juvenile services, she brings a deep understanding of diverse behavioral and emotional challenges. She is especially passionate about working with adolescents — and also provides therapeutic support to children, adults, and families navigating high-risk seasons of life.',
       chips: ['Adolescents', 'Children', 'Adults', 'Family Dynamics', 'Anxiety', 'Depression', 'ADHD', 'Mood Disorders', 'Personality Disorders', 'High-Risk Support'],
       bookLabel: 'Book with Anna'
+    },
+    jordan: {
+      name: 'Jordan <em>Supervisor</em>',
+      creds: 'MS, LMHC, NCC — Clinical Supervisor',
+      img: 'Jordan Head Shot.jpeg',
+      alt: 'Jordan, Clinical Supervisor',
+      status: 'Accepting Supervisees',
+      tag: 'Jordan · Clinical Supervision',
+      bio: "Jordan's approach to supervision is grounded in a developmental, relational, and social justice–informed counseling paradigm. She brings experience from her clinical practice, counselor education, program leadership, and systems-level advocacy, with a particular emphasis on ethical practice, professional identity development, and counselor well-being. She views supervision as both an evaluative and formative process that prioritizes client welfare while intentionally supporting interns' growth in clinical competence, self-awareness, and professional responsibility. Jordan's supervisory stance recognizes that counseling practice does not occur in a vacuum; rather, it is shaped by cultural identities, power dynamics, institutional contexts, and systemic inequities. She encourages interns to examine how their own values, assumptions, and positionalities influence clinical judgment, relational dynamics, and intervention choices. Her goal is to create a supportive yet challenging learning environment where interns can engage in reflective practice, receive constructive feedback, and build confidence in their clinical skills.",
+      chips: ['Clinical Supervision', 'Professional Development', 'Ethical Practice', 'Identity Development', 'Reflective Practice', 'Self-Awareness', 'Social Justice', 'Systemic Awareness', 'Clinical Competence'],
+      bookLabel: 'Inquire About Supervision'
     }
   };
 
@@ -1277,7 +1291,9 @@ footer {
     profileCreds.textContent = data.creds;
     profileBio.textContent = data.bio;
     profileTag.textContent = data.tag;
-    profileBookBtn.textContent = `Book with ${data.name.split('<em')[0].trim()}`;
+    document.querySelector('.profile-visual-tag strong').textContent = data.status;
+    profileBookBtn.textContent = data.bookLabel || `Book with ${data.name.split('<em')[0].trim()}`;
+    profileBookBtn.href = key === 'jordan' ? '#' : profileBookBtn.href;
 
     profileChips.innerHTML = '';
     data.chips.forEach((chip) => {
